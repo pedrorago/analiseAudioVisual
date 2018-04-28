@@ -13,6 +13,7 @@
   "author": "Roberto Oliveira",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.229.1",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
