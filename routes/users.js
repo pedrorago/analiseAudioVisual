@@ -86,6 +86,7 @@ app.post('/upload', function(req, res) {
 // SHOW LIST OF USERS
 app.get('/', function(req, res, next) {
 	req.getConnection(function(error, conn) {
+		console.log(error)
 		conn.query('SELECT * FROM users ORDER BY id DESC',function(err, rows, fields) {
 			//if(err) throw err
 			if (err) {
@@ -133,6 +134,7 @@ app.post('/add', function(req, res, next){
 		}
 		
 		req.getConnection(function(error, conn) {
+			console.log(error)
 			conn.query('INSERT INTO users SET ?', user, function(err, result) {
 				//if(err) throw err
 				if (err) {
@@ -182,6 +184,7 @@ app.post('/add', function(req, res, next){
 // SHOW EDIT USER FORM
 app.get('/edit/(:id)', function(req, res, next){
 	req.getConnection(function(error, conn) {
+		console.log(error)
 		conn.query('SELECT * FROM users WHERE id = ' + req.params.id, function(err, rows, fields) {
 			if(err) throw err
 			
