@@ -64,8 +64,9 @@ var bodyParser = require('body-parser')
  */ 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+var path=require('path');
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use("/public", express.static(path.join(__dirname, 'public')));
 /**
  * This module let us use HTTP verbs such as PUT or DELETE 
  * in places where they are not supported
