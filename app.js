@@ -65,7 +65,7 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-
+app.use(express.static('public'))
 /**
  * This module let us use HTTP verbs such as PUT or DELETE 
  * in places where they are not supported
