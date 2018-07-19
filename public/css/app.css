@@ -1,3 +1,4 @@
+@import "@material/textfield/mdc-text-field";
 html, body {
   height: 100%; }
 
@@ -6,11 +7,31 @@ html, body {
   height: 100%;
   display: flex;
   align-items: center;
+  background: #4e4e4e;
   justify-content: center; }
-  #LoginContent div {
-    background: red;
-    width: 31em;
-    height: 34em;
-    border-radius: 10px; }
+  #LoginContent content {
+    width: 100%;
+    height: 100%;
+    background-image: url(http://creativeit.io/material-dashboard-lite/images/Dark_background_1920x1080.png); }
+  #LoginContent form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #eaeaea;
+    width: 24em;
+    height: 33em;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    padding: 2em 3em;
+    display: flex;
+    align-items: center; }
+    #LoginContent form img {
+      max-width: 5em; }
+    #LoginContent form h2 {
+      font-family: Roboto;
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #444;
+      font-weight: 500; }
 
 /*# sourceMappingURL=app.css.map */
