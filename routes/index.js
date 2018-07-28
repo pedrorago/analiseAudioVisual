@@ -1,17 +1,23 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var router = express.Router();
 
-app.get('/', function(req, res) {
-	// render to views/index.ejs template file
-	res.render('index', {title: 'My Node.js Application'})
-})
+/* GET user information after login */
 
-/** 
- * We assign app object to module.exports
- * 
- * module.exports exposes the app object as a module
- * 
- * module.exports should be used to return the object 
- * when this file is required in another module like app.js
- */ 
-module.exports = app;
+router.get('/', isAuthenticated,function(req, res, next) {
+
+  /*var username   = req.session.user.username;
+  var full_name  = req.session.user.full_name;
+  
+  res.render('index', { username: username, full_name: full_name });*/
+  res.render('index');
+});
+
+function isAuthenticated(req, res, next) {
+  if (req.session.user)
+      return next();
+
+  // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SIGNIN PAGE
+  res.redirect('/login');
+}
+
+module.exports = router;
