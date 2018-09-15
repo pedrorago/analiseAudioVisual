@@ -1,33 +1,38 @@
-const request = require('request');
-const Busboy = require('busboy');
+const request     = require('request');
+const Busboy      = require('busboy');
 const UtilService = require('../services/util-service');
+const ProgramacaoService = require('../services/programacao-service');
 
 module.exports = function(app, passport) {
 
-    //UPLOAD FILE
-    app.post('/salvar-programacao', function(req, res) {
 
-        let sampleFile = req.files.sampleFile;
-				let name_file  = new Date().getTime()+"-"+req.files.sampleFile;
-				
-        var busboy = new Busboy({
-            headers: req.headers
-        });
+    app.post('/s3StreamUpload', function(req, res, next) {
+        var busboy = new Busboy({headers: req.headers});
 
-        // The file upload has completed
-        busboy.on('finish', function() {
-            Promise.all([UtilService.upload_file(sampleFile, name_file)]).then(resp => {
+        Promise.all([UtilService.upload_promise(busboy),
+                     UtilService.form_to_json(busboy)]).then(resp=>{
 
+            let programacao = resp[1];
+            programacao.link_video = resp[0].Location;
+            programacao.nome_video = resp[0].key;
 
-            })
-        });
+            ProgramacaoService.save_promogramacao(programacao).then(resp=>{
+                res.json({msg:"Sucesso ao cadastrar programação!"})
+            });
+        }).catch(function(e){
+            res.json({msg:"Erro"+e});
+        })
 
         req.pipe(busboy);
+     });
 
-    });
 
     app.get('/', isLoggedIn, function(req, res) {
         res.render('index.ejs'); // load the index.ejs file
+    });
+
+    app.get('/uplaod', function(req, res) {
+        res.render('upload.ejs'); // load the index.ejs file
     });
 
     app.get('/login', function(req, res) {

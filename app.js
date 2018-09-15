@@ -20,6 +20,8 @@ var Store             = require('express-session').Store;
  
 var app               = express();
 
+var busboy            = require('connect-busboy');
+
 var BetterMemoryStore = require(__dirname + '/memory');
 
 var store = new BetterMemoryStore({ expires: 60 * 60 * 1000, debug: true });
@@ -38,6 +40,8 @@ var store = new BetterMemoryStore({ expires: 60 * 60 * 1000, debug: true });
     saveUninitialized: true
 
 }));
+
+app.use(busboy());
 
 app.use(flash());
 
