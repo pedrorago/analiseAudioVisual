@@ -1,0 +1,779 @@
+@import "fonts.sass"
+
+$colorDefault: #424d6e
+$colorWhite: #edf2fd
+$colorLabel: #6f7789
+$colorLegend: #697aaf
+$whiteParagraph: #c4d0e8
+$colorLabel: #b9c0d2
+$colorHeader: #191f31
+$inputPlaceholder: #455179
+$colorBlackInput: #333d5d
+
+$active: #262d41
+$circle: #505d7b
+$icon: #333d5d
+
+@keyframes fade-in 
+  from  
+      opacity: 0
+  to    
+      opacity: 1 
+
+
+@mixin actionSidebar
+    &:hover
+        background-color: #161c2d
+        
+    &:active
+        background-color: #191f31
+
+@mixin picture
+    width: 2.4em
+    height: 2.5em
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $colorDefault
+    overflow: hidden
+
+    img
+        width: 100%
+        opacity: 0
+        animation: fade-in 2s normal forwards ease-in-out
+        animation-delay: .5s
+        
+@mixin contentFlex($height, $direction)
+    width: 100%
+    height: $height
+    display: flex
+    flex-direction: $direction
+
+@mixin botaoCinza($padding)
+
+    background:  $colorBlackInput
+    color:  #8595b8
+    text-decoration:  none
+    font-family:  Avenir Next
+    padding: $padding 
+    border-radius: 6px
+    transition: .3s ease-out
+    cursor: pointer
+
+    &:focus
+        outline: none
+
+    &:hover
+        background: #39466d
+        color: #a3b3d4
+    
+    &:active
+        background: #2c3656
+
+body
+    img
+        animation-play-state: running
+
+
+
+@mixin titleBox($width, $height)
+    width: $width
+    height: $height
+    border-radius: 6px
+    background-color: $colorHeader
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $colorWhite
+    position: relative
+    margin-left: -1.9em
+    margin-top: .6em
+    box-shadow: 6px 15px 71px 5px rgba(25,31,49,0.85)
+    display: none
+    transition: .3s ease-out
+    z-index: 10
+
+    span
+        position: absolute
+        width: 1.5em
+        height: 1.5em
+        background: $colorHeader
+        transform: rotate(45deg)
+        top: -15%
+    
+    p
+        margin-top: 0
+        font-size: .9em
+        z-index: 9999
+
+#DireitosReservados
+    color: #495574
+    font-weight: 400
+    line-height: 1.3em
+    font-family: Avenir Next
+    font-size: 1em
+    width: 100%
+    position: fixed
+    margin: 0 auto
+    text-align: center
+    left: 0
+    bottom: 4%
+
+            
+.paragraph
+    font-family: Helvetica
+    color: #c4d0e8
+    font-weight: 300
+
+.label
+    font-family: Helvetica
+    color: #6f7789
+    font-size: .89em
+
+
+@mixin form()
+
+    input, select, form
+        border: none
+        position: relative
+        background: #edf2fd
+        width: 100%
+        padding: .9em
+        padding-left: 1.7em
+        border-radius: 5px
+        margin-bottom: 2em
+        color: $colorBlackInput
+        font-family: Helvetica
+        
+        &:focus 
+            outline: none
+
+        &::placeholder
+            color: $inputPlaceholder
+            font-family: Helvetica
+            font-size: 1.1em
+
+    label
+        @extend .label
+        color: #d0d4dd
+        font-weight: 500
+        font-size: .85em
+        margin-bottom: 1em
+   
+    select
+        margin-top: 1em
+
+strong
+    font-weight: 600
+
+body
+    background: #262d41
+    
+
+
+.activeHeader
+        width: 86.2%
+
+header
+    background: $colorHeader
+    height: 5.5em
+    width: 95%
+    float: right
+    display: flex
+    justify-content: space-between
+    transition: .3s ease-out
+
+
+
+    .menuContainer-btn
+        width: 2.3em
+        height: 1.6em
+        margin-left: 1.4em
+        margin-top: 2em
+        cursor: pointer
+
+    .mobile-btn 
+        display: block
+        color: $colorDefault
+        height: 0px
+        width: 36px
+        border-top: 4px solid
+        position: relative
+        cursor: pointer
+        -webkit-backface-visibility: hidden
+        border-radius: 6px
+
+
+    .mobile-btn::after, .mobile-btn::before 
+        content: ''
+        display: block
+        height: 4px
+        margin-top: 6px
+        background: currentColor
+        position: relative
+        transition: transform .3s ease
+        border-radius: 6px
+
+    .mobile-btn.active 
+        border-top-color: transparent
+
+    .mobile-btn.active::after 
+        margin-top: 0px
+        top: 2px
+        transform: rotate(45deg)
+
+    .mobile-btn.active::before 
+        margin-top: 0px
+        top: 6px
+        transform: rotate(135deg)
+
+    .userIconContainer
+        width: 20em
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        
+        picture
+            @include picture()
+            margin-right: 1.6em
+
+
+aside
+    height: 100%
+    width: 5.3em
+    position: fixed
+    background: #151a29
+    display: flex
+    flex-direction: column
+    z-index: 100
+    transition: .3s ease-out
+    overflow: hidden
+    
+    .logo
+        margin-top: .4em
+        text-decoration: none
+        display: flex
+        align-items: center
+
+        img
+            margin-left: .3em
+        p
+            font-family: Avenir Next
+            font-size: .83em
+            line-height: 1.4em
+            color: $colorWhite
+
+.activeSidebar
+    width: 14.5em
+
+nav
+    width: 100%
+    display: flex
+    flex-direction: column
+    margin-top: 2.7em
+
+    li
+        list-style: none
+        width: 100%
+        height: 4.3em
+        transition: .3s ease-out
+        @include actionSidebar
+
+        a
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            margin-left: 1.65em
+            text-decoration: none
+            p
+                color: #edf2fd
+                font-family: Helvetica
+                font-weight: 300
+                letter-spacing: 1
+                margin-left: 1.67em
+                font-size: .9em
+    
+    .infoButton
+        position: absolute
+        bottom: 0
+        @include actionSidebar
+
+.content
+    width: 88.25%
+    height: 100%
+    margin-left: 5.4em
+    z-index: 99999999
+    padding: 10.1em 3.4em
+
+    main
+        height: 100%
+        width: 100%
+        
+        h1
+            font-family: Avenir Next
+            color: $colorWhite
+            font-size: 2em
+            margin-bottom: 1.5em
+        
+        h2
+            font-family: Avenir Next
+            color: $colorWhite
+            font-size: 1.6em
+            margin-bottom: 2.67em
+        h3
+            font-family: Helvetica
+            color: $whiteParagraph
+        
+        h4
+            font-family: Helvetica
+            color: #8999bc
+            margin-top: -2em
+            font-size: 1.1em
+
+        legend
+            color: $colorLegend
+            font-family: Avenir Next
+            font-size: 1em
+            text-align: center
+            font-weight: 600
+            width: 98%
+            margin: 0 auto
+            line-height: 1.9em
+
+.GraphicDashboard
+    width: 600px !important
+    height: 325px !important
+    margin-top: 4em
+
+    p
+        margin-bottom: .85em
+        @extend .paragraph
+        
+    label 
+        @extend .label    
+
+    canvas
+        margin-top: 2em
+        margin-left: -.3em
+
+.Beetween
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+.TimingAnalisesDashboard
+    margin-top: 4em
+    display: flex
+    flex-direction: column
+
+    p, label
+        text-align: end
+        
+    p
+        margin-bottom: .85em
+        @extend .paragraph
+    
+    label
+        @extend .label
+        margin-bottom: 2em
+
+    div 
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        border-bottom: 1px solid #2f3850
+        padding: .6em 0em
+        padding-left: 3em
+        
+        &:last-child
+            border-bottom: none
+
+        picture
+            @include picture()
+            margin-left: 1.5em
+        
+        p
+            margin: 0
+
+.headerContent
+    display: flex
+    align-items: center
+    justify-content: space-between
+    div 
+        display: flex
+        align-items: center
+
+        a
+            @include botaoCinza(.6em 1.5em)
+            margin-right: 1.5em
+
+.formInputSearch
+    position: relative
+
+    input  
+        border: none
+        padding: .6em
+        padding-left: 2.7em
+        border-radius: 7px
+        width: 15em
+        position: relative
+
+        &::placeholder
+            color: #626c89 
+
+        &:focus
+            outline: none
+
+    button
+        background: transparent
+        border: none
+        padding: 0
+    i
+        position: absolute
+        top: 14%
+        left: 3%
+        color: #626c89
+        cursor: pointer
+
+.listProgram
+    width: 100%
+    max-height: 30.5em
+    margin-top: 2em
+    overflow-y: auto
+    height: auto
+    padding-right: 1em
+    
+    &::-webkit-scrollbar
+        width: 9px
+
+    &::-webkit-scrollbar-track
+        background: #323c58
+        border-radius: 25px
+
+    &::-webkit-scrollbar-thumb
+        border-radius: 25px
+        background: #8999bc
+
+    .listBox
+        background: $colorDefault
+        width: 95.4%
+        height: 4em
+        border-radius: 6px
+        display: flex
+        align-items: center
+        padding-left: 2em
+        padding-right: 2em
+        position: relative
+        margin-bottom: 1.1em
+        
+        span
+            margin-right: 2em
+
+            &:nth-child(1)
+                width: 18em
+
+            &:nth-child(2)
+                width: 10em
+
+            &:nth-child(4)
+                width: 6em
+        label  
+            color: $colorLabel
+            font-family: Helvetica
+            font-size: .7em
+            font-weight: 600
+            margin-bottom: 1em
+        
+        p
+            font-family: Helvetica
+            color: $whiteParagraph
+            margin-top: .56em
+
+        .buttonsList
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 5em
+            position: absolute
+            right: 0
+            a
+                width: 34px
+                height: 35px
+                position: relative
+                text-decoration: none
+                &:hover
+                    .titleBox
+                        display: flex
+
+
+                .titleBox
+                    @include titleBox(6em, 2.5em)
+
+@media(max-width:1440px)
+
+    .listProgram 
+        @include contentFlex(27.5em, column)
+
+    margin-right: 1.5em
+    width: 18em
+
+
+.SingUpContainer
+    @include contentFlex(auto, row)
+    justify-content: space-between
+
+.SingUpForm
+    margin-top: 4em
+    display: flex
+    width: 32em
+    flex-direction: column
+    @include form()
+
+    div 
+        display: flex
+        align-items: center
+        
+        .spanDiaForm
+            width: 10.5em
+            margin-right: 2em
+    select
+        margin-right: 2em
+        padding-left: 1.4em
+    
+    span
+        select,input
+            margin-top: 1em
+
+    #Data
+        width: 6em
+    
+    #Mes
+        width: 9em
+    
+    #Ano
+        width: 6em
+        margin-right: 0
+    
+    .inputTimes
+        justify-content: space-between
+        
+        span
+            width: 47%
+    button
+        @include botaoCinza(1em)
+        width: 9em
+        font-size: 1em
+        border: none
+
+.UploadVideo
+    @include form()
+    margin-top: 4em
+
+    .VideoContent
+        height: 18.7em
+        background: #8999bc
+        width: 28.7em
+        margin-top: .8em
+        border-radius: 7px
+        overflow: hidden
+        
+        form
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            background: transparent
+            padding: 0
+            margin: 0
+
+            label   
+                width: 100% 
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                flex-direction: column
+
+                p
+                    font-family: Avenir Next
+                    color: #333d5d
+                    font-size: 1.4em
+                    font-weight: 600
+                
+                // img
+                //     max-width: 9em
+                //     margin-bottom: 1em
+
+            input
+                background: transparent
+    .msg
+        font-family: Helvetica
+        text-align: center
+        margin-top: 1em
+        font-size: .89em
+        color: #8999bc
+    
+
+.upload 
+    cursor: pointer
+    position: relative
+    height: 11.2em
+
+    .image 
+        color: $icon
+        stroke: none
+        transform: rotate(15deg)
+    
+    .circle 
+        display: block
+        stroke: $circle
+        fill: none
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-width: 4
+        width: 131px
+        height: 138px
+        opacity: 0
+        transition: all .2s ease
+        transform: rotate(-90deg)
+        .active 
+            stroke: $active
+            stroke-dasharray: 502.65
+            stroke-dashoffset: 502.65
+            transition: all 4s ease
+        
+    
+    &:before 
+        content: ''
+        border-radius: 12px
+        background: rgba($icon, .7)
+        transform: rotate(-15deg)
+    
+    .image,
+    &:before 
+        display: block
+        width: 52px
+        height: 52px
+        margin: -26px 0 0 -26px
+        left: 50%
+        top: 50%
+        position: absolute
+        transform-origin: 0% 100%
+        transition: all .5s cubic-bezier(.51, .92, .24, 1.15)
+    
+    &:not(.do):hover 
+        .image 
+            transform: rotate(10deg)
+            color: $active
+        
+        &:before 
+            transform: rotate(-10deg)
+            background: rgba($active, .3)
+        
+    
+    &.do 
+        .image 
+            color: $active
+            transform: rotate(10deg)
+            animation: bounce 1s infinite ease
+        
+        &:before 
+            background: rgba($active, .3)
+            transform: rotate(-10deg)
+            animation: bounceAlt 1s infinite ease
+        
+        .circle 
+            opacity: 1
+            .active 
+                stroke-dashoffset: 0
+            
+        
+    
+    &.animateEnd 
+        .image,
+        &:before 
+            animation: none
+        
+        .image 
+            transform: rotate(10deg)
+        
+        &:before 
+            transform: rotate(-10deg)
+        
+        .circle 
+            opacity: 0
+            transition-delay: 0s
+            .active 
+                stroke-dasharray: 502.65
+                stroke-dashoffset: 502.65
+            
+
+@keyframes bounce 
+    50% 
+        transform: rotate(15deg)
+    
+
+
+@keyframes bounceAlt 
+    50% 
+        transform: rotate(-15deg)
+    
+
+.infoFile
+
+    display: flex
+    margin-top: 1em
+    flex-direction: column
+    transition: .3s ease-out
+    opacity: 0
+
+    label
+        display: flex
+        font-size: .8em
+        justify-content: flex-end
+        color: #6d7c9c
+
+        p
+            color: #8999bc
+            font-weight: 600
+            margin-left: .5em
+
+.videoPreviewContent
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    display: none
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    .videoPreview
+        width: 100%
+        height: 100%
+    
+    span
+        width: 100%
+        height: 100%
+        position: absolute
+        background: #191f31
+        opacity: 0
+        transition: .3s ease-out
+
+    img
+        max-width: 7em
+        position: absolute
+        opacity: 0
+        transition: .3s ease-out
+        z-index: 2
+
+    &:hover img 
+        opacity: 1
+
+    &:hover span
+        opacity: 0.5
