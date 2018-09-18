@@ -27,9 +27,20 @@ module.exports = function(app, passport) {
      });
 
 
-    app.get('/', isLoggedIn, function(req, res) {
+    app.get('/', function(req, res) {
         res.render('index.ejs'); // load the index.ejs file
     });
+
+    app.get('/program', function(req, res) {
+        res.render('program.ejs'); // load the index.ejs file
+    });
+
+
+    app.get('/singUp_program', function(req, res) {
+        res.render('singUp_program.ejs'); // load the index.ejs file
+    });
+
+
 
     app.get('/uplaod', function(req, res) {
         res.render('upload.ejs'); // load the index.ejs file

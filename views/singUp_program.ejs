@@ -1,4 +1,4 @@
-<?php require_once("header.php"); ?>
+<% include includes/header.ejs %>
 
 
 <!-- View de cadastro de programação -->
@@ -13,7 +13,7 @@
     <div class='container'>
         
         <div class='SingUpContainer'>
-            <form class='SingUpForm'>
+            <form class='SingUpForm' id="SingUpForm" method="POST" action="/s3StreamUpload" enctype="multipart/form-data">
                 <label for="Nome">NOME DA PROGRAMAÇÃO</label>
                 <input type="text" placeholder='Digite o nome da programação' name='nome'>
                 <div>
@@ -68,18 +68,18 @@
                             </select>
                             
                             <select name="Mes" id="Mes">
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="01">Janeiro</option>
+                                <option value="02">Fevereiro</option>
+                                <option value="03">Março</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Maio</option>
+                                <option value="06">Junho</option>
+                                <option value="07">Julho</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
                             </select>
                             
                             <select name="Ano" id="Ano">
@@ -104,6 +104,7 @@
                 </div>
                 <label for="Nome">EMISSORA</label>
                 <input type="text" placeholder='Digite o nome da emissora' name='emissora'>
+
                 <label for="Nome">FORMATO DO VIDEO</label>
                 <select name="formato" id="Formato" style='margin-top:0'>
                     <option value="MP4">MP4</option>
@@ -120,7 +121,7 @@
                         <input type="time" value='00:00' name='fim' id='Fim'>
                     </span>
                 </div>
-                <button>Cadastrar</button>
+                <button type='submit'>Cadastrar</button>
             </form>
             <div class='UploadVideo'>
                 <label>VÍDEO</label>
@@ -135,9 +136,9 @@
                     </div>
 
 
-                    <form action="" class='formUploadFile'>
+                    <div class='formUploadFile'>
                         <input type="file" id='Upload' hidden name='imagem_file[]' accept="video/mp4,video/x-m4v,video/avi">
-                        <label for="Upload">
+                        <label for="Upload" style='margin:0;'>
                             <!-- <img src="img/icon10.svg" alt=""> -->
                             <div class="upload">
                                 
@@ -156,7 +157,7 @@
                             <p>Upload da programação</p>
 
                         </label>
-                    </form>
+                    </div>
                 </div>
                 <p class='msg'>Apenas arquivos em formato: MP4, AVI</p>
                 
@@ -177,7 +178,9 @@
 
 
 
-<?php require_once("footer.php"); ?>
+<% include includes/footer.ejs %>
+
+<script src="js/upload.js"></script>
 
 <style>
     body

@@ -1,12 +1,20 @@
 
-var frm = $('#upload');
+var frm = $("#SingUpForm");
 
 frm.submit(function (e) {
 
     $('.progress-bar').text('0%');
     $('.progress-bar').width('0%');
     
-    let data = new FormData(document.getElementById('upload'));
+
+    var dataEmissao = $(".SingUpForm #Data").val()+"/"+$(".SingUpForm #Mes").val()+"/"+$(".SingUpForm #Ano").val();
+
+    console.log(dataEmissao);
+
+    let data = new FormData(document.getElementById('SingUpForm'));
+
+    data.append('data_emissao',dataEmissao);
+
     e.preventDefault();
     
     $.ajax({
