@@ -11,7 +11,7 @@ var self = module.exports = {
                   params: {
                         Key: save_name_file, 
                         Body: file,
-                        Bucket: 'imagens.ne10.uol.com.br/teste'},
+                        Bucket: ''},
                   options: {partSize: 5 * 1024 * 1024, queueSize: 10}   // 5 MB
                });
                s3.upload().on('httpUploadProgress', function (evt) {
