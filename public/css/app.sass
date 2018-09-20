@@ -10,6 +10,9 @@ $colorLabel: #b9c0d2
 $colorHeader: #191f31
 $inputPlaceholder: #455179
 $colorBlackInput: #333d5d
+$corBotaoCinza: #333d5d
+$corBotaoVermelho: #ff1212
+$corBotaoAzul: #0076ff
 
 $active: #262d41
 $circle: #505d7b
@@ -51,10 +54,10 @@ $icon: #333d5d
     display: flex
     flex-direction: $direction
 
-@mixin botaoCinza($padding)
+@mixin botao($padding, $color)
 
-    background:  $colorBlackInput
-    color:  #8595b8
+    background:  $color
+    color:  $colorWhite
     text-decoration:  none
     font-family:  Avenir Next
     padding: $padding 
@@ -65,12 +68,12 @@ $icon: #333d5d
     &:focus
         outline: none
 
-    &:hover
-        background: #39466d
-        color: #a3b3d4
+    // &:hover
+    //     background: $colorHover
+    //     color: #a3b3d4
     
-    &:active
-        background: #2c3656
+    // &:active
+    //     background: #2c3656
 
 body
     img
@@ -323,7 +326,7 @@ nav
             font-family: Avenir Next
             color: $colorWhite
             font-size: 1.6em
-            margin-bottom: 2.67em
+            margin-bottom: 2em
         h3
             font-family: Helvetica
             color: $whiteParagraph
@@ -408,7 +411,7 @@ nav
         align-items: center
 
         a
-            @include botaoCinza(.6em 1.5em)
+            @include botao(.6em 1.5em, $corBotaoCinza)
             margin-right: 1.5em
 
 .formInputSearch
@@ -446,7 +449,8 @@ nav
     overflow-y: auto
     height: auto
     padding-right: 1em
-    
+    padding-bottom: 3.5em 
+
     &::-webkit-scrollbar
         width: 9px
 
@@ -564,7 +568,7 @@ nav
         span
             width: 47%
     button
-        @include botaoCinza(1em)
+        @include botao(1em, $corBotaoCinza)
         width: 9em
         font-size: 1em
         border: none
@@ -573,45 +577,6 @@ nav
     @include form()
     margin-top: 4em
 
-    .VideoContent
-        height: 18.7em
-        background: #8999bc
-        width: 28.7em
-        margin-top: .8em
-        border-radius: 7px
-        overflow: hidden
-        
-        .formUploadFile
-            width: 100%
-            height: 100%
-            display: flex
-            align-items: center
-            justify-content: center
-            background: transparent
-            padding: 0
-            margin: 0
-
-            label   
-                width: 100% 
-                height: 100%
-                display: flex
-                align-items: center
-                justify-content: center
-                cursor: pointer
-                flex-direction: column
-
-                p
-                    font-family: Avenir Next
-                    color: #333d5d
-                    font-size: 1.4em
-                    font-weight: 600
-                
-                // img
-                //     max-width: 9em
-                //     margin-bottom: 1em
-
-            input
-                background: transparent
     .msg
         font-family: Helvetica
         text-align: center
@@ -619,6 +584,45 @@ nav
         font-size: .89em
         color: #8999bc
     
+.VideoContent
+    height: 21em
+    background: #8999bc
+    width: 37.3em
+    margin-top: .8em
+    border-radius: 7px
+    overflow: hidden
+        
+    .formUploadFile
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        background: transparent
+        padding: 0
+        margin: 0
+
+        label   
+            width: 100% 
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+            flex-direction: column
+
+            p
+                font-family: Avenir Next
+                color: #333d5d
+                font-size: 1.4em
+                font-weight: 600
+                
+            // img
+            //     max-width: 9em
+            //     margin-bottom: 1em
+
+        input
+        background: transparent
 
 .upload 
     cursor: pointer
@@ -823,3 +827,87 @@ nav
 	
 
 
+
+.videoPreviewProfile
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 7px
+    overflow: hidden
+
+    video
+        width: 100%
+        height: 100%
+    
+    span
+        background: #191f31
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        opacity: .6
+
+.activePreview
+    opacity: 0 !important
+
+.VideoContentProfile
+    height: 21em
+    position: relative
+    width: 37.3em
+    margin-top: 0em
+    border-radius: 7px
+    background: #191f31
+
+    .infoFile
+        margin-bottom: 3em 
+
+        label
+            font-family: Avenir Next
+            margin-bottom: 1em
+            font-size: .9em
+            justify-content: flex-start
+    
+    .botaoCinza
+        @include botao(0.8em 3em, $corBotaoCinza)
+        margin-right: 1.5em
+
+    .botaoVermelho
+        @include botao(0.8em 3em, $corBotaoVermelho)
+        margin-right: 1.5em
+
+    .botaoAzul
+        @include botao(0.8em 3em, $corBotaoAzul)
+
+.mainsProfile
+    h2
+        margin-bottom: 1.3em !important
+
+
+.contentVideoProfile
+    display: flex
+    width: 100%
+
+.ProgramDesc
+    margin-left: 3em
+    display: flex
+    flex-wrap: wrap
+    width: 28em
+    justify-content: space-between
+    @include form()
+
+    span
+        width: 48%
+
+        &:nth-child(1)
+            width: 100%
+
+    p
+        font-family: Avenir Next
+        margin-top: 1em
+        font-size: 1em
+        justify-content: flex-start
+        color: #6d7c9c
+
+    

@@ -35,6 +35,14 @@ module.exports = function(app, passport) {
         res.render('program.ejs'); // load the index.ejs file
     });
 
+    app.get('/profile_program', function(req, res) {
+        res.render('profile_program.ejs'); // load the index.ejs file
+    });
+
+    app.get('/edit_program', function(req, res) {
+        res.render('edit_program.ejs'); // load the index.ejs file
+    });
+
 
     app.get('/singUp_program', function(req, res) {
         res.render('singUp_program.ejs'); // load the index.ejs file

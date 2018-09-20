@@ -56,7 +56,7 @@ body img {
   color: #c4d0e8;
   font-weight: 300; }
 
-.label, .GraphicDashboard label, .TimingAnalisesDashboard label, .SingUpForm label, .UploadVideo label {
+.label, .GraphicDashboard label, .TimingAnalisesDashboard label, .SingUpForm label, .UploadVideo label, .ProgramDesc label {
   font-family: Helvetica;
   color: #6f7789;
   font-size: 0.89em; }
@@ -215,7 +215,7 @@ nav {
       font-family: Avenir Next;
       color: #edf2fd;
       font-size: 1.6em;
-      margin-bottom: 2.67em; }
+      margin-bottom: 2em; }
     .content main h3 {
       font-family: Helvetica;
       color: #c4d0e8; }
@@ -295,7 +295,7 @@ nav {
     align-items: center; }
     .headerContent div a {
       background: #333d5d;
-      color: #8595b8;
+      color: #edf2fd;
       text-decoration: none;
       font-family: Avenir Next;
       padding: 0.6em 1.5em;
@@ -305,11 +305,6 @@ nav {
       margin-right: 1.5em; }
       .headerContent div a:focus {
         outline: none; }
-      .headerContent div a:hover {
-        background: #39466d;
-        color: #a3b3d4; }
-      .headerContent div a:active {
-        background: #2c3656; }
 
 .formInputSearch {
   position: relative; }
@@ -341,7 +336,8 @@ nav {
   margin-top: 2em;
   overflow-y: auto;
   height: auto;
-  padding-right: 1em; }
+  padding-right: 1em;
+  padding-bottom: 3.5em; }
   .listProgram::-webkit-scrollbar {
     width: 9px; }
   .listProgram::-webkit-scrollbar-track {
@@ -490,7 +486,7 @@ nav {
       width: 47%; }
   .SingUpForm button {
     background: #333d5d;
-    color: #8595b8;
+    color: #edf2fd;
     text-decoration: none;
     font-family: Avenir Next;
     padding: 1em;
@@ -502,11 +498,6 @@ nav {
     border: none; }
     .SingUpForm button:focus {
       outline: none; }
-    .SingUpForm button:hover {
-      background: #39466d;
-      color: #a3b3d4; }
-    .SingUpForm button:active {
-      background: #2c3656; }
 
 .UploadVideo {
   margin-top: 4em; }
@@ -534,43 +525,43 @@ nav {
     margin-bottom: 1em; }
   .UploadVideo select {
     margin-top: 1em; }
-  .UploadVideo .VideoContent {
-    height: 18.7em;
-    background: #8999bc;
-    width: 28.7em;
-    margin-top: 0.8em;
-    border-radius: 7px;
-    overflow: hidden; }
-    .UploadVideo .VideoContent .formUploadFile {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      padding: 0;
-      margin: 0; }
-      .UploadVideo .VideoContent .formUploadFile label {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        flex-direction: column; }
-        .UploadVideo .VideoContent .formUploadFile label p {
-          font-family: Avenir Next;
-          color: #333d5d;
-          font-size: 1.4em;
-          font-weight: 600; }
-      .UploadVideo .VideoContent .formUploadFile input {
-        background: transparent; }
   .UploadVideo .msg {
     font-family: Helvetica;
     text-align: center;
     margin-top: 1em;
     font-size: 0.89em;
     color: #8999bc; }
+
+.VideoContent {
+  height: 21em;
+  background: #8999bc;
+  width: 37.3em;
+  margin-top: 0.8em;
+  border-radius: 7px;
+  overflow: hidden; }
+  .VideoContent .formUploadFile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    background: transparent; }
+    .VideoContent .formUploadFile label {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-direction: column; }
+      .VideoContent .formUploadFile label p {
+        font-family: Avenir Next;
+        color: #333d5d;
+        font-size: 1.4em;
+        font-weight: 600; }
 
 .upload {
   cursor: pointer;
@@ -694,5 +685,125 @@ nav {
     opacity: 1; }
   .videoPreviewContent:hover span {
     opacity: 0.5; }
+
+.videoPreviewProfile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  overflow: hidden; }
+  .videoPreviewProfile video {
+    width: 100%;
+    height: 100%; }
+  .videoPreviewProfile span {
+    background: #191f31;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.6; }
+
+.activePreview {
+  opacity: 0 !important; }
+
+.VideoContentProfile {
+  height: 21em;
+  position: relative;
+  width: 37.3em;
+  margin-top: 0em;
+  border-radius: 7px;
+  background: #191f31; }
+  .VideoContentProfile .infoFile {
+    margin-bottom: 3em; }
+    .VideoContentProfile .infoFile label {
+      font-family: Avenir Next;
+      margin-bottom: 1em;
+      font-size: 0.9em;
+      justify-content: flex-start; }
+  .VideoContentProfile .botaoCinza {
+    background: #333d5d;
+    color: #edf2fd;
+    text-decoration: none;
+    font-family: Avenir Next;
+    padding: 0.8em 3em;
+    border-radius: 6px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    margin-right: 1.5em; }
+    .VideoContentProfile .botaoCinza:focus {
+      outline: none; }
+  .VideoContentProfile .botaoVermelho {
+    background: #ff1212;
+    color: #edf2fd;
+    text-decoration: none;
+    font-family: Avenir Next;
+    padding: 0.8em 3em;
+    border-radius: 6px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    margin-right: 1.5em; }
+    .VideoContentProfile .botaoVermelho:focus {
+      outline: none; }
+  .VideoContentProfile .botaoAzul {
+    background: #0076ff;
+    color: #edf2fd;
+    text-decoration: none;
+    font-family: Avenir Next;
+    padding: 0.8em 3em;
+    border-radius: 6px;
+    transition: 0.3s ease-out;
+    cursor: pointer; }
+    .VideoContentProfile .botaoAzul:focus {
+      outline: none; }
+
+.mainsProfile h2 {
+  margin-bottom: 1.3em !important; }
+
+.contentVideoProfile {
+  display: flex;
+  width: 100%; }
+
+.ProgramDesc {
+  margin-left: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 28em;
+  justify-content: space-between; }
+  .ProgramDesc input, .ProgramDesc select, .ProgramDesc form {
+    border: none;
+    position: relative;
+    background: #edf2fd;
+    width: 100%;
+    padding: 0.9em;
+    padding-left: 1.7em;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    color: #333d5d;
+    font-family: Helvetica; }
+    .ProgramDesc input:focus, .ProgramDesc select:focus, .ProgramDesc form:focus {
+      outline: none; }
+    .ProgramDesc input::placeholder, .ProgramDesc select::placeholder, .ProgramDesc form::placeholder {
+      color: #455179;
+      font-family: Helvetica;
+      font-size: 1.1em; }
+  .ProgramDesc label {
+    color: #d0d4dd;
+    font-weight: 500;
+    font-size: 0.85em;
+    margin-bottom: 1em; }
+  .ProgramDesc select {
+    margin-top: 1em; }
+  .ProgramDesc span {
+    width: 48%; }
+    .ProgramDesc span:nth-child(1) {
+      width: 100%; }
+  .ProgramDesc p {
+    font-family: Avenir Next;
+    margin-top: 1em;
+    font-size: 1em;
+    justify-content: flex-start;
+    color: #6d7c9c; }
 
 /*# sourceMappingURL=app.css.map */

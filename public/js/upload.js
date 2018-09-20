@@ -14,6 +14,7 @@ frm.submit(function (e) {
     let data = new FormData(document.getElementById('SingUpForm'));
 
     data.append('data_emissao',dataEmissao);
+    data.append('video',$('input[type=file]')[0].files[0]);
 
     e.preventDefault();
     

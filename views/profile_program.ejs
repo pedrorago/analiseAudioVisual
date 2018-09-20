@@ -1,0 +1,90 @@
+<% include includes/header.ejs %>
+
+
+<!-- View de perfil de programação -->
+
+<main class='mainsProfile'>
+    
+    <h2>Programação: <strong> 184848</strong></h2>
+    
+    
+    <div class='container'>
+        
+        <div class='contentVideo contentVideoProfile'>
+            <div class='VideoContentProfile'>
+                
+                <div class='videoPreviewProfile'>
+                    <video class="videoPreview videoPlayerProfile" controls src="img/videoteste.mp4">
+                    </video>
+                </div>
+                <div class='infoFile' style='opacity:1;'>
+                    <label>Arquivo no formato: <p id='FormatoArquivo'>MP4</p></label>
+                    <label>Nome do arquivo:    <p id='NomeArquivo'>MPSJS_AOSOS.MP4 </p></label>
+                </div>
+                <a href="/edit_program" class='botaoCinza'>Editar</a>
+                <a href="#" class='botaoVermelho'>Remover</a>
+                <a href="#" class='botaoAzul'>Analisar</a>
+                
+            </div>
+            
+            <div class='ProgramDesc'>
+                
+                <span>
+                    <label for="">NOME DA PROGRAMAÇÃO</label>
+                    <p>Encontro com Fátima Bernardes</p>
+                </span>
+                
+                <span>
+                    <label for="">DIA DE EMISSÃO</label>
+                    <p>Segunda-feira</p>
+                </span>
+                <span>
+                    <label for="">DATA DE EMISSÃO</label>
+                    <p>10 de Agosto de 2018</p>
+                </span>
+                
+                <span>
+                    <label>EMISSORA</label>
+                    <p>Rede Globo</p>
+                </span>
+                <span>
+                    <label>STATUS</label>
+                    <p>Não analisado</p>
+                </span>
+                <span>
+                    <label>FORMATO DE VÍDEO</label>
+                    <p>MP4</p>
+                </span>
+                <span>
+                    <label>CLASSIFICAÇÃO</label>
+                    <p>10:50H</p>
+                </span>
+                <span>
+                    <label>INÍCIO DA PROGRAMAÇÃO</label>
+                    <p>10:50H</p>
+                </span>
+                <span>
+                    <label>FIM DA PROGRAMAÇÃO</label>
+                    <p>10:50</p>
+                </span>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
+    
+</main>
+
+
+
+<% include includes/footer.ejs %>
+
+<style>
+    body
+    {
+        overflow-y: hidden;
+    }
+</style>
