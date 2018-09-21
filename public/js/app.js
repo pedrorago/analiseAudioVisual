@@ -5,18 +5,18 @@ $(function()
     var typingTimer; 
     var doneTypingInterval = 1000; 
     
-    $('#EditForm input').keyup(function() 
+    $('#EditForm input, .formProfile input, .formProfile textarea').keyup(function() 
     {
         clearTimeout(typingTimer);
-        if ($('#EditForm input').val) 
+        if ($('#EditForm input, .formProfile input, .formProfile textarea').val) 
         {
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         }
     });
     
     function doneTyping() {
-        $("#EditForm input").attr("disabled", "true");
-        $("#EditForm input").css("color", "#333d5d");
+        $("#EditForm input, .formProfile input, .formProfile textarea").attr("disabled", "true");
+        $("#EditForm input, .formProfile input, .formProfile textarea").css("color", "#333d5d");
     }
 
 
@@ -26,7 +26,13 @@ $(function()
     $(".pencilEdit").on('click', function()
     {
         $(this).siblings('input').removeAttr("disabled");
+        $(this).siblings('textarea').removeAttr("disabled");
         $(this).siblings('input').css("color", "#000");
+        $(this).siblings('textarea').css("color", "#000");
+        $(this).siblings('input').val("");
+        $(this).siblings('textarea').text("");
+        $(this).siblings('input').focus();
+        $(this).siblings('textarea').focus();
     });
     
     $(".spanSelect .pencilEdit").on('click',function()
@@ -52,6 +58,7 @@ $(function()
         var fileInput = document.getElementById('Upload');
         var fileUrl = window.URL.createObjectURL(fileInput.files[0]);
         $(".videoPreview").attr("src", fileUrl);
+        $(".imagemPreviewBox").attr("src", fileUrl);
         
     });
     

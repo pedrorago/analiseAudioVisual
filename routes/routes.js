@@ -48,11 +48,13 @@ module.exports = function(app, passport) {
         res.render('singUp_program.ejs'); // load the index.ejs file
     });
 
-
-
-    app.get('/uplaod', function(req, res) {
-        res.render('upload.ejs'); // load the index.ejs file
+    app.get('/singUp_program', function(req, res) {
+        res.render('singUp_program.ejs'); // load the index.ejs file
     });
+    app.get('/profile', function(req, res) {
+        res.render('profile.ejs'); // load the index.ejs file
+    });
+
 
     app.get('/login', function(req, res) {
         res.render('login.ejs', {

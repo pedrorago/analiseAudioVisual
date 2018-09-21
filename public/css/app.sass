@@ -64,6 +64,7 @@ $icon: #333d5d
     border-radius: 6px
     transition: .3s ease-out
     cursor: pointer
+    border: none
 
     &:focus
         outline: none
@@ -88,6 +89,44 @@ body
     #{$propriedade}:         $valor
 
 
+@mixin preview()
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    display: none
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    .videoPreview
+        width: 100%
+        height: 100%
+
+    .imagemPreviewBox
+        width: 100%
+        height: auto
+    
+    span
+        width: 100%
+        height: 100%
+        position: absolute
+        background: #191f31
+        opacity: 0
+        transition: .3s ease-out
+    
+    .iconPencil
+        max-width: 7em
+        position: absolute
+        opacity: 0
+        transition: .3s ease-out
+        z-index: 2
+
+    &:hover img 
+        opacity: 1
+
+    &:hover span
+        opacity: 0.5
 
 @mixin titleBox($width, $height)
     width: $width
@@ -146,7 +185,7 @@ body
 
 @mixin form()
 
-    input, select, form
+    input, select, form, textarea
         border: none
         position: relative
         background: #edf2fd
@@ -366,6 +405,10 @@ nav
             color: #8999bc
             margin-top: -2em
             font-size: 1.1em
+        h5
+            color: #edf2fd
+            font-family: Helvetica
+            font-weight: 600
 
         legend
             color: $colorLegend
@@ -381,7 +424,12 @@ nav
 @media(max-width: 1440px)
     .content
         width: 85.4% 
-
+        main
+            h2
+                font-size: 1.5em
+            h5
+                font-size: .85em
+                margin-top: -2.4em
 
 .GraphicDashboard
     width: 600px !important
@@ -797,39 +845,7 @@ nav
             margin-left: .5em
 
 .videoPreviewContent
-    width: 100%
-    height: 100%
-    overflow: hidden
-    position: relative
-    display: none
-    align-items: center
-    justify-content: center
-    cursor: pointer
-
-    .videoPreview
-        width: 100%
-        height: 100%
-    
-    span
-        width: 100%
-        height: 100%
-        position: absolute
-        background: #191f31
-        opacity: 0
-        transition: .3s ease-out
-
-    img
-        max-width: 7em
-        position: absolute
-        opacity: 0
-        transition: .3s ease-out
-        z-index: 2
-
-    &:hover img 
-        opacity: 1
-
-    &:hover span
-        opacity: 0.5
+    @include preview()
 
 // #LoginContent
     
@@ -960,7 +976,9 @@ nav
 
     
 
-#EditForm
+#EditForm, .formProfile
+    input 
+        padding-right: 4.5em
     label
         margin-bottom: 0em
     span
@@ -986,3 +1004,113 @@ nav
 #EditVideo
     .videoPreviewContent
         display: flex
+
+.profileContent
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: space-between
+
+    .formProfile
+        @include form()
+        width: 63% 
+        display: flex
+        flex-wrap: wrap
+        margin-top: 2em
+
+        .TextareaaSpan
+            margin-top: 2.5em
+            
+            img
+                top: 2.6em
+
+        .inputBox
+            width: 58%
+            height: 14.8em
+
+        .inputSpan
+            height: 3.5em
+            width: 100%
+
+            input
+                margin-top: .7em
+                padding-right: 4.5em
+                margin-bottom: 1.5em
+                background: #edf2fd
+            img
+                top: 2em
+                right: 4%
+
+        .SecondInfoProfile
+            width: 100%
+
+            label
+                color: #6f7789
+                font-size: 1em
+            
+            textarea
+                margin-top: 1em
+                height: 9.2em
+                padding-right: 4em
+
+        button
+            @include botao(.6em 1.5em, $corBotaoCinza)
+            height: 3.3em
+            margin-top: 1.7em
+            width: 8.5em
+            margin-left: 2em
+
+        .PassSpan
+            label
+                color: #6f7789
+                font-size: 1em
+            input
+                margin-top: .7em
+            img
+                top: 29%
+
+            
+        .SpanAtual
+                margin-right: 2em
+        
+        .ImgProfileBox
+            background: #8999bc
+            height: 15em
+            width: 15.8em
+            border-radius: 13px
+            overflow: hidden
+            margin-right: 3em
+
+        .imagemPreview
+            @include preview()
+        
+        #ImgProfilePreview
+            display: flex
+
+    .infosProfile 
+        width: 31%
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        margin-top: 3.5em
+
+        label
+            font-family: Helvetica
+            display: flex
+            font-size: .95em
+            justify-content: flex-end
+            color: #6d7c9c
+            font-family: Helvetica
+            margin-bottom: 1.1em
+
+        p
+            color: #8999bc
+            font-weight: 600
+            margin-left: .5em
+
+.FormImg
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center

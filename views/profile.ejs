@@ -1,0 +1,110 @@
+<% include includes/header.ejs %>
+
+
+<!-- View de perfil do usuario -->
+
+<main>
+    
+    <h2>Perfil de<strong> Pedro</strong></h2>
+    <h5>ANALISTA</h5>
+    
+    <div class='container'>
+        
+        <div class='profileContent'>
+            
+            <form class='formProfile'>
+                
+                <div class='ImgProfileBox'>
+                    
+                    <div class='videoPreviewContent imagemPreview' id='ImgProfilePreview'>
+                        <img src="img/icon11.svg" alt="" class='iconPencil'>
+                        <span></span>
+                        
+                        <img src="img/man3.jpg" alt="" class='imagemPreviewBox'>
+                    </div>
+                    
+                    <div class='FormImg'>
+                        <input type="file" id='Upload' hidden name='imagem_file[]' accept="imagem/jpeg,imagem/jpg,imagem/png,imagem/tiff">
+                        <label for="Upload" style='margin:0;'>
+                            <!-- <img src="img/icon10.svg" alt=""> -->
+                            <div class="upload">
+                                
+                                <svg class="circle" viewBox="0 0 164 164">
+                                    <circle cx="82" cy="82" r="80"></circle>
+                                    <circle class="active" cx="82" cy="82" r="80"></circle>
+                                </svg>
+                                
+                                <svg class="image" viewBox="0 0 60 60">
+                                    <rect fill="currentColor" x="0" y="0" width="60" height="60" rx="11.9999993"></rect>
+                                    <circle fill="#8999bc" cx="15" cy="15" r="5"></circle>
+                                    <path d="M50,54 L10,54 C7.790861,54 6,52.209139 6,50 L6,44.2867962 C6,44.0993765 6.05266944,43.9157289 6.1520017,43.7567973 L12.6080068,33.4271891 C12.9299296,32.9121126 13.3649277,32.4771145 13.8800042,32.1551917 C15.7533504,30.9843504 18.2211519,31.553843 19.3919932,33.4271891 L26,44 L36.3752674,21.7672841 C36.7726106,20.9158345 37.4570086,20.2314365 38.3084581,19.8340934 C40.3103427,18.8998806 42.6905198,19.7653995 43.6247326,21.7672841 L53.9061831,43.7989639 C53.9679765,43.9313783 54,44.0757261 54,44.2218493 L54,50 C54,52.209139 52.209139,54 50,54 Z" fill="#8999bc"></path>
+                                </svg>
+                                
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class='inputBox'>
+                    <span class='inputSpan'>
+                        <label for="Nome">NOME</label>
+                        
+                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                        <input type="text" placeholder='Digite o seu nome' name='nome' disabled='true' value='Pedro Rago da Silva'>
+                    </span>
+                    
+                    <span class='inputSpan'>
+                        <label for="Email">EMAIL</label>
+                        
+                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                        <input type="text" placeholder='Digite o seu email' name='email' disabled='true' value='lorem@loremipsum.com.br'>
+                    </span>
+                    
+                    <span class='inputSpan'>
+                        <label for="Nascimento">NASCIMENTO</label>
+                        
+                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                        <input type="text" placeholder='dd/mm/aa' name='nascimento' disabled='true' value="10/02/1998">
+                    </span>
+                </div>
+                <span class='SecondInfoProfile TextareaaSpan'>
+                    <label for="Sobre">Sobre:</label>
+                    <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                    <textarea name="sobre" placeholder='Escreva um pouco sobre você' id="Sobre" disabled='true'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae libero ea iusto, commodi doloremque, deleniti harum consequatur accusamus aspernatur fugit aperiam sint porro veniam facere vero nulla? Ipsam, itaque!
+                        </textarea>
+                </span>
+                <span class='PassSpan SpanAtual'>
+                    <label for="SenhaAtual">Senha atual:</label>
+                    <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                    <input type="password" name='senhaatual' placeholder='Digite uma senha' disabled="true">
+                </span>
+                <span class='PassSpan'>
+                    <label for="NovaSenha">Nova senha:</label>
+                    <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                    <input type="password" name='novasenha' placeholder='Digite uma senha' disabled="true">
+                </span>
+                <button type='submit'>Enviar</button>
+            </form>
+            
+            <div class='infosProfile'>
+                <label>Data de cadastro: <p id='DataCadastro'>10/05/2018</p></label>
+                <label>UltimaAtualização:    <p id='UltimaAtualizacao'>20/08/2018</p></label>
+                <label>Quantidade de analises realizadas:    <p id='QtdAnalises'>25 analises</p></label>
+                <label>Ultima analise realizada:    <p id='QtdAnalises'>19/08/2018</p></label>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
+    
+</main>
+
+
+
+<% include includes/footer.ejs %>
+
+<script src="js/upload.js"></script>
+
