@@ -16,11 +16,14 @@
             <form class='SingUpForm' id="EditForm" method="POST" action="/s3StreamUpload" enctype="multipart/form-data">
                 <input name="video" id="inputVideo" hidden>
                 <label for="Nome">NOME DA PROGRAMAÇÃO</label>
-                <input type="text" placeholder='Digite o nome da programação' name='nome' disabled>
+                <span>
+                    <img src="img/pencil.svg" alt="" class='pencilEdit'>
+                    <input type="text" placeholder='Digite o nome da programação' name='nome' disabled='true'>
+                </span>
                 <div>
-                    <span class='spanDiaForm'>
+                    <span class='spanDiaForm spanSelect'>
                         <label for="Dia">DIA DE EMISSÃO</label>
-                        <select name="DiaEmissao" id="Dia" disabled>
+                        <select name="DiaEmissao" id="Dia" >
                             <option value="Segunda-Feira">Segunda-Feira</option>
                             <option value="Segunda-Feira">Terça-Feira</option>
                             <option value="Segunda-Feira">Quarta-Feira</option>
@@ -31,10 +34,10 @@
                         </select>
                     </span>
                     
-                    <span>
+                    <span class='spanSelect'>
                         <label for="Data">DATA DE EMISSÃO</label>
                         <div>
-                            <select name="Dia" id="Data" disabled>
+                            <select name="Dia" id="Data" >
                                 <option value="01">01</option>
                                 <option value="02">02</option>
                                 <option value="03">03</option>
@@ -68,7 +71,7 @@
                                 <option value="31">31</option>
                             </select>
                             
-                            <select name="Mes" id="Mes" disabled>
+                            <select name="Mes" id="Mes" >
                                 <option value="01">Janeiro</option>
                                 <option value="02">Fevereiro</option>
                                 <option value="03">Março</option>
@@ -83,7 +86,7 @@
                                 <option value="12">Dezembro</option>
                             </select>
                             
-                            <select name="Ano" id="Ano" disabled>
+                            <select name="Ano" id="Ano" >
                                 <option value="2025">25</option>
                                 <option value="2024">24</option>
                                 <option value="2023">23</option>
@@ -104,27 +107,39 @@
                     </span>
                 </div>
                 <label for="Nome">EMISSORA</label>
-                <input type="text" placeholder='Digite o nome da emissora' name='emissora' disabled >
+                <span>
+                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
+
+                    <input type="text" placeholder='Digite o nome da emissora' name='emissora' disabled >
+                </span>
 
                 <label for="Nome">FORMATO DO VIDEO</label>
-                <select name="formato" id="Formato" style='margin-top:0' disabled>
-                    <option value="MP4">MP4</option>
-                    <option value="AVI">AVI</option>
-                </select>
-                
+                <span class='spanSelect'>
+                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
+
+                    <select name="formato" id="Formato" disabled>
+                        <option value="MP4">MP4</option>
+                        <option value="AVI">AVI</option>
+                    </select>
+                </span>
+
                 <div class='inputTimes'>
                     <span>
+                            <img src="img/pencil.svg" alt="" class='pencilEdit'>
+
                         <label for="Inicio">ÍNICIO DA PROGRAMAÇÃO</label>
                         <input type="time" value='00:00' name='inicio' id='Inicio' disabled >
                     </span>
                     <span>
+                            <img src="img/pencil.svg" alt="" class='pencilEdit'>
+
                         <label for="Fim">FIM DA PROGRAMAÇÃO</label>
                         <input type="time" value='00:00' name='fim' id='Fim' disabled>
                     </span>
                 </div>
                 <button type='submit'>Cadastrar</button>
             </form>
-            <div class='UploadVideo'>
+            <div class='UploadVideo' id='EditVideo'>
                 <label>VÍDEO</label>
                 
                 <div class='VideoContent'>
@@ -132,12 +147,12 @@
                     <div class='videoPreviewContent'>
                         <img src="img/icon11.svg" alt="">
                         <span></span>
-                        <video class="videoPreview">
+                        <video class="videoPreview videoPlayerProfile" src="img/videoteste.mp4">
                         </video>
                     </div>
 
 
-                    <div class='formUploadFile'>
+                    <div class='formUploadFile '>
                         <input type="file" id='Upload' hidden name='imagem_file[]' accept="video/mp4,video/x-m4v,video/avi">
                         <label for="Upload" style='margin:0;'>
                             <!-- <img src="img/icon10.svg" alt=""> -->
@@ -160,9 +175,9 @@
                         </label>
                     </div>
                 </div>
-                <p class='msg'>Apenas arquivos em formato: MP4, AVI</p>
+                <p class='msg' style='display:none;'>Apenas arquivos em formato: MP4, AVI</p>
                 
-                <div class='infoFile'>
+                <div class='infoFile' style='opacity: 1;'>
                     <label>Arquivo no formato: <p id='FormatoArquivo'> </p></label>
                     <label>Nome do arquivo:    <p id='NomeArquivo'> </p></label>
                 </div>
@@ -183,9 +198,3 @@
 
 <script src="js/upload.js"></script>
 
-<style>
-    body
-    {
-        overflow-y: hidden;
-    }
-</style>
