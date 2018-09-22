@@ -50,7 +50,30 @@ var self = module.exports = {
                 new_file_name = new Date().getTime()+"-"+filename;
                 self.upload_file(file,new_file_name).then(resp=>{
                     resolve(resp);
+                }).catch(e=>{
+                    reject(e);
                 });
+            });
+        })
+
+    },
+    file_to_base64: function(busboy) {
+        return new Promise(function(resolve, reject) {
+            var base64data = [];
+            var buffer = '';
+            busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+                console.log(fieldname);
+                file.setEncoding('base64');
+                file.on('data', function(data) {
+                    // `data` is now a base64-encoded chunk of file data
+                    buffer += data;
+                }).on('end', function() {
+                    base64data.push(buffer);
+                    resolve(base64data);
+                });
+            });
+            busboy.on('finish', function() {
+                resolve(base64data);
             });
         })
 

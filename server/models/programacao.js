@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     usuario_id      : DataTypes.STRING,
     criacao         : DataTypes.DATE,
     status          : DataTypes.STRING,
+    excluido        : DataTypes.STRING
   },{
     freezeTableName: true,
     tableName   : 'programacao',

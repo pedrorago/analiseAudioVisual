@@ -88,6 +88,7 @@ var LocalStrategy = require('passport-local').Strategy;
   function(req, email, password, done) {
 
     var isValidPassword = function(userpass,password){
+      console.log(userpass,password)
       return bCrypt.compareSync(password, userpass);
     }
 

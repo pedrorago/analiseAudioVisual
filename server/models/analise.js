@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     programacao_id  : DataTypes.STRING,
     subcategoria_id : DataTypes.STRING,
     categoria_id    : DataTypes.STRING,
-    data_criacao    : DataTypes.STRING,
+    data_criacao    : DataTypes.DATE,
     usuario_id      : DataTypes.STRING
   },{
     freezeTableName: true,
