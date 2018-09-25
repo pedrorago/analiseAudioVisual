@@ -239,10 +239,7 @@ header
     justify-content: space-between
     transition: .3s ease-out
 
-@media(max-width: 1440px)
-    
-    header
-        width: 93.7%
+
 
 
     .menuContainer-btn
@@ -299,6 +296,10 @@ header
             @include picture()
             margin-right: 1.6em
 
+@media(max-width: 1440px)
+    
+    header
+        width: 93.7%
 
 aside
     height: 100%
@@ -570,15 +571,6 @@ nav
             &:nth-child(4)
                 width: 6em
 
-    @media(max-width: 1440px)
-        .listBox
-            span
-                &:nth-child(1)
-                    width: 15em
-                &:nth-child(2)
-                    width: 9em
-                &:nth-child(5)
-                    display: none
         label  
             color: $colorLabel
             font-family: Helvetica
@@ -611,15 +603,23 @@ nav
                 .titleBox
                     @include titleBox(6em, 2.5em)
 
+@media(max-width: 1440px)
+    .listBox
+        span
+            &:nth-child(1)
+                width: 15em
+            &:nth-child(2)
+                width: 9em
+            &:nth-child(5)
+                display: none
+
 @media(max-width:1440px)
 
     .listProgram 
         width: 100%
         height: 27em
         padding-right: 2em
-
-    margin-right: 1.5em
-    width: 18em
+        margin-right: 1.5em
 
 
 .SingUpContainer
