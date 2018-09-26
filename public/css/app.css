@@ -75,17 +75,51 @@ body {
     width: 82.8%; } }
 header {
   background: #191f31;
-  height: 5.5em;
+  height: 5em;
   width: 95%;
   float: right;
   display: flex;
   justify-content: space-between;
   transition: 0.3s ease-out; }
+  header .analyzeHeader {
+    display: none;
+    align-items: center;
+    margin-left: 3.5em; }
+    header .analyzeHeader span {
+      width: 2em;
+      height: 2em;
+      border-radius: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      header .analyzeHeader span img {
+        width: 100%; }
+    header .analyzeHeader h3 {
+      font-family: Avenir Next;
+      font-size: 0.87em;
+      margin-left: 1em;
+      color: #edf2fd;
+      margin-right: 5.3em; }
+    header .analyzeHeader div {
+      display: flex;
+      align-items: center;
+      margin-right: 3em; }
+      header .analyzeHeader div img {
+        max-width: 2.3em; }
+      header .analyzeHeader div p {
+        color: #58637e;
+        font-family: Avenir Next;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin-left: 1em; }
+      header .analyzeHeader div .clockImg {
+        max-width: 1.4em; }
   header .menuContainer-btn {
     width: 2.3em;
     height: 1.6em;
     margin-left: 1.4em;
-    margin-top: 2em;
+    margin-top: 1.8em;
     cursor: pointer;
     z-index: 100; }
   header .mobile-btn {
@@ -1025,5 +1059,41 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.mainAnalyze .container {
+  display: flex;
+  justify-content: space-between; }
+  .mainAnalyze .container .leftposition {
+    width: 75%; }
+  .mainAnalyze .container .rightposition {
+    width: 52.7%; }
+
+.analyzeVideoBox {
+  height: 28em;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .analyzeVideoBox video {
+    width: 104%;
+    height: 100%; }
+
+.bookBox {
+  border-bottom: 2px solid #0076ff;
+  padding: 2em 2em;
+  padding-bottom: 2em;
+  height: 16em;
+  overflow: hidden; }
+  .bookBox .formInputSearch input {
+    padding-left: 1.5em;
+    width: 32.2em;
+    padding-right: 4em; }
+  .bookBox .formInputSearch i {
+    position: relative; }
+  .bookBox .formInputSearch button {
+    position: absolute;
+    top: 11%;
+    right: 16%; }
 
 /*# sourceMappingURL=app.css.map */
