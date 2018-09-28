@@ -109,6 +109,11 @@ module.exports = function (app, passport) {
         res.render('program.ejs'); // load the index.ejs file
     });
 
+    app.get('/analyze', function (req, res) {
+        res.render('analyze.ejs'); // load the index.ejs file
+    });
+
+
     app.get('/profile_program/:id_program', function (req, res) {
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
             //res.json(resp); // load the index.ejs file

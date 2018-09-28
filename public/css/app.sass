@@ -232,24 +232,63 @@ body
 
 header
     background: $colorHeader
-    height: 5.5em
+    height: 5em
     width: 95%
     float: right
     display: flex
     justify-content: space-between
     transition: .3s ease-out
 
-@media(max-width: 1440px)
-    
-    header
-        width: 93.7%
 
+
+    .analyzeHeader
+        display: none
+        align-items: center
+        margin-left: 3.5em
+
+        
+        span
+            width: 2em
+            height: 2em
+            border-radius: 100%
+            overflow: hidden
+            display: flex
+            align-items: center
+            justify-content: center
+
+            img
+                width: 100%
+        
+        h3
+            font-family: Avenir Next
+            font-size: .87em
+            margin-left: 1em
+            color: $colorWhite
+            margin-right: 5.3em
+
+        div
+            display: flex
+            align-items: center
+            margin-right: 3em
+
+            img
+                max-width: 2.3em
+            p
+                color: #58637e
+                font-family: Avenir Next
+                font-size: .8em
+                font-weight: 600
+                margin-left: 1em
+            
+            .clockImg
+
+                max-width: 1.4em
 
     .menuContainer-btn
         width: 2.3em
         height: 1.6em
         margin-left: 1.4em
-        margin-top: 2em
+        margin-top: 1.8em
         cursor: pointer
         z-index: 100
 
@@ -299,6 +338,10 @@ header
             @include picture()
             margin-right: 1.6em
 
+@media(max-width: 1440px)
+    
+    header
+        width: 93.7%
 
 aside
     height: 100%
@@ -570,15 +613,6 @@ nav
             &:nth-child(4)
                 width: 6em
 
-    @media(max-width: 1440px)
-        .listBox
-            span
-                &:nth-child(1)
-                    width: 15em
-                &:nth-child(2)
-                    width: 9em
-                &:nth-child(5)
-                    display: none
         label  
             color: $colorLabel
             font-family: Helvetica
@@ -611,15 +645,23 @@ nav
                 .titleBox
                     @include titleBox(6em, 2.5em)
 
+@media(max-width: 1440px)
+    .listBox
+        span
+            &:nth-child(1)
+                width: 15em
+            &:nth-child(2)
+                width: 9em
+            &:nth-child(5)
+                display: none
+
 @media(max-width:1440px)
 
     .listProgram 
         width: 100%
         height: 27em
         padding-right: 2em
-
-    margin-right: 1.5em
-    width: 18em
+        margin-right: 1.5em
 
 
 .SingUpContainer
@@ -1114,3 +1156,49 @@ nav
     display: flex
     align-items: center
     justify-content: center
+
+.mainAnalyze
+
+    .container
+        display: flex
+        justify-content: space-between
+
+        .leftposition
+            width: 75%
+
+        .rightposition
+            width: 52.7%
+
+.analyzeVideoBox
+    height: 28em
+    width: 100%
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: center
+
+    video   
+        width: 104%
+        height: 100%
+
+.bookBox
+    border-bottom: 2px solid #0076ff
+    padding: 2em 2em
+    padding-bottom: 2em
+    height: 16em
+    overflow: hidden
+    
+    .formInputSearch
+        input
+            padding-left: 1.5em
+            width: 32.2em
+            padding-right: 4em
+        
+        i
+            position: relative
+        
+        button
+            
+            position: absolute
+            top: 11%
+            right: 16%

@@ -1,0 +1,66 @@
+<% include includes/header.ejs %>
+
+<style>
+
+    aside
+    {
+        height:5em;
+        display:block;
+        position: absolute;
+    }
+    aside .logo
+    {
+        margin-top:0;
+    }
+    
+    .content {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 5em;
+        padding-left: 0em;
+        padding-right:0em;
+    }
+    header .analyzeHeader
+    {
+        display: flex;
+    }
+    header .menuContainer-btn
+    {
+        display: none;
+    }
+    </style>
+
+<!-- view de analise -->
+
+<main class='mainAnalyze'>
+   
+    <div class='container'>
+        
+        <div class='leftposition'>
+            <div class='analyzeVideoBox'>
+                <video src="img/videoteste.mp4" controls></video>
+            </div>
+        </div>
+        <div class='rightposition'>
+            <div class='bookBox'>
+                <form action="" class='formInputSearch'>
+                    <input type="text" placeholder="Pesquise" name='pesquisa'>
+                    <button>
+                        <i class="material-icons"> search </i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        
+
+    </div>
+    
+    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
+    
+</main>
+
+
+<% include includes/footer.ejs %>
+
+

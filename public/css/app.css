@@ -75,26 +75,54 @@ body {
     width: 82.8%; } }
 header {
   background: #191f31;
-  height: 5.5em;
+  height: 5em;
   width: 95%;
   float: right;
   display: flex;
   justify-content: space-between;
   transition: 0.3s ease-out; }
-
-@media(max-width: 1440px) {
-  header {
-    width: 93.7%; }
-
-  .menuContainer-btn {
+  header .analyzeHeader {
+    display: none;
+    align-items: center;
+    margin-left: 3.5em; }
+    header .analyzeHeader span {
+      width: 2em;
+      height: 2em;
+      border-radius: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      header .analyzeHeader span img {
+        width: 100%; }
+    header .analyzeHeader h3 {
+      font-family: Avenir Next;
+      font-size: 0.87em;
+      margin-left: 1em;
+      color: #edf2fd;
+      margin-right: 5.3em; }
+    header .analyzeHeader div {
+      display: flex;
+      align-items: center;
+      margin-right: 3em; }
+      header .analyzeHeader div img {
+        max-width: 2.3em; }
+      header .analyzeHeader div p {
+        color: #58637e;
+        font-family: Avenir Next;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin-left: 1em; }
+      header .analyzeHeader div .clockImg {
+        max-width: 1.4em; }
+  header .menuContainer-btn {
     width: 2.3em;
     height: 1.6em;
     margin-left: 1.4em;
-    margin-top: 2em;
+    margin-top: 1.8em;
     cursor: pointer;
     z-index: 100; }
-
-  .mobile-btn {
+  header .mobile-btn {
     display: block;
     color: #424d6e;
     height: 0px;
@@ -104,8 +132,7 @@ header {
     cursor: pointer;
     -webkit-backface-visibility: hidden;
     border-radius: 6px; }
-
-  .mobile-btn::after, .mobile-btn::before {
+  header .mobile-btn::after, header .mobile-btn::before {
     content: "";
     display: block;
     height: 4px;
@@ -114,27 +141,23 @@ header {
     position: relative;
     transition: transform 0.3s ease;
     border-radius: 6px; }
-
-  .mobile-btn.active {
+  header .mobile-btn.active {
     border-top-color: transparent; }
-
-  .mobile-btn.active::after {
+  header .mobile-btn.active::after {
     margin-top: 0px;
     top: 2px;
     transform: rotate(45deg); }
-
-  .mobile-btn.active::before {
+  header .mobile-btn.active::before {
     margin-top: 0px;
     top: 6px;
     transform: rotate(135deg); }
-
-  .userIconContainer {
+  header .userIconContainer {
     width: 20em;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end; }
-    .userIconContainer picture {
+    header .userIconContainer picture {
       width: 2.4em;
       height: 2.5em;
       border-radius: 50%;
@@ -144,11 +167,15 @@ header {
       background: #424d6e;
       overflow: hidden;
       margin-right: 1.6em; }
-      .userIconContainer picture img {
+      header .userIconContainer picture img {
         width: 100%;
         opacity: 0;
         animation: fade-in 2s normal forwards ease-in-out;
-        animation-delay: 0.5s; } }
+        animation-delay: 0.5s; }
+
+@media(max-width: 1440px) {
+  header {
+    width: 93.7%; } }
 aside {
   height: 100%;
   width: 5.3em;
@@ -404,72 +431,71 @@ nav {
         width: 10em; }
       .listProgram .listBox span:nth-child(4) {
         width: 6em; }
-@media(max-width: 1440px) {
-  .listProgram .listBox span:nth-child(1) {
-    width: 15em; }
-  .listProgram .listBox span:nth-child(2) {
-    width: 9em; }
-  .listProgram .listBox span:nth-child(5) {
-    display: none; }
-  .listProgram label {
-    color: #b9c0d2;
-    font-family: Helvetica;
-    font-size: 0.7em;
-    font-weight: 600;
-    margin-bottom: 1em; }
-  .listProgram p {
-    font-family: Helvetica;
-    color: #c4d0e8;
-    margin-top: 0.56em; }
-  .listProgram .buttonsList {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 5em;
-    position: absolute;
-    right: 0; }
-    .listProgram .buttonsList a {
-      width: 34px;
-      height: 35px;
-      position: relative;
-      text-decoration: none; }
-      .listProgram .buttonsList a:hover .titleBox {
-        display: flex; }
-      .listProgram .buttonsList a .titleBox {
-        width: 6em;
-        height: 2.5em;
-        border-radius: 6px;
-        background-color: #191f31;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #edf2fd;
+    .listProgram .listBox label {
+      color: #b9c0d2;
+      font-family: Helvetica;
+      font-size: 0.7em;
+      font-weight: 600;
+      margin-bottom: 1em; }
+    .listProgram .listBox p {
+      font-family: Helvetica;
+      color: #c4d0e8;
+      margin-top: 0.56em; }
+    .listProgram .listBox .buttonsList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 5em;
+      position: absolute;
+      right: 0; }
+      .listProgram .listBox .buttonsList a {
+        width: 34px;
+        height: 35px;
         position: relative;
-        margin-left: -1.9em;
-        margin-top: 0.6em;
-        box-shadow: 6px 15px 71px 5px rgba(25, 31, 49, 0.85);
-        display: none;
-        transition: 0.3s ease-out;
-        z-index: 10; }
-        .listProgram .buttonsList a .titleBox span {
-          position: absolute;
-          width: 1.5em;
-          height: 1.5em;
-          background: #191f31;
-          transform: rotate(45deg);
-          top: -15%; }
-        .listProgram .buttonsList a .titleBox p {
-          margin-top: 0;
-          font-size: 0.9em;
-          z-index: 9999; } }
+        text-decoration: none; }
+        .listProgram .listBox .buttonsList a:hover .titleBox {
+          display: flex; }
+        .listProgram .listBox .buttonsList a .titleBox {
+          width: 6em;
+          height: 2.5em;
+          border-radius: 6px;
+          background-color: #191f31;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #edf2fd;
+          position: relative;
+          margin-left: -1.9em;
+          margin-top: 0.6em;
+          box-shadow: 6px 15px 71px 5px rgba(25, 31, 49, 0.85);
+          display: none;
+          transition: 0.3s ease-out;
+          z-index: 10; }
+          .listProgram .listBox .buttonsList a .titleBox span {
+            position: absolute;
+            width: 1.5em;
+            height: 1.5em;
+            background: #191f31;
+            transform: rotate(45deg);
+            top: -15%; }
+          .listProgram .listBox .buttonsList a .titleBox p {
+            margin-top: 0;
+            font-size: 0.9em;
+            z-index: 9999; }
+
+@media(max-width: 1440px) {
+  .listBox span:nth-child(1) {
+    width: 15em; }
+  .listBox span:nth-child(2) {
+    width: 9em; }
+  .listBox span:nth-child(5) {
+    display: none; } }
 @media(max-width:1440px) {
   .listProgram {
     width: 100%;
     height: 27em;
-    padding-right: 2em; }
-
-  margin-right: 1.5em;
-  width: 18em; }
+    padding-right: 2em;
+    margin-right: 1.5em; } }
 .SingUpContainer {
   width: 100%;
   height: auto;
@@ -1033,5 +1059,41 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.mainAnalyze .container {
+  display: flex;
+  justify-content: space-between; }
+  .mainAnalyze .container .leftposition {
+    width: 75%; }
+  .mainAnalyze .container .rightposition {
+    width: 52.7%; }
+
+.analyzeVideoBox {
+  height: 28em;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .analyzeVideoBox video {
+    width: 104%;
+    height: 100%; }
+
+.bookBox {
+  border-bottom: 2px solid #0076ff;
+  padding: 2em 2em;
+  padding-bottom: 2em;
+  height: 16em;
+  overflow: hidden; }
+  .bookBox .formInputSearch input {
+    padding-left: 1.5em;
+    width: 32.2em;
+    padding-right: 4em; }
+  .bookBox .formInputSearch i {
+    position: relative; }
+  .bookBox .formInputSearch button {
+    position: absolute;
+    top: 11%;
+    right: 16%; }
 
 /*# sourceMappingURL=app.css.map */
