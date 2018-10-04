@@ -1,7 +1,23 @@
 
 $(function()
 {
-    
+
+
+    $(".infosPlaceheader").on('click', function()
+    {
+        if ($(this).closest('.infosPlace').hasClass("infosPlaceActive")) {
+            $(this).closest('.infosPlace').toggleClass('infosPlaceActive');
+            $(".infosPlace").removeClass('infosPlaceActive');
+            
+        }else
+        {
+            
+            $(".infosPlace").removeClass('infosPlaceActive');
+            $(this).closest('.infosPlace').toggleClass('infosPlaceActive');
+        }
+        
+    });
+
     var typingTimer; 
     var doneTypingInterval = 1000; 
     
