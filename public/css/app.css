@@ -1289,4 +1289,12 @@ nav {
     text-transform: uppercase;
     margin-top: 0.5em; }
 
+.progress-bar {
+  height: 0.3em;
+  background: #0a6cce;
+  width: 0;
+  transition: all 1.4s ease-out 0s;
+  border-radius: 17px;
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */
