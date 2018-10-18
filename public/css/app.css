@@ -1078,10 +1078,25 @@ nav {
   display: flex;
   justify-content: space-between; }
   .mainAnalyze .container .leftposition {
-    width: 75%;
-    background: #1b202e; }
+    width: 62%;
+    background: #1b202e;
+    height: 91%;
+    position: fixed;
+    overflow-y: auto;
+    padding-bottom: 3em;
+    margin-bottom: 4em; }
+    .mainAnalyze .container .leftposition::-webkit-scrollbar {
+      width: 5px; }
+    .mainAnalyze .container .leftposition::-webkit-scrollbar-track {
+      background: #323c58;
+      border-radius: 25px; }
+    .mainAnalyze .container .leftposition::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+      background: #5e6880; }
   .mainAnalyze .container .rightposition {
-    width: 52.7%; }
+    width: 38%;
+    position: absolute;
+    right: 0; }
 
 .analyzeVideoBox {
   height: 28em;
@@ -1233,11 +1248,17 @@ nav {
       margin-bottom: 1em; }
     .infosPlace .infosPlacebody select {
       margin-top: 1em; }
+    .infosPlace .infosPlacebody label {
+      line-height: 1.4em; }
     .infosPlace .infosPlacebody input {
       margin-top: 0.8em; }
 
 .infosPlaceActive {
   height: auto !important;
   padding-bottom: 1em; }
+
+.analiseFinal {
+  display: none;
+  opacity: 0; }
 
 /*# sourceMappingURL=app.css.map */

@@ -79,7 +79,7 @@ $icon: #333d5d
 body
 
     overflow-x: hidden
-    
+
     img
         animation-play-state: running
 
@@ -1171,11 +1171,30 @@ nav
         justify-content: space-between
 
         .leftposition
-            width: 75%
+            width: 62%
             background: #1b202e
+            height: 91%
+            position: fixed
+            overflow-y: auto
+            padding-bottom: 3em
+            margin-bottom: 4em
+
+            &::-webkit-scrollbar
+                width: 5px
+
+            &::-webkit-scrollbar-track
+                background: #323c58
+                border-radius: 25px
+
+            &::-webkit-scrollbar-thumb
+                border-radius: 25px
+                background: #5e6880
 
         .rightposition
-            width: 52.7%
+            width: 38%
+            position: absolute
+            right: 0
+
 
 .analyzeVideoBox
     height: 28em
@@ -1331,9 +1350,16 @@ nav
 
         @include form()
 
+        label
+            line-height: 1.4em
+            
         input
             margin-top: .8em
 
 .infosPlaceActive
     height: auto !important
     padding-bottom: 1em
+
+.analiseFinal
+    display: none
+    opacity: 0
