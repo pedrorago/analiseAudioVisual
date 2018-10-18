@@ -15,12 +15,18 @@
         <div class='SingUpContainer'>
             <form class='SingUpForm' id="SingUpForm" method="POST" action="/s3StreamUpload" enctype="multipart/form-data">
                 <input name="video" id="inputVideo" hidden>
+                
                 <label for="Nome">NOME DA PROGRAMAÇÃO</label>
-                <input type="text" value='Program-DE2ED' name='nome'>
+                <input type="text" value='Program-DE2ED' name='nome' id='NomeProgramacaoCadastro'>
 
                 <label for="DataProgramacao">DATA DA PROGRAMAÇÃO</label>
-                <input name='' type='date' id='DataProgramacao' value='2018-02-10'/>                
+                <input name='data_programacao' type='date' id='DataProgramacao' value='0000-00-00'/>                
                 
+                <label for="HorarioInicio">HORÁRIO DO INÍCIO DA PROGRAMAÇÃO</label>
+                <input name='hora_inicio' type='time' id='HorarioInicio' value="00:00" format="hh-mm"> 
+
+                <label for="HorarioFim">HORÁRIO DO FIM DA PROGRAMAÇÃO</label>
+                <input name='hora_fim' type='time' id='HorarioFim' value="00:00" format="hh-mm">
 
                 <button type='submit'>Cadastrar</button>
             </form>
