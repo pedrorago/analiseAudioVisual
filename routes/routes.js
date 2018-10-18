@@ -125,6 +125,14 @@ module.exports = function (app, passport) {
 
     });
 
+    app.get('/profile_program', function (req, res) {
+       
+            res.render('profile_program.ejs',
+            {   program:null
+            });
+
+    });
+
     app.get('/edit_program/:id_program', function (req, res) {
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
             //res.json(resp); // load the index.ejs file
@@ -133,6 +141,14 @@ module.exports = function (app, passport) {
             {   program:resp
             });
         })
+        // // load the index.ejs file
+    });
+
+    app.get('/edit_program', function (req, res) {
+    
+            res.render('edit_program.ejs',
+            {   program:null
+            });
         // // load the index.ejs file
     });
 

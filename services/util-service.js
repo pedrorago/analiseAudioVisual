@@ -6,12 +6,13 @@ var self = module.exports = {
         return new Promise(function(resolve, reject) {
 
             var s3 = new AWS.S3({     
-                accessKeyId: '',
-                secretAccessKey: '',
+                accessKeyId: 'AKIAI5TR4TYTRLIJHJ5Q',
+                secretAccessKey: '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',
                   params: {
                         Key: save_name_file, 
                         Body: file,
-                        Bucket: ''},
+                        Bucket: 'analise-audio-visual'},
+                        ACL:'public-read-write',
                   options: {partSize: 5 * 1024 * 1024, queueSize: 10}   // 5 MB
                });
                s3.upload().on('httpUploadProgress', function (evt) {
