@@ -7,14 +7,18 @@ frm.submit(function (e) {
     $('.progress-bar').width('0%');
     
 
-    var dataEmissao = $(".SingUpForm #Data").val()+"/"+$(".SingUpForm #Mes").val()+"/"+$(".SingUpForm #Ano").val();
+    //var dataEmissao = $(".SingUpForm #Data").val()+"/"+$(".SingUpForm #Mes").val()+"/"+$(".SingUpForm #Ano").val();
 
-    console.log(dataEmissao);
+    //console.log(dataEmissao);
 
-    let data = new FormData(document.getElementById('SingUpForm'));
-
-    data.append('data_emissao',dataEmissao);
+    let data = new FormData();
+    let dataInico = $('#DataProgramacao').val();
+    console.log()
+    data.append('nome',$('#NomeProgramacaoCadastro').val());
+    data.append('data_emissao',$('#DataProgramacao').val());
     data.append('video',$('input[type=file]')[0].files[0]);
+    data.append('hora_inicio',dataInico+" "+$('#HorarioInicio').val());
+    data.append('hora_fim',dataInico+" "+$('#HorarioFim').val());
 
     e.preventDefault();
     
