@@ -106,7 +106,13 @@ module.exports = function (app, passport) {
     });
 
     app.get('/program', function (req, res) {
-        res.render('program.ejs'); // load the index.ejs file
+        ProgramacaoService.get_all_promogramacao().then(resp=>{
+            //res.json(resp); // load the index.ejs file
+
+            res.render('program.ejs',
+            {   programs:resp
+            });
+        })
     });
 
     app.get('/analyze', function (req, res) {

@@ -6,8 +6,8 @@ var self = module.exports = {
         return new Promise(function(resolve, reject) {
 
             var s3 = new AWS.S3({     
-                accessKeyId: 'AKIAIH3BI67H3QKUMMIQ',
-                secretAccessKey: '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',
+                accessKeyId: '',
+                secretAccessKey: '',
                   params: {
                         Key: save_name_file, 
                         Body: file,
