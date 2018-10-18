@@ -10,9 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     link_video      : DataTypes.STRING,
     nome_video      : DataTypes.STRING,
     usuario_id      : DataTypes.STRING,
-    criacao         : DataTypes.DATE,
     status          : DataTypes.STRING,
-    excluido        : DataTypes.STRING
   },{
     freezeTableName: true,
     tableName   : 'programacao',
