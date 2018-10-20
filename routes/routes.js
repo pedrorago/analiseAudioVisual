@@ -58,9 +58,10 @@ module.exports = function (app, passport) {
             })
     });
 
-    app.post('/delete-program/:program_id', function (req, res) {
+    app.get('/delete-program/:program_id',isLoggedIn, function (req, res) {
+        res.locals.user = req.user;
         ProgramacaoService.delete_promogramacao(req.params.program_id).then(resp => {
-            res.render('profile_program.ejs',{msg: "Sucesso ao excluir programação!"})
+            res.redirect('/program');
         });
     });
 
@@ -70,6 +71,7 @@ module.exports = function (app, passport) {
         Promise.all([UtilService.file_to_base64(busboy),
         UtilService.form_to_json(busboy)])
             .then(resp => {
+                
                 user = resp[1];
                 user['photo'] = resp[0][0];
                 user.createdAt = new Date();
@@ -94,7 +96,6 @@ module.exports = function (app, passport) {
             .then(resp => {
                 let user = resp[1];
                 user['photo'] = resp[0][0];
-
                 return UserService.edit_user(user);
 
             }).then(resp => {

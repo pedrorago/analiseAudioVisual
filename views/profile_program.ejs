@@ -22,7 +22,7 @@
                     <label>Nome do arquivo:    <p id='NomeArquivo'><%=program.nome%> </p></label>
                 </div>
                 <a href="/edit_program" class='botaoCinza'>Editar</a>
-                <a href="#" class='botaoVermelho'>Remover</a>
+                <a href="/delete-program/<%= program.id %>" class='botaoVermelho'>Remover</a>
                 <a href="/analyze/<%= program.id %>" class='botaoAzul'>Analisar</a>
                 
             </div>

@@ -15,7 +15,7 @@ module.exports = {
 
     get_all_promogramacao: function () {
         return new Promise(function (resolve, reject) {
-            Programacao.findAll().then(programacao => {
+            Programacao.findAll({where:{excluido:0}}).then(programacao => {
                 resolve(programacao);
             }).catch(e => {
                 reject(e);
@@ -62,9 +62,8 @@ module.exports = {
 
     delete_promogramacao: function (id) {
         return new Promise(function (resolve, reject) {
-            console.log(req.params)
             Programacao.update({ excluido: 1 },
-                { where: { id: req.params.program_id } }
+                { where: { id: id } }
             ).then(function (rowsUpdated) {
                 resolve(rowsUpdated);
             })
