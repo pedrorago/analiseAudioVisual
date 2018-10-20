@@ -70,6 +70,7 @@ module.exports = function (app, passport) {
         Promise.all([UtilService.file_to_base64(busboy),
         UtilService.form_to_json(busboy)])
             .then(resp => {
+                
                 user = resp[1];
                 user['photo'] = resp[0][0];
                 user.createdAt = new Date();
@@ -94,7 +95,6 @@ module.exports = function (app, passport) {
             .then(resp => {
                 let user = resp[1];
                 user['photo'] = resp[0][0];
-
                 return UserService.edit_user(user);
 
             }).then(resp => {
