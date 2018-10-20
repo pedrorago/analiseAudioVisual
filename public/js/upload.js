@@ -35,6 +35,7 @@ frm.submit(function (e) {
         success: function(data){
             console.log('upload successful!\n' + data);
             console.log(data);
+            alert(data.msg);
         },
         xhr: function() {
           // create an XMLHttpRequest
