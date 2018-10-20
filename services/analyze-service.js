@@ -6,9 +6,7 @@ module.exports = {
     save_analise: function (req) {
         return new Promise(function (resolve, reject) {
             let analise = req.body;
-            //analise.id_user = req.user.id;
-           
-            analise.id_user = 1;
+            analise.id_user = req.user.id;
             analise.data_created = new Date();
             console.log(analise);
             Analise.create(analise).then(resp => {
@@ -23,9 +21,9 @@ module.exports = {
         })
     },
 
-    get_all_analise: function () {
+    get_last_analise: function () {
             return new Promise(function (resolve, reject) {
-                sequelize.query("select u.name, TIMEDIFF(a.data_created,NOW()) from analise a inner join Users u on a.id_user = u.id order by data_created asc  limit 10;")
+                sequelize.query("select u.name,u.photo, TIMEDIFF(NOW(),a.data_created) as time from analise a inner join Users u on a.id_user = u.id order by time asc limit 10;", { type: sequelize.QueryTypes.SELECT})
                 .then(resp => {
                     resolve(resp);
                     // We don't need spread here, since only the results will be returned for select queries
@@ -35,7 +33,7 @@ module.exports = {
             })
     },
 
-    get_last_analise: function () {
+    get_all_analise: function () {
         return new Promise(function (resolve, reject) {
             Analise.findAll().then(programacao => {
                 resolve(programacao);

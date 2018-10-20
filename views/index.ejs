@@ -22,37 +22,14 @@
             <div class='TimingAnalisesDashboard'>
                 <p>Últimas análises realizadas</p>
                 <label>Listagem de análises realizadas</label>
-                
+                <% for(var i=0; i<last.length; i++) {%>
                 <div>
-                    <p> <strong>Camila Queiroz</strong> - realizou uma analise há 3 min</p>
+                    <p> <strong><%=last[i].name%></strong> - realizou uma analise há <%=last[i].time%>s</p>
                     <picture>
-                        <img src="img/woman1.jpg" alt="">
+                        <img src="data:image/png;base64, <%=last[i].photo%>" alt="">
                     </picture>
                 </div>
-                <div>
-                    <p> <strong>Eduardo Paes</strong> - realizou uma analise há 25 min</p>
-                    <picture>
-                        <img src="img/man2.jpg" alt="">
-                    </picture>
-                </div>
-                <div>
-                    <p> <strong>Carolina da Silva</strong> - realizou uma analise há 30 min</p>
-                    <picture>
-                        <img src="img/woman2.jpg" alt="">                        
-                    </picture>
-                </div>
-                <div>
-                    <p> <strong>Antonio Queiroz</strong> - realizou uma analise há 1 horas</p>
-                    <picture>
-                        <img src="img/man1.jpg" alt="">                        
-                    </picture>
-                </div>
-                <div>
-                    <p> <strong>Eduardo Paes</strong> - realizou uma analise há 2 horas</p>
-                    <picture>
-                        <img src="img/man2.jpg" alt="">
-                    </picture>
-                </div>
+                <% } %>
             </div>
         </div>
         
