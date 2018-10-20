@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "12345678",
-    "database": "saav",
-    "host": "127.0.0.1",
+    "username": "betonix",
+    "password": "roberto2525",
+    "database": "analise_visual",
+    "host": "db4free.net",
     "dialect": "mysql"
   },
   "test": {

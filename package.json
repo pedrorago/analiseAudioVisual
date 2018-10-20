@@ -28,5 +28,8 @@
     "passport-local": "^1.0.0",
     "request": "^2.87.0",
     "sequelize": "^4.38.0"
+  }, 
+  "engines": {
+    "node": "4.1.1"
   }
 }
