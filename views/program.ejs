@@ -28,10 +28,7 @@
         </span>
         
         <div class='listProgram'>
-            <% for(var i=0; i<programs.length; i++) {
-                var dia = programs[i].hora_inicio.getDay();
-                %>
-                    
+            <% for(var i=0; i<programs.length; i++) {%>
                     <div class='listBox'>
                             <span>
                                 <label>TÍTULO DA PROGRAMAÇÃO</label>
@@ -43,9 +40,8 @@
                             </span>
                             <span>
                                 <label>HORÁRIO DE TRANSMISSÃO</label>
-                                <p><%=  programs[i].hora_inicio %></p>
+                                <p><%= programs[i].hora_inicio.toLocaleTimeString()%></p>
                             </span>
-
                             <span>
                                 <label>FORMATO</label>
                                 <p>MP4</p>
