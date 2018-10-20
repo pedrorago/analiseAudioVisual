@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     nome_video      : DataTypes.STRING,
     usuario_id      : DataTypes.STRING,
     status          : DataTypes.STRING,
+    excluido        : DataTypes.INTEGER
   },{
     freezeTableName: true,
     tableName   : 'programacao',

@@ -58,9 +58,10 @@ module.exports = function (app, passport) {
             })
     });
 
-    app.post('/delete-program/:program_id', function (req, res) {
+    app.get('/delete-program/:program_id',isLoggedIn, function (req, res) {
+        res.locals.user = req.user;
         ProgramacaoService.delete_promogramacao(req.params.program_id).then(resp => {
-            res.render('profile_program.ejs',{msg: "Sucesso ao excluir programação!"})
+            res.redirect('/program');
         });
     });
 
