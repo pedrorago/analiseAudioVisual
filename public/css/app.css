@@ -78,7 +78,7 @@ body {
   background: #262d41; }
 
 .activeHeader {
-  width: 86.2%; }
+  width: 87.9%; }
 
 @media(max-width: 1440px) {
   .activeHeader {
@@ -86,7 +86,7 @@ body {
 header {
   background: #191f31;
   height: 5em;
-  width: 95%;
+  width: 95.6%;
   float: right;
   display: flex;
   justify-content: space-between;

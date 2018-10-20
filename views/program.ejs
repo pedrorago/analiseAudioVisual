@@ -28,7 +28,10 @@
         </span>
         
         <div class='listProgram'>
-            <% for(var i=0; i<programs.length; i++) {%>
+            <% for(var i=0; i<programs.length; i++) {
+                var dia = programs[i].hora_inicio.getDay();
+                %>
+                    
                     <div class='listBox'>
                             <span>
                                 <label>TÍTULO DA PROGRAMAÇÃO</label>
@@ -40,12 +43,9 @@
                             </span>
                             <span>
                                 <label>HORÁRIO DE TRANSMISSÃO</label>
-                                <p><%= programs[i].hora_inicio.getHours() %> : <%= programs[i].hora_fim.getMinutes() %></p>
+                                <p><%=  programs[i].hora_inicio %></p>
                             </span>
-                            <span>
-                                <label>HORÁRIO DE TRANSMISSÃO</label>
-                                <p><%= programs[i].hora_fim.getHours() %> : <%= programs[i].hora_fim.getMinutes() %></p>
-                            </span>
+
                             <span>
                                 <label>FORMATO</label>
                                 <p>MP4</p>

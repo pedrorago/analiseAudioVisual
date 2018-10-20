@@ -207,7 +207,11 @@ module.exports = function (app, passport) {
             message: req.flash('loginMessage')
         });
     });
-
+    app.get('/forgot', function (req, res) {
+        res.render('forgot.ejs', {
+            message: req.flash('forgotMessege')
+        });
+    });
     app.post('/login', function (req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             console.log(user)

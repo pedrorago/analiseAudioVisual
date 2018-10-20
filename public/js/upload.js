@@ -12,7 +12,7 @@ frm.submit(function (e) {
 
     let data = new FormData();
     let dataInico = $('#DataProgramacao').val();
-    console.log()
+    console.log();
     data.append('nome',$('#NomeProgramacaoCadastro').val());
     data.append('data_emissao',$('#DataProgramacao').val());
     data.append('video',$('input[type=file]')[0].files[0]);
@@ -58,6 +58,9 @@ frm.submit(function (e) {
                   {
 
                     $('.progress-bar').css('display', 'none');
+
+                    // $(location).attr('href', '/program')
+
 
                   }, 2250);
 
