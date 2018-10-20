@@ -1,6 +1,10 @@
 
 $(function()
 {
+        
+
+
+
     
       // Analyze 
       if( $("#Conteudo-violento").val() != "Sim" )
@@ -45,7 +49,7 @@ $(function()
             id += str[(Math.random()*(str.length-1)).toFixed()];
           }
           
-          $("#NomeProgramacaoCadastro").val('Program-'+id);
+          $("#NomeProgramacaoCadastro").attr('value', 'Program-'+id);
       }
 
       
@@ -189,13 +193,7 @@ $(function()
         
     })
     
-    
-    $('.menuContainer-btn').click(function(){
-        $(this).find('span').toggleClass('active');
-        
-        $("aside").toggleClass('activeSidebar');
-        $("header").toggleClass('activeHeader');
-    });
+
     
 });
 
