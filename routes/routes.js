@@ -192,9 +192,9 @@ module.exports = function (app, passport) {
         res.render('singUp_program.ejs'); // load the index.ejs file
     });
 
-    app.get('/singUp_program',isLoggedIn, function (req, res) {
+    app.get('/statistics',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
-        res.render('singUp_program.ejs'); // load the index.ejs file
+        res.render('statistics.ejs'); // load the index.ejs file
     });
     app.get('/profile',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
