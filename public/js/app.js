@@ -207,7 +207,7 @@ var graficoSemana = new Chart(ctx,
             labels: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"],
             datasets: [
                 {
-                    label: '# Análises',
+                    label: '# Análises', 
                     data: [30, 5, 40, 20, 16, 7, 10],
                     
                     backgroundColor: [
