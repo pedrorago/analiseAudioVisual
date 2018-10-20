@@ -1,4 +1,7 @@
-<% include includes/header.ejs %>
+
+<%- include('includes/header', {status: program.status}); %>
+
+
 
 <style>
     
@@ -28,6 +31,11 @@
     {
         display: none;
     }
+
+    header{
+        position: absolute;
+        z-index: 99999;
+    }
 </style>
 
 <!-- view de analise -->
@@ -35,20 +43,20 @@
 <main class='mainAnalyze'>
     
     <div class='container'>
-        
+        <form id="form_save_analyze">
+            <input type="hidden" name="id_programacao" value="<%=program.id%>"/>
         <div class='leftposition'>
             <div class='analyzeVideoBox'>
-                <video src="img/videoteste.mp4" controls></video>
+                <video src="<%=program.link_video%>" controls></video>
             </div>
             <div class='HeaderAnalyze-Name'>
                 <span>
-                    <h2>Program - DE23D2</h2>
-                    <p>18/10/2018</p>
+                    <h2><%=program.nome%></h2>
+                    <p><%=program.dia_emissao.toLocaleString()%></p>
                 </span>
                 
                 <a href="javascript:void(0)"><img src="img/download.svg" alt=""></a>
             </div>
-            
             <div class='Userplace infosPlace infosPlaceActive'>
                 <div class='infosPlaceheader'>
                     <h5>Informações básicas</h5>
@@ -57,11 +65,11 @@
                 <div class='infosPlacebody'>   
                     <span>
                         <label for="Nome">Nome do Programa:</label>
-                        <input type="text" placeholder="Digite o nome do programa" value='Program-DE23D2' value='nome_programa'>
+                        <input name="nome_programa" type="text" placeholder="Digite o nome do programa" value='Program-DE23D2' value='nome_programa'>
                     </span>
                     <span>
                         <label for="Emissora">Nome da Emissora:</label>
-                        <input type="text" placeholder="Digite o nome da emissora" value='nome_emissora'>
+                        <input name="nome_emissora" type="text" placeholder="Digite o nome da emissora" value='nome_emissora'>
                     </span>
                     <span>
                         <label for="DiaT">Dia de transmissão:</label>
@@ -407,7 +415,7 @@
                             </select>
                         </span>
 
-                        <span>
+                        <!--<span>
                             <label for="referencia_conteudo_sexual">Referências ao conteúdo sexual/de nudez apresentadas dentro de um contexto
                                     histórico e/ou artístico, envolvendo as causas, consequências e soluções
                                     pertinentes ao caso.</label>
@@ -422,7 +430,7 @@
                                     <option value='Apresenta a habilidade (feminina ou masculina) de dizer não, no tocante asrelações sexuais.'>Apresenta a habilidade (feminina ou masculina) de dizer não, no tocante asrelações sexuais.</option>
                                     <option value='Há uma discussão/reflexão sobre sexo.'>Há uma discussão/reflexão sobre sexo.</option>
                             </select>
-                        </span>
+                        </span>-->
 
                         <span>
                             <label for="conteudo_narcoticos">O material em análise apresenta algum tipo de conteúdo envolvendo drogas?                                </label>
@@ -542,6 +550,7 @@
                 </div>
                 
             </div>
+        </form>
             <div class='rightposition'>
                 <div class='bookBox'>
                     <form action="" class='formInputSearch'>
@@ -584,6 +593,6 @@
     </main>
     
     <% include includes/footer.ejs %>
-    
+    <script src="/js/salvarAnalise.js"></script>
     
     

@@ -1,4 +1,5 @@
 const Programacao = require('../server/models').Programacao
+const sequelize = require('../server/models').sequelize;
 
 module.exports = {
     save_promogramacao: function (programacao) {
@@ -45,6 +46,19 @@ module.exports = {
                 })
         })
     },
+
+    update_status_programa: function (id,status) {
+        return new Promise(function (resolve, reject) {
+            sequelize.query("update programacao set status='"+status+"' where id="+id)
+            .then(resp => {
+                resolve(resp);
+                // We don't need spread here, since only the results will be returned for select queries
+            }).catch(e =>{
+                reject(e);
+            })
+        })
+    },
+
 
     delete_promogramacao: function (id) {
         return new Promise(function (resolve, reject) {

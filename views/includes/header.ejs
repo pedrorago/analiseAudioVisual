@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
@@ -36,26 +40,30 @@
         </div>
         <div class='analyzeHeader'>
             <span>
-                <img src="img/woman2.jpg" alt="">
+                <img src="/img/woman2.jpg" alt="">
             </span>
             <h3>Publicado por <strong>Maria Clara</strong></h3>
 
             <div>
-                <img src="img/statusIcon.svg" alt="">
-                <p>Analisado</p>
+                <img src="/img/statusIcon.svg" alt="">
+                <% if (locals.status) { %>
+
+                    <p><%=status%></p>
+                   
+                   <% } %>
             </div>
 
             <div>
-                <img src="img/clock.svg" alt="" class='clockImg'>
+                <img src="/img/clock.svg" alt="" class='clockImg'>
                 <p>01:30:00</p>
             </div>
 
-            <a href="javascript:void(0)">Concluir</a>
+            <a onclick="saveAnalise()" href="javascript:void(0)">Concluir</a>
 
         </div>
         <div class='userIconContainer'>
             <picture>
-                <img src="img/man3.jpg" alt="">
+                <img src="/img/man3.jpg" alt="">
             </picture>
         </div>
     </header>

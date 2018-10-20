@@ -3,6 +3,7 @@ const Busboy = require('busboy');
 const UtilService = require('../services/util-service');
 const ProgramacaoService = require('../services/programacao-service');
 const UserService = require('../services/users-service');
+const AnalyzeService = require('../services/analyze-service');
 
 module.exports = function (app, passport) {
 
@@ -12,7 +13,7 @@ module.exports = function (app, passport) {
 
         Promise.all([UtilService.upload_promise(busboy),
         UtilService.form_to_json(busboy)]).then(resp => {
-
+            resp[1]['status'] = 'Não Analisado';
             let programacao = resp[1];
             programacao.link_video = resp[0].Location;
             programacao.nome_video = resp[0].key;
@@ -64,17 +65,20 @@ module.exports = function (app, passport) {
     });
 
     app.post('/create-user', function (req, res) {
+        let user = {};
         var busboy = new Busboy({ headers: req.headers });
         Promise.all([UtilService.file_to_base64(busboy),
         UtilService.form_to_json(busboy)])
             .then(resp => {
-                let user = resp[1];
+                user = resp[1];
                 user['photo'] = resp[0][0];
+                user.createdAt = new Date();
 
                 return UserService.create_user(user);
 
             }).then(resp => {
-                res.json(resp);
+                res.locals.user = req.user;
+                res.render('login');
             })
             .catch(function (e) {
                 res.json(e);
@@ -101,14 +105,14 @@ module.exports = function (app, passport) {
         req.pipe(busboy);
     });
 
-    app.get('/', function (req, res) {
+    app.get('/',isLoggedIn, function (req, res) {
+        res.locals.user = req.user;
         res.render('index.ejs'); // load the index.ejs file
     });
 
-    app.get('/program', function (req, res) {
+    app.get('/program',isLoggedIn, function (req, res) {
         ProgramacaoService.get_all_promogramacao().then(resp=>{
             //res.json(resp); // load the index.ejs file
-
             res.render('program.ejs',
             {   programs:resp
             });
@@ -119,6 +123,21 @@ module.exports = function (app, passport) {
         res.render('analyze.ejs'); // load the index.ejs file
     });
 
+    app.post('/save-analyze', function (req, res) {
+        AnalyzeService.save_analise(req).then(resp => {
+            res.json("Sucesso ao salvar analise!");
+        });
+    });
+
+    app.get('/analyze/:id_program',isLoggedIn, function (req, res) {
+        ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
+            //res.json(resp); // load the index.ejs file
+
+            res.render('analyze.ejs',
+            {   program:resp
+            });
+        })
+    });
 
     app.get('/profile_program/:id_program', function (req, res) {
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
@@ -131,7 +150,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/profile_program', function (req, res) {
+    app.get('/profile_program',isLoggedIn, function (req, res) {
        
             res.render('profile_program.ejs',
             {   program:null
@@ -139,7 +158,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/edit_program/:id_program', function (req, res) {
+    app.get('/edit_program/:id_program',isLoggedIn, function (req, res) {
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
             //res.json(resp); // load the index.ejs file
 
@@ -150,7 +169,7 @@ module.exports = function (app, passport) {
         // // load the index.ejs file
     });
 
-    app.get('/edit_program', function (req, res) {
+    app.get('/edit_program',isLoggedIn, function (req, res) {
     
             res.render('edit_program.ejs',
             {   program:null
@@ -158,14 +177,14 @@ module.exports = function (app, passport) {
         // // load the index.ejs file
     });
 
-    app.get('/singUp_program', function (req, res) {
+    app.get('/singUp_program',isLoggedIn, function (req, res) {
         res.render('singUp_program.ejs'); // load the index.ejs file
     });
 
-    app.get('/singUp_program', function (req, res) {
+    app.get('/singUp_program',isLoggedIn, function (req, res) {
         res.render('singUp_program.ejs'); // load the index.ejs file
     });
-    app.get('/profile', function (req, res) {
+    app.get('/profile',isLoggedIn, function (req, res) {
         res.render('profile.ejs'); // load the index.ejs file
     });
 
@@ -193,9 +212,12 @@ module.exports = function (app, passport) {
                 if (err) {
                     return next(err);
                 }
-                return res.json({
+                /*return res.json({
                     "responseCode": 1
-                })
+                })*/
+                res.locals.user = req.user;
+                req.user = user;
+                res.render('index');
             });
         })(req, res, next)
     })
