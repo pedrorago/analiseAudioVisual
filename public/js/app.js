@@ -1,6 +1,10 @@
 
 $(function()
 {
+        
+
+
+
     
       // Analyze 
       if( $("#Conteudo-violento").val() != "Sim" )
@@ -45,7 +49,7 @@ $(function()
             id += str[(Math.random()*(str.length-1)).toFixed()];
           }
           
-          $("#NomeProgramacaoCadastro").val('Program-'+id);
+          $("#NomeProgramacaoCadastro").attr('value', 'Program-'+id);
       }
 
       
@@ -69,14 +73,14 @@ $(function()
     var typingTimer; 
     var doneTypingInterval = 1000; 
     
-    $('#EditForm input, .formProfile input, .formProfile textarea').keyup(function() 
+    /*$('#EditForm input, .formProfile input, .formProfile textarea').keyup(function() 
     {
         clearTimeout(typingTimer);
         if ($('#EditForm input, .formProfile input, .formProfile textarea').val) 
         {
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         }
-    });
+    });*/
     
     function doneTyping() {
         $("#EditForm input, .formProfile input, .formProfile textarea").attr("disabled", "true");
@@ -87,7 +91,7 @@ $(function()
     
     var tipoArquivoProgram;
     
-    $(".pencilEdit").on('click', function()
+    /*$(".pencilEdit").on('click', function()
     {
         $(this).siblings('input').removeAttr("disabled");
         $(this).siblings('textarea').removeAttr("disabled");
@@ -113,7 +117,7 @@ $(function()
             });
         });
         
-    });
+    });*/
     
     
     $('#Upload').change(function (e) {
@@ -189,13 +193,7 @@ $(function()
         
     })
     
-    
-    $('.menuContainer-btn').click(function(){
-        $(this).find('span').toggleClass('active');
-        
-        $("aside").toggleClass('activeSidebar');
-        $("header").toggleClass('activeHeader');
-    });
+
     
 });
 

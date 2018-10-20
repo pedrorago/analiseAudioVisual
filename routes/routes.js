@@ -70,6 +70,7 @@ module.exports = function (app, passport) {
         Promise.all([UtilService.file_to_base64(busboy),
         UtilService.form_to_json(busboy)])
             .then(resp => {
+                
                 user = resp[1];
                 user['photo'] = resp[0][0];
                 user.createdAt = new Date();
@@ -94,7 +95,6 @@ module.exports = function (app, passport) {
             .then(resp => {
                 let user = resp[1];
                 user['photo'] = resp[0][0];
-
                 return UserService.edit_user(user);
 
             }).then(resp => {
@@ -148,6 +148,7 @@ module.exports = function (app, passport) {
     });
 
     app.get('/profile_program/:id_program', function (req, res) {
+        res.locals.user = req.user;
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
             //res.json(resp); // load the index.ejs file
 
@@ -191,9 +192,9 @@ module.exports = function (app, passport) {
         res.render('singUp_program.ejs'); // load the index.ejs file
     });
 
-    app.get('/singUp_program',isLoggedIn, function (req, res) {
+    app.get('/statistics',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
-        res.render('singUp_program.ejs'); // load the index.ejs file
+        res.render('statistics.ejs'); // load the index.ejs file
     });
     app.get('/profile',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
@@ -206,7 +207,11 @@ module.exports = function (app, passport) {
             message: req.flash('loginMessage')
         });
     });
-
+    app.get('/forgot', function (req, res) {
+        res.render('forgot.ejs', {
+            message: req.flash('forgotMessege')
+        });
+    });
     app.post('/login', function (req, res, next) {
         passport.authenticate('local-login', function (err, user, info) {
             console.log(user)

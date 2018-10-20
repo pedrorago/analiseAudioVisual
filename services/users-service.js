@@ -25,17 +25,21 @@ module.exports = {
         })
     },
     edit_user: function (user) {
-        return new Promise((resolve, reject) => {
-            let newpassword = bCrypt.hashSync(user.newPassword, bCrypt.genSaltSync(8), null);
+        var generateHash = function(password) {
+            return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+        };
 
+        return new Promise((resolve, reject) => {
             User.findOne({ where: { email: user.email } }).then(function (u) {
-                let currentPassword = u.password;
+                let currentPassword = user.currentPassword;
                 if (u) {
-                    let valide = bCrypt.compareSync(user.password, currentPassword);
+                    let valide = bCrypt.compareSync(currentPassword ,u.password);
                     if (!valide) {
                         reject("senha não confere");
                     }else{
-                    user.password = newpassword;
+                    var userPassword = generateHash(user.newpassword);
+                    user.password = userPassword;
+                    console.log(user)
                     User.update(
                         user,
                         { where: { email: user.email } }
@@ -47,9 +51,7 @@ module.exports = {
                 else {
                     reject('email não encontrado');
                 }
-            }).catch(e => {
-                reject(e);
-            });
+            })
         })
     }
 }

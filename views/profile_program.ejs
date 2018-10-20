@@ -5,7 +5,7 @@
 
 <main class='mainsProfile'>
     
-    <h2>Programação: <strong> 184848</strong></h2>
+    <h2>Programação: <strong> <%=program.id%></strong></h2>
     
     
     <div class='container'>
@@ -14,16 +14,16 @@
             <div class='VideoContentProfile'>
                 
                 <div class='videoPreviewProfile'>
-                    <video class="videoPreview videoPlayerProfile" controls src="img/videoteste.mp4">
+                    <video class="videoPreview videoPlayerProfile" controls src="<%=program.link_video%>">
                     </video>
                 </div>
                 <div class='infoFile' style='opacity:1;'>
                     <label>Arquivo no formato: <p id='FormatoArquivo'>MP4</p></label>
-                    <label>Nome do arquivo:    <p id='NomeArquivo'>MPSJS_AOSOS.MP4 </p></label>
+                    <label>Nome do arquivo:    <p id='NomeArquivo'><%=program.nome%> </p></label>
                 </div>
                 <a href="/edit_program" class='botaoCinza'>Editar</a>
                 <a href="#" class='botaoVermelho'>Remover</a>
-                <a href="#" class='botaoAzul'>Analisar</a>
+                <a href="/analyze/<%= program.id %>" class='botaoAzul'>Analisar</a>
                 
             </div>
             
@@ -31,25 +31,25 @@
                 
                 <span>
                     <label for="">NOME DA PROGRAMAÇÃO</label>
-                    <p>Encontro com Fátima Bernardes</p>
+                    <p><%=program.nome%></p>
                 </span>
                 
                 <span>
                     <label for="">DIA DE EMISSÃO</label>
-                    <p>Segunda-feira</p>
+                    <p>Não registrado</p>
                 </span>
                 <span>
                     <label for="">DATA DE EMISSÃO</label>
-                    <p>10 de Agosto de 2018</p>
+                    <p><%= program.dia_emissao.toLocaleDateString() %></p>
                 </span>
                 
                 <span>
                     <label>EMISSORA</label>
-                    <p>Rede Globo</p>
+                    <p>Não registrado</p>
                 </span>
                 <span>
                     <label>STATUS</label>
-                    <p>Não analisado</p>
+                    <p><%=program.status%></p>
                 </span>
                 <span>
                     <label>FORMATO DE VÍDEO</label>
@@ -57,15 +57,15 @@
                 </span>
                 <span>
                     <label>CLASSIFICAÇÃO</label>
-                    <p>10:50H</p>
+                    <p>Não registrado</p>
                 </span>
                 <span>
                     <label>INÍCIO DA PROGRAMAÇÃO</label>
-                    <p>10:50H</p>
+                    <p><%= program.hora_inicio.toLocaleTimeString().slice(0,-3)%>H</p>
                 </span>
                 <span>
                     <label>FIM DA PROGRAMAÇÃO</label>
-                    <p>10:50</p>
+                    <p><%=program.hora_fim.toLocaleTimeString().slice(0,-3)%>H</p>
                 </span>
             </div>
             

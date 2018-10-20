@@ -1,41 +1,17 @@
 
-var frm = $("#SingUpForm");
-var contador = 1;
-frm.submit(function (e) {
+function updateProfile() {
 
-   
-    
-
-    //var dataEmissao = $(".SingUpForm #Data").val()+"/"+$(".SingUpForm #Mes").val()+"/"+$(".SingUpForm #Ano").val();
-
-    //console.log(dataEmissao);
-
-    let data = new FormData();
-    let dataInico = $('#DataProgramacao').val();
-    console.log();
-    data.append('nome',$('#NomeProgramacaoCadastro').val());
-    data.append('data_emissao',$('#DataProgramacao').val());
-    data.append('video',$('input[type=file]')[0].files[0]);
-    data.append('hora_inicio',dataInico+" "+$('#HorarioInicio').val());
-    data.append('hora_fim',dataInico+" "+$('#HorarioFim').val());
-
-    e.preventDefault();
-    
-    while(contador <= 1)
-    {
-      $('.progress-bar').width('0%');
-      $('.progress-bar').css('display', 'block');
+  var form = $('#form_profile');
 
       $.ajax({
-        url: '/s3StreamUpload',
+        url: '/edit-user',
         type: 'POST',
-        data: data,
-        processData: false,
-        contentType: false,
+        data: form.serialize(),
         success: function(data){
             console.log('upload successful!\n' + data);
             console.log(data);
-            alert(data.msg);
+            alert(data);
+            location.reload();
         },
         xhr: function() {
           // create an XMLHttpRequest
@@ -60,27 +36,16 @@ frm.submit(function (e) {
 
                     $('.progress-bar').css('display', 'none');
 
-                    // $(location).attr('href', '/program')
-
-
                   }, 2250);
 
-                }
-
-
-    
+                }   
               }
               
-             
-  
           }, false);
   
           return xhr;
         }
       });
-      contador++;
-    }
-    
-  
-});
+
+};
 

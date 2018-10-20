@@ -5,9 +5,9 @@
 
 <main>
     
-    <h1>Bem vindo(a) <strong><%= user.name %>!</strong></h1>
+    <h1>Bem vindo(a) <strong><%= user.name %> !</strong></h1>
     
-    <legend>Parabéns, Pedro! Você realizou 5 analises a 15 horas atrás. Há novas programações para serem analisadas. Boa sorte! Lorem ipsum maecenas nullam integer Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, aspernatur saepe hic aperiam ad minima totam accusamus labore dolor.</legend>
+    <legend>Parabéns, <%= user.name %> ! Você realizou 5 analises a 15 horas atrás. Há novas programações para serem analisadas. Boa sorte! Lorem ipsum maecenas nullam integer Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, aspernatur saepe hic aperiam ad minima totam accusamus labore dolor.</legend>
     
     <div class='container'>
         
@@ -44,7 +44,16 @@
 <% include includes/footer.ejs %>
 
 
+<script>
 
+    $('.menuContainer-btn').click(function(){
+        $(this).find('span').toggleClass('active');
+        
+        $("aside").toggleClass('activeSidebar');
+        $("header").toggleClass('activeHeader');
+    });
+    
+</script>
 <style>
 .content
 {

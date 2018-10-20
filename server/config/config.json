@@ -1,9 +1,16 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "betonix",
     "password": "roberto2525",
     "database": "analise_visual",
     "host": "db4free.net",
+=======
+    "username": "root",
+    "password": "",
+    "database": "audio_visual",
+    "host": "127.0.0.1",
+>>>>>>> b867642f1afd8c771fff9d2b58d18cc0393796b6
     "dialect": "mysql"
   },
   "test": {
