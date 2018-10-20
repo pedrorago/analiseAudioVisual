@@ -15,8 +15,8 @@
             <div class='GraphicDashboard'>
                 <p>Estatísticas de análises semanais</p>
                 <label>Baseada em análises realizadas por você semanalmente.</label>
-                <canvas id="myChart"></canvas>
-                
+                <canvas id="graficoSemana"></canvas>
+                   
             </div>
             
             <div class='TimingAnalisesDashboard'>
@@ -44,16 +44,7 @@
 <% include includes/footer.ejs %>
 
 
-<script>
 
-    $('.menuContainer-btn').click(function(){
-        $(this).find('span').toggleClass('active');
-        
-        $("aside").toggleClass('activeSidebar');
-        $("header").toggleClass('activeHeader');
-    });
-    
-</script>
 <style>
 .content
 {

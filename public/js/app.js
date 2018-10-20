@@ -1,60 +1,60 @@
 
 $(function()
 {
-        
-
-
-
     
-      // Analyze 
-      if( $("#Conteudo-violento").val() != "Sim" )
-      {
-         $(".analiseFinal").css('display', 'none');
-         $(".analiseFinal").css('opacity', '0');
-  
-      }else
-      {
-         $(".analiseFinal").css('display', 'block');
-         $(".analiseFinal").css('opacity', '1');
-      }
-  
-      $("#Conteudo-violento").on('change', function() {
-          if ($(this).val() == 'Sim'){
-              $(".analiseFinal").css('display', 'block');
-              setTimeout(function()
-              {
-                  $(".analiseFinal").css('opacity', '1');
-              }, 100);
-          } else {
-              $(".analiseFinal").css('opacity', '0');
-              setTimeout(function()
-              {
-                  $(".analiseFinal").css('display', 'none');
-              }, 100);        
-          }
-      });
-  
-  
-  
-  
-  
-      //
-  
-  
-      randID();
-  
-      function randID(){
-          var str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',id='';
-          for(var i = 0; i < 5; i++){
+    
+    
+    
+    
+    // Analyze 
+    if( $("#Conteudo-violento").val() != "Sim" )
+    {
+        $(".analiseFinal").css('display', 'none');
+        $(".analiseFinal").css('opacity', '0');
+        
+    }else
+    {
+        $(".analiseFinal").css('display', 'block');
+        $(".analiseFinal").css('opacity', '1');
+    }
+    
+    $("#Conteudo-violento").on('change', function() {
+        if ($(this).val() == 'Sim'){
+            $(".analiseFinal").css('display', 'block');
+            setTimeout(function()
+            {
+                $(".analiseFinal").css('opacity', '1');
+            }, 100);
+        } else {
+            $(".analiseFinal").css('opacity', '0');
+            setTimeout(function()
+            {
+                $(".analiseFinal").css('display', 'none');
+            }, 100);        
+        }
+    });
+    
+    
+    
+    
+    
+    //
+    
+    
+    randID();
+    
+    function randID(){
+        var str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',id='';
+        for(var i = 0; i < 5; i++){
             id += str[(Math.random()*(str.length-1)).toFixed()];
-          }
-          
-          $("#NomeProgramacaoCadastro").attr('value', 'Program-'+id);
-      }
-
-      
-
-      
+        }
+        
+        $("#NomeProgramacaoCadastro").attr('value', 'Program-'+id);
+    }
+    
+    
+    
+    
     $(".infosPlaceheader").on('click', function()
     {
         if ($(this).closest('.infosPlace').hasClass("infosPlaceActive")) {
@@ -193,13 +193,13 @@ $(function()
         
     })
     
-
+    
     
 });
 
 
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, 
+var ctx = document.getElementById("graficoSemana").getContext('2d');
+var graficoSemana = new Chart(ctx, 
     {
         type: 'line',
         data: 
@@ -229,20 +229,21 @@ var myChart = new Chart(ctx,
                     
                     borderWidth: 2
                 }]
-            },
-            options: 
+        },
+        options: 
+        {
+            scales: 
             {
-                scales: 
-                {
-                    yAxes: [
+                yAxes: [
+                    {
+                        ticks: 
                         {
-                            ticks: {
-                                beginAtZero:true
-                            }
+                        beginAtZero:true
+                        }
                         }]
                     }
-                }
-            });
+            }
+    });
             
             
             
