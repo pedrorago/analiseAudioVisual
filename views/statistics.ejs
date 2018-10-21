@@ -5,10 +5,296 @@
 
 <main>
     
-    <
+    <h2>Estatísticas do <strong>Sistema</strong></h2>
+    <div class='containerEsta'>
+            <div class='EstatisticasContainer Graphic01'>
+                    <div class='HeaderEst'> 
+                        <h4>Total de programas:</h4>
+                        <h5>500</h5>
+                    </div>
+                    <p>
+                        <canvas id="totalProgramas" width="800" height="450"></canvas>
+                    </p>
+                </div>
+                
+                <div class='EstatisticasContainer Graphic01'>
+                    <div class='HeaderEst'> 
+                        <h4>Total de analises:</h4>
+                        <h5>251</h5>
+                    </div>
+                    <p>
+                            <canvas id="totalAnalises" width="800" height="450"></canvas>
+                    </p>
+                </div>
+
+                <div class='EstatisticasContainer Graphic01'>
+                        <div class='HeaderEst'> 
+                            <h4>Total de analises não realizadas:</h4>
+                            <h5>53</h5>
+                        </div>
+                        <p>
+                                <canvas id="totalNaoAnalise" width="800" height="450"></canvas>
+                        </p>
+                    </div>
+
+    </div>
+
+    
 </main>
 
 
 <% include includes/footer.ejs %>
 
 
+<script>
+    
+    Chart.defaults.global.defaultFontColor = '#b5bdcf';
+    Chart.defaults.global.defaultFontFamily	 = 'Avenir Next';
+    Chart.defaults.global.defaultFontSize	 =  14;
+    new Chart(document.getElementById("totalAnalises"), {
+        type: 'bar',
+        data: {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+            datasets: [
+            {
+                label: "2018",
+                backgroundColor: "rgba(255,99,132,0.2)",
+                borderColor: "rgba(255,99,132,1)",
+                borderWidth: 2,
+                hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                hoverBorderColor: "rgba(255,99,132,1)",
+                data: [65, 59, 20, 81, 56, 55, 40, 100, 23, 50, 30, 40],
+            }
+            ]
+        },
+        options: {
+            
+            
+            scales: {
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(237,242,253,0.46)"
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            responsive: true,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#edf2fd',
+                    fontFamily: 'Avenir Next',
+                    fontSize: 15
+                }
+            },
+            title: {
+                display: false,
+            },
+            tooltips:
+            {
+                callbacks: {
+                    labelColor: function(tooltipItem, chart) {
+                        return {
+                            borderColor: 'rgba(255,99,132,1)',
+                            backgroundColor: 'rgba(255,99,132,1)'
+                        }
+                    },
+                    labelTextColor:function(tooltipItem, chart){
+                        return '#edf2fd';
+                    }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById("totalProgramas"), {
+        type: 'bar',
+        data: {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+            datasets: [
+            {
+                label: "2018",
+                backgroundColor: "rgba(10,108,206,0.37)",
+                borderColor: "#0a6cce",
+                borderWidth: 2,
+                hoverBackgroundColor: "rgba(10,108,206,0.57)",
+                hoverBorderColor: "#0b74dc",          
+                data: [65, 75, 70, 80, 60, 80, 10, 9, 20, 10, 40, 23]
+            }
+            ]
+        },
+        options: {
+            
+            
+            scales: {
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(237,242,253,0.46)"
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            responsive: true,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#edf2fd',
+                    fontFamily: 'Avenir Next',
+                    fontSize: 15
+                }
+            },
+            title: {
+                display: false,
+            },
+            tooltips:
+            {
+                callbacks: {
+                    labelColor: function(tooltipItem, chart) {
+                        return {
+                            borderColor: 'rgba(10,108,206,0.37)',
+                            backgroundColor: 'rgba(10,108,206,0.37)'
+                        }
+                    },
+                    labelTextColor:function(tooltipItem, chart){
+                        return '#edf2fd';
+                    }
+                ]
+            }
+        }
+    });
+    var myDoughnutChart = new Chart(document.getElementById("totalNaoAnalise"), {
+        type: 'doughnut',
+        data: {
+            labels: ["Programas", "Analises não realizadas"],
+            
+            datasets: [
+            {   
+                borderColor: "#0a6cce",
+                borderWidth: 2,
+                backgroundColor: [
+                "rgba(10,108,206,0.37)",
+                "rgba(255,99,132,0.2)",
+                ],
+                data: [500, 50]
+            }
+            ]
+        },
+        options: {
+            
+            
+            scales: {
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(237,242,253,0.46)"
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            responsive: true,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#edf2fd',
+                    fontFamily: 'Avenir Next',
+                    fontSize: 15
+                }
+            },
+            title: {
+                display: false,
+            },
+            tooltips:
+            {
+                callbacks: {
+                    labelColor: function(tooltipItem, chart) {
+                        return {
+                            borderColor: 'rgba(10,108,206,0.37)',
+                            backgroundColor: 'rgba(10,108,206,0.37)'
+                        }
+                    },
+                    labelTextColor:function(tooltipItem, chart){
+                        return '#edf2fd';
+                    }
+                }
+            }
+        }
+});
+
+
+
+    // var marksCanvas = document.getElementById("graficoTotalAnalise");
+    
+    // Chart.defaults.global.defaultFontFamily = "Lato";
+    // Chart.defaults.global.defaultFontSize = 18;
+    
+    // var marksData = {
+        //   labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        //   datasets: [{
+            //     label: "Não analisadas",
+            //     backgroundColor: "transparent",
+            //     borderColor: "rgba(200,0,0,0.6)",
+            //     fill: false,
+            //     radius: 6,
+            //     pointRadius: 6,
+            //     pointBorderWidth: 3,
+            //     pointBackgroundColor: "orange",
+            //     pointBorderColor: "rgba(200,0,0,0.6)",
+            //     pointHoverRadius: 10,
+            //     data: [65, 75, 70, 80, 60, 80, 10, 9, 20, 10, 40, 23]
+            //   }, {
+                //     label: "Analisadas",
+                //     backgroundColor: "transparent",
+                //     borderColor: "rgba(0,0,200,0.6)",
+                //     fill: false,
+                //     radius: 6,
+                //     pointRadius: 6,
+                //     pointBorderWidth: 3,
+                //     pointBackgroundColor: "cornflowerblue",
+                //     pointBorderColor: "rgba(0,0,200,0.6)",
+                //     pointHoverRadius: 10,
+                //     data: [54, 65, 60, 70, 70, 75, 13, 10, 20, 30, 44, 24]
+                //   }]
+                // };
+                
+                // var chartOptions = {
+                    //   scale: {
+                        //     ticks: {
+                            //       beginAtZero: true,
+                            //       min: 0,
+                            //       max: 100,
+                            //       stepSize: 20
+                            //     },
+                            //     pointLabels: {
+                                //       fontSize: 18
+                                //     }
+                                //   },
+                                //   legend: {
+                                    //     position: 'left'
+                                    //   }
+                                    // };
+                                    
+                                    // var radarChart = new Chart(marksCanvas, {
+                                        //   type: 'horizontalBar',
+                                        //   data: marksData,
+                                        //   options: chartOptions
+                                        // });
+                                        
+                                        
+                                    </script>
