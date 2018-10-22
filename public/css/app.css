@@ -90,7 +90,10 @@ header {
   float: right;
   display: flex;
   justify-content: space-between;
-  transition: 0.3s ease-out; }
+  transition: 0.3s ease-out;
+  position: fixed;
+  z-index: 100;
+  right: 0; }
   header .analyzeHeader {
     display: none;
     align-items: center;
@@ -1306,6 +1309,13 @@ nav {
   width: 49%;
   height: 34em; }
 
+.Graphic02 {
+  width: 49%;
+  height: 26em; }
+
+@media(max-width: 1440px) {
+  .Graphic01 {
+    height: 25em; } }
 .EstatisticasContainer {
   background: #191f31;
   border-radius: 19px;

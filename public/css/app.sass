@@ -251,6 +251,9 @@ header
     display: flex
     justify-content: space-between
     transition: .3s ease-out
+    position: fixed
+    z-index: 100
+    right: 0
 
 
 
@@ -1409,7 +1412,15 @@ nav
 .Graphic01
     width: 49%
     height: 34em
-    
+
+.Graphic02
+    width: 49%
+    height: 26em
+
+@media(max-width: 1440px)
+    .Graphic01
+        height: 25em   
+
 .EstatisticasContainer
     background: #191f31
     border-radius: 19px
