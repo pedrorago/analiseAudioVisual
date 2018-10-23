@@ -191,12 +191,68 @@ header {
       justify-content: center;
       background: #424d6e;
       overflow: hidden;
-      margin-right: 1.6em; }
+      margin-right: 1.6em;
+      overflow: visible;
+      position: relative;
+      cursor: pointer;
+      width: 6em;
+      height: 11em;
+      border-radius: 0;
+      background: none;
+      justify-content: flex-end; }
       header .userIconContainer picture img {
         width: 100%;
         opacity: 0;
         animation: fade-in 2s normal forwards ease-in-out;
         animation-delay: 0.5s; }
+      header .userIconContainer picture:hover .titleBox {
+        display: flex !important; }
+      header .userIconContainer picture .containerIMGPic {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+        width: 2.4em;
+        height: 2.5em;
+        background: #424d6e; }
+      header .userIconContainer picture .titleBox {
+        width: 6em;
+        height: 2.5em;
+        border-radius: 6px;
+        background-color: #191f31;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #edf2fd;
+        position: relative;
+        margin-left: -1.9em;
+        margin-top: 0.6em;
+        box-shadow: 6px 15px 71px 5px rgba(25, 31, 49, 0.85);
+        display: none;
+        transition: 0.3s ease-out;
+        z-index: 10;
+        margin-top: 4em;
+        position: absolute;
+        margin-left: 0.5em;
+        text-decoration: none;
+        background: #333d5d;
+        font-family: Avenir Next; }
+        header .userIconContainer picture .titleBox span {
+          position: absolute;
+          width: 1.5em;
+          height: 1.5em;
+          background: #191f31;
+          transform: rotate(45deg);
+          top: -15%; }
+        header .userIconContainer picture .titleBox p {
+          margin-top: 0;
+          font-size: 0.9em;
+          z-index: 9999; }
+        header .userIconContainer picture .titleBox span {
+          right: 19%;
+          background: #333d5d; }
+          header .userIconContainer picture .titleBox span p {
+            font-family: Avenir Next; }
 
 @media(max-width: 1440px) {
   header {

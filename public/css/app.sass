@@ -357,6 +357,45 @@ header
         picture
             @include picture()
             margin-right: 1.6em
+            overflow: visible
+            position: relative
+            cursor: pointer
+            width: 6em
+            height: 11em
+            border-radius: 0
+            background: none
+            justify-content: flex-end
+            
+            &:hover .titleBox
+                    display: flex !important
+
+            .containerIMGPic
+                width: 100%
+                height: 100%
+                overflow: hidden
+                border-radius: 50%
+                width: 2.4em
+                height: 2.5em
+                background: #424d6e
+
+
+
+            .titleBox
+                @include titleBox(6em, 2.5em)
+                margin-top: 4em
+                position: absolute
+                margin-left: 0.5em
+                text-decoration: none
+                background: #333d5d
+                font-family: Avenir Next
+
+                span
+                    right: 19%
+                    background: #333d5d
+                    p
+                        font-family: Avenir Next
+
+
 
 @media(max-width: 1440px)
     
