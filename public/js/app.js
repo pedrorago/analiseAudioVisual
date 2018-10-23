@@ -1,6 +1,12 @@
 
 $(function()
 {
+    setTimeout(function()
+    {
+        $("nav li a p").css("opacity", "1");
+        $(".containerReports").css("opacity", "1");
+    }, 1000);
+
     $('#FiltroConteudo').on('click', function() 
     {
         if( $("#FiltroConteudo").is(':checked') ){

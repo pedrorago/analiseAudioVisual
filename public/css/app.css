@@ -259,7 +259,9 @@ nav {
         font-weight: 300;
         letter-spacing: 1;
         margin-left: 1.67em;
-        font-size: 0.9em; }
+        font-size: 0.9em;
+        transition: 0.3s ease-out;
+        opacity: 0; }
   nav .infoButton {
     position: absolute;
     bottom: 0; }
