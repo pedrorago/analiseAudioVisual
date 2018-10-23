@@ -1,9 +1,28 @@
 
 $(function()
 {
-    
-    
-    
+    $('#FiltroConteudo').on('click', function() 
+    {
+        if( $("#FiltroConteudo").is(':checked') ){
+             $(".ConteudoFiltroContent").removeClass("violentoActive");
+             $(".ConteudoViolento").removeClass("violentoActive");
+             $("#ConteudoViolentoInput").prop("checked", true);
+        } else {
+            $(".ConteudoFiltroContent").addClass("violentoActive");
+
+        }
+    });
+
+    $('#ConteudoViolentoInput').on('click', function() 
+    {
+        if( $("#ConteudoViolentoInput").is(':checked') ){
+             $(".ConteudoViolento").removeClass("violentoActive");
+        } else {
+            $(".ConteudoViolento").addClass("violentoActive");
+
+        }
+    });
+ 
     
     
     // Analyze 

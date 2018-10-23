@@ -7,38 +7,505 @@
     
     <h2>Estatísticas do <strong>Sistema</strong></h2>
     <div class='containerEsta'>
-            <div class='EstatisticasContainer Graphic01'>
-                    <div class='HeaderEst'> 
-                        <h4>Total de programas:</h4>
-                        <h5>500</h5>
+        <div class='EstatisticasContainer Graphic01'>
+            <div class='HeaderEst'> 
+                <h4>Total de programas:</h4>
+                <h5>500</h5>
+            </div>
+            <p>
+                <canvas id="totalProgramas" width="800" height="450"></canvas>
+            </p>
+        </div>
+        
+        <div class='EstatisticasContainer Graphic01'>
+            <div class='HeaderEst'> 
+                <h4>Total de analises:</h4>
+                <h5>251</h5>
+            </div>
+            <p>
+                <canvas id="totalAnalises" width="800" height="450"></canvas>
+            </p>
+        </div>
+        
+        <div class='EstatisticasContainer Graphic02'>
+            <div class='HeaderEst'> 
+                <h4>Total de analises não realizadas:</h4>
+                <h5>53</h5>
+            </div>
+            <p>
+                <canvas id="totalNaoAnalise" width="800" height="450"></canvas>
+            </p>
+        </div>
+        
+        <div class='EstatisticasContainer Graphic02'>
+            <div class='HeaderEst'> 
+                <h4>Total de usuários:</h4>
+                <h5>120</h5>
+            </div>
+            <p>
+                <canvas id="totalUsuarios" width="800" height="450"></canvas>
+            </p>
+        </div>
+        <div class='EstatisticasContainer Graphic03'>
+            <div class='HeaderEst'> 
+                <h4>Total de emissoras:</h4>
+                <h5>4</h5>
+            </div>
+            <p>
+                <canvas id="totalEmissoras" width="800" height="450"></canvas>
+            </p>
+        </div>
+        <div class='EstatisticasContainer Graphic04'>
+            <div class='HeaderEst'> 
+                <h4>Gerar relátorio:</h4>
+                
+            </div>
+            <form class='EstatisctBody'>
+                <span>
+                    <label for="TotalProgramasInput">Total de programas:</label>
+                    <div class="button button1 r" id="button-3">
+                        <input type="checkbox" class="checkbox" name='TotalProgramasInput' id='TotalProgramasInput'>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
                     </div>
-                    <p>
-                        <canvas id="totalProgramas" width="800" height="450"></canvas>
-                    </p>
+                </span>
+                <select name="StatusProgramas" id="StatusProgramas">
+                    <option value="Todos">Todos</option>
+                    <option value="Analisados">Analisados</option>
+                    <option value="Não Analisados">Não Analisado</option>
+                </select>
+                
+                <span>
+                    <label for="TotalUsuariosInput">Total de usuários:</label>
+                    <div class="button button1 r" id="button-3">
+                        <input type="checkbox" class="checkbox" name='TotalUsuariosInput' id='TotalUsuariosInput'>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                </span>
+                
+                
+                <select name="StatusUsuario" id="StatusUsuario">
+                    <option value="Todos">Todos</option>
+                    <option value="Analisados">Ativos</option>
+                    <option value="Não Analisados">Não ativos</option>
+                </select>
+                
+                
+                <span>
+                    <label for="TotalAnalisesInput">Total de análises:</label>
+                    <div class="button button1 r" id="button-3">
+                        <input type="checkbox" class="checkbox" name='TotalAnalisesInput' id='TotalAnalisesInput'>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                </span>
+                
+                
+                <select name="EmissorasAnalises" id="EmissorasAnalises">
+                    <option value="Todos">Todas</option>
+                    <option value="Globo">Globo</option>
+                    <option value="SBT">SBT</option>
+                    <option value="Record">Record</option>
+                </select>
+                
+                <span class='FiltroCOnteudo'>
+                    <label for="FiltroConteudo">Buscar por conteúdo:</label>
+                    <div class="button button2 r" id="button-3">
+                        <input type="checkbox" class="checkbox" checked name='FiltroConteudo' id='FiltroConteudo'>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                </span>
+                
+                <div class='FiltroCOnteudo ConteudoFiltroContent'>
+                    <select name="dia_transmissao" id="DiaT" class='selectConteudo'>
+                        <option value="">Informe o dia de transmissão</option>
+                        <option value="Segunda-feira">Segunda-feira</option>
+                        <option value="Terça-feira">Terça-feira</option>
+                        <option value="Quarta-feira">Quarta-feira</option>
+                        <option value="Quinta-feira">Quinta-feira</option>
+                        <option value="Sexta-feira">Sexta-feira</option>
+                        <option value="Sábado-feira">Sábado-feira</option>
+                        <option value="Domingo-feira">Domingo-feira</option>
+                    </select>
+                    
+                    <select name="genero" id="genero" class='selectConteudo'>
+                        <option value="">Informe o gênero</option>
+                        <option value='Auditório'>Auditório</option>
+                        <option value="Colunismo Social">Colunismo Social</option>
+                        <option value="Culinário">Culinário</option>
+                        <option value="Debate">Debate</option>
+                        <option value=" Desenho Animado"> Desenho Animado</option>
+                        <option value="Documentário">Documentário</option>
+                        <option value="Educativo">Educativo</option>
+                        <option value="Entrevista">Entrevista</option>
+                        <option value="Especial">Especial</option>
+                        <option value="Esportivo/transmissão ao vivo">Esportivo/transmissão ao vivo</option>
+                        <option value="Espetivo/gravado">Espetivo/gravado</option>
+                        <option value="Game show">Game show</option>
+                        <option value="Humorístico">Humorístico</option>
+                        <option value="Infantil">Infantil</option>
+                        <option value="Informativo">Informativo</option>
+                        <option value="Interativo">Interativo</option>
+                        <option value="Minissérie">Minissérie</option>
+                        <option value="Musical/Show">Musical/Show</option>
+                        <option value="Novela">Novela</option>
+                        <option value="Programas que trabalham com o sensacional da vida cotidiana">Programas que trabalham com o sensacional da vida cotidiana</option>
+                        <option value="Horário político">Horário político</option>
+                        <option value="Debate político">Debate político</option>
+                        <option value="Reality Show">Reality Show</option>
+                        <option value="Missa">Missa</option>
+                        <option value="Culto religioso">Culto religioso</option>
+                        <option value="Série">Série</option>
+                        <option value="Seriado">Seriado</option>
+                        <option value="Sitcom">Sitcom</option>
+                        <option value="Sorteio">Sorteio</option>
+                        <option value="Talkshow">Talkshow</option>
+                        <option value="Telejornalismo">Telejornalismo</option>
+                        <option value="Variedade">Variedade</option>
+                        <option value="Revista eletrônica">Revista eletrônica</option>
+                        <option value="Outros">Outros</option>
+                        
+                        
+                    </select>
+                    
+                    <select name="idioma" id="Idioma" class='selectConteudo'>
+                        <option value="">Selecione o idioma do programa</option>
+                        <option value="Português">Português</option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Espanhol">Espanhol</option>
+                        <option value="Outros idioma">Outros idiomas</option>
+                    </select>
+                    
+                    <select name="nacionalidade_producao" id="Nacionalidade" class='selectConteudo'>
+                        <option value="">Informa a nacionalidade de produção</option>
+                        <option value="Produção nacional">Produção nacional</option>
+                        <option value="Produção regional">Produção regional</option>
+                        <option value="Produção local">Produção local</option>
+                        <option value="Produção dos Estados Unidos">Produção dos Estados Unidos</option>
+                        <option value="Produção do México">Produção do México</option>
+                        <option value="Produção de outros países">Produção de outros países</option>
+                    </select>
+
+                    <select name="conteudo" id="leitura" class='selectConteudo'>
+                            <option value="">Informe qual é o tipo de leitura</option>
+                            <option value="Legendado">Legendado</option>
+                            <option value="Dublado">Dublado</option>
+                            <option value="Não se especifica">Não se especifica</option>
+                     </select>
+                    
+                     <select name="classificacao_indicativa" id="ClassificacaoEmissora" class='selectConteudo'>
+                            <option value=""> Selecione a Classificação</option>
+                            <option value="Livre">Livre</option>
+                            <option value="10">10 anos</option>
+                            <option value="12">12 anos</option>
+                            <option value="14">14 anos</option>
+                            <option value="16">16 anos</option>
+                            <option value="18">18 anos</option>
+                        </select>
+                        <select name="enredo_conteudo" id="Enredo" class='selectConteudo'>
+                                <option value="">Selecione o enredo</option>
+                                <option value='Ação  '>Ação   </option>
+                                <option value='Animação '>Animação  </option>
+                                <option value='Animação Digital '>Animação Digital  </option>
+                                <option value='Arte '>Arte  </option>
+                                <option value='Artes marciais '>Artes marciais  </option>
+                                <option value='Aventura '>Aventura  </option>
+                                <option value='Aventura bíblica '>Aventura bíblica  </option>
+                                <option value='Aventura de assalto '>Aventura de assalto  </option>
+                                <option value='Aventura de guerra '>Aventura de guerra  </option>
+                                <option value='Aventura juvenil '>Aventura juvenil  </option>
+                                <option value='Aventura policial '>Aventura policial  </option>
+                                <option value='Bíblico '>Bíblico  </option>
+                                <option value='Capa-espada '>Capa-espada  </option>
+                                <option value='Chanchada '>Chanchada  </option>
+                                <option value='Chanchada Musical '>Chanchada Musical  </option>
+                                <option value='Ciência e tecnologia '>Ciência e tecnologia  </option>
+                                <option value='Clássico '>Clássico  </option>
+                                <option value='Comédia '>Comédia  </option>
+                                <option value='Comédia clássica '>Comédia clássica  </option>
+                                <option value='Comédia de humor negro '>Comédia de humor negro  </option>
+                                <option value='Comédia dramática '>Comédia dramática  </option>
+                                <option value='Comédia de faroeste '>Comédia de faroeste  </option>
+                                <option value='Comédia infantil '>Comédia infantil  </option>
+                                <option value='Comédia juvenil '>Comédia juvenil  </option>
+                                <option value='Comédia musical '>Comédia musical  </option>
+                                <option value='Comédia pastelão '>Comédia pastelão  </option>
+                                <option value='Comédia policial '>Comédia policial  </option>
+                                <option value='Comédia romântica '>Comédia romântica  </option>
+                                <option value='Comportamento e vida cotidiana '>Comportamento e vida cotidiana  </option>
+                                <option value='Desenho animado '>Desenho animado  </option>
+                                <option value='Didático '>Didático  </option>
+                                <option value='Drama '>Drama  </option>
+                                <option value='Drama biográfico '>Drama biográfico  </option>
+                                <option value='Drama de prisão '>Drama de prisão  </option>
+                                <option value='Drama de guerra '>Drama de guerra  </option>
+                                <option value='Drama erótico '>Drama erótico  </option>
+                                <option value='Drama esportivo '>Drama esportivo  </option>
+                                <option value='Drama histórico  '>Drama histórico   </option>
+                                <option value='Drama policial '>Drama policial  </option>
+                                <option value='Drama político '>Drama político  </option>
+                                <option value='Drama religioso '>Drama religioso  </option>
+                                <option value='Drama romântico '>Drama romântico  </option>
+                                <option value='Educativo '>Educativo  </option>
+                                <option value='Épico '>Épico  </option>
+                                <option value='Erótico '>Erótico  </option>
+                                <option value='Espionagem '>Espionagem  </option>
+                                <option value='Fantasia '>Fantasia  </option>
+                                <option value='Fantasia juvenil '>Fantasia juvenil  </option>
+                                <option value='Faroeste '>Faroeste  </option>
+                                <option value='Ficção científica '>Ficção científica  </option>
+                                <option value='Filme-catástrofe    '>Filme-catástrofe     </option>
+                                <option value='Filme em episódios '>Filme em episódios  </option>
+                                <option value='Gângster '>Gângster  </option>
+                                <option value='Guerra '>Guerra  </option>
+                                <option value='História '>História  </option>
+                                <option value='Infantil '>Infantil  </option>
+                                <option value='Musical '>Musical  </option>
+                                <option value='Musical didático '>Musical didático  </option>
+                                <option value='Musical juvenil clássico '>Musical juvenil clássico  </option>
+                                <option value='Musical natalino '>Musical natalino  </option>
+                                <option value='Natureza e animais  '>Natureza e animais   </option>
+                                <option value='Policial '>Policial  </option>
+                                <option value='Pornográfico '>Pornográfico  </option>
+                                <option value='Procedimentos médicos '>Procedimentos médicos  </option>
+                                <option value='Religioso '>Religioso  </option>
+                                <option value='Romance '>Romance  </option>
+                                <option value='Romance musical '>Romance musical  </option>
+                                <option value='Saúde '>Saúde  </option>
+                                <option value='Surrealista '>Surrealista  </option>
+                                <option value='Suspense '>Suspense  </option>
+                                <option value='Suspense-erótico '>Suspense-erótico  </option>
+                                <option value='Terror '>Terror  </option>
+                                <option value='Vanguarda '>Vanguarda  </option>
+                                <option value='Outros '>Outros  </option>
+                                <option value='Não há gênero a ser acrescentado'>Não há gênero a ser acrescentado.</option>
+                            </select>
+
+                           <span class='FiltroCOnteudo ConteudoViolentoSpan'>
+                                <label for="ConteudoViolentoInput">Existe conteúdo violento?</label>
+                                <div class="button button2 r" id="button-3">
+                                    <input type="checkbox" class="checkbox" checked name='ConteudoViolentoInput' id='ConteudoViolentoInput'>
+                                    <div class="knobs"></div>
+                                    <div class="layer"></div>
+                                </div>
+                            </span>
+                            <div class='ConteudoViolento'>
+                            <select name="relevancia_conteudo_trama" id="relevancia_conteudo_trama" class='selectConteudo'>
+                                <option value="">Relevância do conteúdo violento para a trama:</option>
+                                    <option value='O conteúdo violento não é relevante para a compreensão da trama.'>O conteúdo violento não é relevante para a compreensão da trama.</option>
+                                    <option value='O conteúdo violento é medianamente relevante para a compreensão da trama.'>O conteúdo violento é medianamente relevante para a compreensão da trama.</option>
+                                    <option value='O conteúdo violento é imprescindível para a compreensão da trama.'>O conteúdo violento é imprescindível para a compreensão da trama.</option>
+                            </select>
+
+                            <select name='referencia_conteudo_violento' id='referencia_conteudo_violento' class='selectConteudo'>
+                                    <option value='Referências ao conteúdo violento:'>Referências ao conteúdo violento:</option>
+                                    <option value='Apresenta armas (exceto de fogo).'>Apresenta armas (exceto de fogo).</option>
+                                    <option value='Apresenta armas de fogo.'>Apresenta armas de fogo.</option>
+                                    <option value='Apresenta sangue.'>Apresenta sangue.</option>
+                                    <option value='Apresenta sofrimento da vitima.'>Apresenta sofrimento da vitima.</option>
+                                    <option value='Apresenta descrições, a partir das imagens veiculadas, pormenorizadas do'>Apresenta descrições, a partir das imagens veiculadas, pormenorizadas do</option>
+                                    <option value='violento (incluindo o modus operandi e o corpo das vítimas.'>violento (incluindo o modus operandi e o corpo das vítimas.</option>
+                                    <option value='Apresenta descrições verbais pormenorizadas do ato violento (incluindoo modus operandi e o corpo das vítimas).'>Apresenta descrições verbais pormenorizadas do ato violento (incluindoo modus operandi e o corpo das vítimas).</option>
+                                    <option value='Apresenta consequências negativas (prisão, por exemplo) de curto prazo aoagressor.'>Apresenta consequências negativas (prisão, por exemplo) de curto prazo aoagressor.</option>
+                                    <option value='Não há punição ao agressor.'>Não há punição ao agressor.</option>
+                                    <option value='Há punição ao agressor.'>Há punição ao agressor.</option>
+                                    <option value='Há recompensa ao agressor.'>Há recompensa ao agressor.</option>
+                                    <option value='Apresenta violência como única forma ou a forma predominante de resoluçãode conflitos.'>Apresenta violência como única forma ou a forma predominante de resoluçãode conflitos.</option>
+                                    <option value='Apresenta formas alternativas de resolução de conflitos.'>Apresenta formas alternativas de resolução de conflitos.</option>
+                                    <option value='Apresenta a realização de justiça com as próprias mãos.'>Apresenta a realização de justiça com as próprias mãos.</option>
+                                    <option value='A violência é perpetrada por personagens de imagens valorizadas (os maisbonitos, os mais sadios, os mais inteligentes, os heróis).'>A violência é perpetrada por personagens de imagens valorizadas (os maisbonitos, os mais sadios, os mais inteligentes, os heróis).</option>
+                                    <option value='Há violência do tipo ‘’mocinhos batem em bandidos.'>Há violência do tipo ‘’mocinhos batem em bandidos.</option>
+                                    <option value='Apresenta as consequências da violência para as vítimas de forma não sensacionalista, ou seja, a cena deixa claro o fato de que ser vítima de violência implica sequelas.'>Apresenta as consequências da violência para as vítimas de forma não sensacionalista, ou seja, a cena deixa claro o fato de que ser vítima de violência implica sequelas.</option>
+                                    <option value='Apresenta cenas de vítimas e estado de agonia.'>Apresenta cenas de vítimas e estado de agonia.</option>
+                                    <option value='Apresenta a violência de forma divertida ou humorística.'>Apresenta a violência de forma divertida ou humorística.</option>
+                                    <option value='Condena a violência.'>Condena a violência.</option>
+                                    <option value='Elogia a violência.'>Elogia a violência.</option>
+                                    <option value='Condena e elogia, ambiguamente.'>Condena e elogia, ambiguamente.</option>
+                                    <option value='Há uma glamorização e/ou apologia da violência.'>Há uma glamorização e/ou apologia da violência.</option>
+                                    <option value='Envolve crianças e adolescentes como vítimas.'>Envolve crianças e adolescentes como vítimas.</option>
+                                    <option value='Envolve crianças e adolescentes como agressores.'>Envolve crianças e adolescentes como agressores.</option>
+                                    <option value='A apresentação de sonoplastia reforça o conteúdo violento.'>A apresentação de sonoplastia reforça o conteúdo violento.</option>
+                                    <option value='A apresentação de sonoplastia minimiza o conteúdo violento.'>A apresentação de sonoplastia minimiza o conteúdo violento.</option>
+                                    <option value='O enquadramento da imagem valoriza o conteúdo violento.'>O enquadramento da imagem valoriza o conteúdo violento.</option>
+                                    <option value='O enquadramento da imagem minimiza o conteúdo violento.'>O enquadramento da imagem minimiza o conteúdo violento.</option>
+                                    <option value='Apresenta violência gratuita/banalização da violência.'>Apresenta violência gratuita/banalização da violência.</option>
+                                    <option value='Apresenta violência familiar.'>Apresenta violência familiar.</option>
+                                    <option value='Apresenta a violência dentro de um contexto esportivo (refere-se aos acidentes que, normalmente, decorrem da prática esportiva) - entretanto, não estão aqui incluídos os atos de violência praticados entre os esportistas ou envolvendo os torcedores.'>Apresenta a violência dentro de um contexto esportivo (refere-se aos acidentes que, normalmente, decorrem da prática esportiva) - entretanto, não estão aqui incluídos os atos de violência praticados entre os esportistas ou envolvendo os torcedores.</option>
+                                    <option value='Apresenta a violência dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.'>Apresenta a violência dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.</option>
+                                </select>
+                                <select name="tipo_violencia" id="tipo_violencia" class='selectConteudo'>
+                                        <option value="">Quanto ao tipo de violência envolvida</option>
+                                        <option value='Assassinato/homicídio.'>Assassinato/homicídio.</option>
+                                        <option value='Agressão física/lesão corporal.'>Agressão física/lesão corporal.</option>
+                                        <option value='Abuso sexual.'>Abuso sexual.</option>
+                                        <option value='Atos criminosos sem lesões corporais ou contra a vida.'>Atos criminosos sem lesões corporais ou contra a vida.</option>
+                                        <option value='Estupro.'>Estupro.</option>
+                                        <option value='Exploração sexual'>Exploração sexual</option>
+                                        <option value='Mutilação de partes de corpo.'>Mutilação de partes de corpo.</option>
+                                        <option value='Suicídio'>Suicídio</option>
+                                        <option value='Tortura/crueldade'>Tortura/crueldade</option>
+                                        <option value='Outros'>Outros</option>
+                                    </select>
+                                    <select name="cena_nudes" id="cena_nudes" class='selectConteudo'>
+                                        <option value="">O material em análise apresenta cenas de nudez:</option>
+                                            <option value="Sim">Sim</option>
+                                            <option value="Não">Não</option>
+                                        </select>
+                                        <select name="cena_sexuais" id="cena_sexuais" class='selectConteudo'>
+                                            <option value="">O material em análise apresenta cenas de relações sexuais?</option>
+                                                <option value="Sim">Sim</option>
+                                                <option value="Não">Não</option>
+                                        </select>
+
+                                        <select name="proprocao_conteudo_sexual" id="proprocao_conteudo_sexual" class='selectConteudo'>
+                                                <option value="">Não Contém Proporção do conteúdo sexual/com nudez no material analisado:</option>
+                                                <option value='Completamente pontual'>Completamente pontual</option>
+                                                <option value='Menor de 5%'>Menor de 5%</option>
+                                                <option value='Entre 5% e 10%'>Entre 5% e 10%</option>
+                                                <option value='Entre 10% e 30%'>Entre 10% e 30%</option>
+                                                <option value='Entre 30% e 50%'>Entre 30% e 50%</option>
+                                                <option value='Entre 50% e 70%'>Entre 50% e 70%</option>
+                                                <option value='Não - entre 70% e 100%'>Não - entre 70% e 100%</option>
+                                        </select>
+                                        <select name="relevancia_conteudo_sexual" id="relevancia_conteudo_sexual" class='selectConteudo'>
+                                            <option value="">Relevância do conteúdo sexual para a trama:</option>
+                                                <option value='O conteúdo sexual não é relevante para a compreensão da trama.'>O conteúdo sexual não é relevante para a compreensão da trama.</option>
+                                                <option value='O conteúdo sexual é medianamente relevante para a compreensão da trama.'>O conteúdo sexual é medianamente relevante para a compreensão da trama.</option>
+                                                <option value='O conteúdo sexual é imprescindível para a compreensão da trama.'>O conteúdo sexual é imprescindível para a compreensão da trama.</option>
+                                        </select>
+                                        <select name="referencia_conteudo_sexual" id="referencia_conteudo_sexual" class='selectConteudo'>
+                                            <option value="">Referências do conteúdo sexual/de nudez no material analisado:</option>
+                                                <option value='Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e'>Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e</option>
+                                                <option value='nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.'>nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.</option>
+                                                <option value='Apresenta nudez completa.'>Apresenta nudez completa.</option>
+                                                <option value='A apresentação da nudez se dá em um contexto científico, médico, de educação sexual ou totalmente desvencilhado de qualquer conotação erótica.'>A apresentação da nudez se dá em um contexto científico, médico, de educação sexual ou totalmente desvencilhado de qualquer conotação erótica.</option>
+                                                <option value='Apresenta cenas de insinuação sexual (é possível deduzir que a relação ocorrerá ou está acontecendo, sem que, contudo, seja possível visualizar).'>Apresenta cenas de insinuação sexual (é possível deduzir que a relação ocorrerá ou está acontecendo, sem que, contudo, seja possível visualizar).</option>
+                                                <option value='Apresenta cenas de sexo sem penetração.'>Apresenta cenas de sexo sem penetração.</option>
+                                                <option value='Apresenta insinuações se sexo oral e/ou anal.'>Apresenta insinuações se sexo oral e/ou anal.</option>
+                                                <option value='Apresenta insinuações se masturbação.'>Apresenta insinuações se masturbação.</option>
+                                                <option value='Apresenta sexo explícito.'>Apresenta sexo explícito.</option>
+                                                <option value='Há cenas de incesto.'>Há cenas de incesto.</option>
+                                                <option value='Há cenas de prostituição.'>Há cenas de prostituição.</option>
+                                                <option value='A mulher é tratada como objeto.'>A mulher é tratada como objeto.</option>
+                                                <option value='O sexo é associado com a traição extraconjugal.'>O sexo é associado com a traição extraconjugal.</option>
+                                                <option value='O sexo é associado com a promiscuidade (várias relações, com pessoas diferentes, em curtos espaços temporais).'>O sexo é associado com a promiscuidade (várias relações, com pessoas diferentes, em curtos espaços temporais).</option>
+                                                <option value='O estupro é apresentado como consequência da paixão e não como um crime.'>O estupro é apresentado como consequência da paixão e não como um crime.</option>
+                                                <option value='O estupro como consequência do consumo de drogas ilícitas e nãocomo um crime.'>O estupro como consequência do consumo de drogas ilícitas e nãocomo um crime.</option>
+                                                <option value='Há o envolvimento de crianças e adolescentes nas cenas com conteúdo sexual.'>Há o envolvimento de crianças e adolescentes nas cenas com conteúdo sexual.</option>
+                                                <option value='A apresentação de fundo musical reforça o conteúdo sexual.'>A apresentação de fundo musical reforça o conteúdo sexual.</option>
+                                                <option value='A apresentação de fundo musical minimiza o conteúdo sexual.'>A apresentação de fundo musical minimiza o conteúdo sexual.</option>
+                                                <option value='A apresentação de sonoplastia minimiza o conteúdo sexual.'>A apresentação de sonoplastia minimiza o conteúdo sexual.</option>
+                                                <option value='A apresentação de sonoplastia valoriza o conteúdo sexual.'>A apresentação de sonoplastia valoriza o conteúdo sexual.</option>
+                                                <option value='O enquadramento da imagem valoriza o conteúdo sexual.'>O enquadramento da imagem valoriza o conteúdo sexual.</option>
+                                                <option value='O enquadramento da imagem minimiza o conteúdo sexual.'>O enquadramento da imagem minimiza o conteúdo sexual.</option>
+                                        </select>
+                                        <select name="conteudo_narcoticos" id="conteudo_narcoticos" class='selectConteudo'>
+                                            <option value="">O material em análise apresenta algum tipo de conteúdo envolvendo drogas?</option>
+                                                <option value='Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.'>Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.</option>
+                                                <option value='Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.'>Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.</option>
+                                                <option value='Sim, ambas'>Sim, ambas</option>
+                                                <option value='Não'>Não</option>
+                                        </select>
+                                        <select name="relevancia_conteudo_narcotico" id="relevancia_conteudo_narcotico" class='selectConteudo'>
+                                            <option value="">Relevância do conteúdo envolvendo drogas para a trama:    </option>
+                                                <option value='O conteúdo não é relevante para a compreensão da trama.'>O conteúdo não é relevante para a compreensão da trama.</option>
+                                                <option value='O conteúdo é medianamente relevante para a compreensão da trama.'>O conteúdo é medianamente relevante para a compreensão da trama.</option>
+                                                <option value='O conteúdo é imprescindível para a compreensão da trama.'>O conteúdo é imprescindível para a compreensão da trama.</option>
+                                        </select>
+                                        <select name="referencia_conteudo_drogas" id="referencia_conteudo_drogas" class='selectConteudo'>
+                                            <option value="">Referência ao conteúdo envolvendo drogas:</option>
+                                                <option value='Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.'>Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
+                                                <option value='Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.'>Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
+                                                <option value='Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).'>Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).</option>
+                                                <option value='Apresenta consequências negativas (ser malsucedido na vida, por exemplo) de longo prazo ao agressor (traficante).'>Apresenta consequências negativas (ser malsucedido na vida, por exemplo) de longo prazo ao agressor (traficante).</option>
+                                                <option value='Apresenta consequências negativas (problemas de saúde, por exemplo) para o consumidor (usuário).'>Apresenta consequências negativas (problemas de saúde, por exemplo) para o consumidor (usuário).</option>
+                                                <option value='Apresenta consequências positivas (prazer, p. ex.) para o consumidor (usuário)'>Apresenta consequências positivas (prazer, p. ex.) para o consumidor (usuário)</option>
+                                                <option value='Não há punição do agressor (traficante).'>Não há punição do agressor (traficante).</option>
+                                                <option value='Há recompensa ao agressor (traficante).'>Há recompensa ao agressor (traficante).</option>
+                                                <option value='Apresenta drogas como a única forma ou a forma predominante de resoluçãode problema.'>Apresenta drogas como a única forma ou a forma predominante de resoluçãode problema.</option>
+                                                <option value='Apresenta formas alternativas de resolução de problemas.'>Apresenta formas alternativas de resolução de problemas.</option>
+                                                <option value='Apresenta uma discussão ao redor do tema consumo de drogas.'>Apresenta uma discussão ao redor do tema consumo de drogas.</option>
+                                                <option value='Apresenta uma discussão ao redor do tema tráfico de drogas.'>Apresenta uma discussão ao redor do tema tráfico de drogas.</option>
+                                                <option value='A apresentação de fundo musical reforça o conteúdo'>A apresentação de fundo musical reforça o conteúdo</option>
+                                                <option value='A apresentação de fundo musical minimiza o conteúdo.'>A apresentação de fundo musical minimiza o conteúdo.</option>
+                                                <option value='A apresentação de sonoplastia reforça o conteúdo.'>A apresentação de sonoplastia reforça o conteúdo.</option>
+                                                <option value='A apresentação de sonoplastia minimiza o conteúdo.'>A apresentação de sonoplastia minimiza o conteúdo.</option>
+                                                <option value='O enquadramento da imagem valoriza o conteúdo.'>O enquadramento da imagem valoriza o conteúdo.</option>
+                                                <option value='O enquadramento da imagem minimiza o conteúdo.'>O enquadramento da imagem minimiza o conteúdo.</option>
+                                                <option value='Referências ao conteúdo envolvendo drogas apresentadas dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.'>Referências ao conteúdo envolvendo drogas apresentadas dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.</option>
+                                                <option value='Envolve crianças e/ou adolescentes na cena. '>Envolve crianças e/ou adolescentes na cena. </option>
+                                                
+                                        </select>
+
+                                        <select name="tipo_linguagem" id="tipo_linguagem" class='selectConteudo' >
+                                            
+                                            <option value="">Quanto ao tipo de linguagem:</option>
+                                                <option value='Apresenta linguagem chula, de baixo calão, palavrões.'>Apresenta linguagem chula, de baixo calão, palavrões.</option>
+                                                <option value='Apresenta linguagem erótica, de conteúdo sexual.'>Apresenta linguagem erótica, de conteúdo sexual.</option>
+                                                <option value='Apresenta gestos obscenos.'>Apresenta gestos obscenos.</option>
+                                                <option value='Apresenta gírias.'>Apresenta gírias.</option>
+                                                <option value='Apresenta ironias, metáforas.'>Apresenta ironias, metáforas.</option>
+                                                <option value='Apresenta linguagem técnica/erudita.'>Apresenta linguagem técnica/erudita.</option>
+                                                <option value='Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.'>Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.</option>
+                                                <option value='Não se aplica.'>Não se aplica.</option>
+                                                <option value='Acidentalmente utilizados.'>Acidentalmente utilizados.</option>
+                                                <option value='Medianamente utilizados.'>Medianamente utilizados.</option>
+                                                <option value='Muito utilizados.'>Muito utilizados.</option>
+                                        </select>
+
+                                        <select name="tipo_descriminacao" id="tipo_descriminacao" class='selectConteudo'>
+                                            <option value="">Quanto ao tipo de discriminação apresentada:</option>
+                                                <option value='De gênero'>De gênero</option>
+                                                <option value='De classe'>De classe</option>
+                                                <option value='Contra gays, lésbicas, bissexuais e/ou transgêneros.'>Contra gays, lésbicas, bissexuais e/ou transgêneros.</option>
+                                                <option value='Contra raças/etnias'>Contra raças/etnias</option>
+                                                <option value='Contra migrantes e imigrantes.'>Contra migrantes e imigrantes.</option>
+                                                <option value='Contra indígenas.'>Contra indígenas.</option>
+                                                <option value='Contra determinados povos/populações.'>Contra determinados povos/populações.</option>
+                                                <option value='Contra crianças/adolescentes.'>Contra crianças/adolescentes.</option>
+                                                <option value='Contra religiões.'>Contra religiões.</option>
+                                                <option value='Contra pessoas com deficiência.'>Contra pessoas com deficiência.</option>
+                                                <option value='Outras.'>Outras.</option>
+                                                <option value='Não se aplica.'>Não se aplica.</option>
+                                        </select>
+
+                                        <select name="vinculacao_esteriotipo" id="vinculacao_esteriotipo" class='selectConteudo'>
+
+                                            <option value="">Há na maior parte das cenas,
+                                                    a veiculação de estereótipos?</option>
+                                                <option value='Sim'>Sim</option>
+                                                <option value='Não'>Não</option>
+                                        </select>
+                                        <select name="intensidade_comportamento_descriminatorio" class='selectConteudo' id="intensidade_comportamento_descriminatorio">
+                                            <option value="">Quando à intensidade da presença de comportamento discriminatório</option>    
+                                            <option value='Acidentalmente verificado.'>Acidentalmente verificado.</option>
+                                                <option value='Medianamente verificado.'>Medianamente verificado.</option>
+                                                <option value='Muito verificado.'>Muito verificado.</option>
+                                        </select>
+                                    
+                                        <select name="comportamento_descriminatorio" id="comportamento_descriminatorio" class='selectConteudo'>
+                                                <option value="">Quanto ao comportamento discriminatório.</option>    
+                                            <option value='É condenado.'>É condenado.<option>
+                                                        <option value='É valorizado.'>É valorizado.<option>
+                                                        <option value='É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.'>É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.<option>
+                                                        <option value='Os agressores são punidos.'>Os agressores são punidos.<option>
+                                                        <option value='Os agressores não são punidos.'>Os agressores não são punidos.<option>
+                                                        <option value='Os agressores são valorizados/recompensados.'>Os agressores são valorizados/recompensados.<option>
+                                        </select>
+                                        </div>
                 </div>
                 
-                <div class='EstatisticasContainer Graphic01'>
-                    <div class='HeaderEst'> 
-                        <h4>Total de analises:</h4>
-                        <h5>251</h5>
-                    </div>
-                    <p>
-                            <canvas id="totalAnalises" width="800" height="450"></canvas>
-                    </p>
-                </div>
-
-                <div class='EstatisticasContainer Graphic01'>
-                        <div class='HeaderEst'> 
-                            <h4>Total de analises não realizadas:</h4>
-                            <h5>53</h5>
-                        </div>
-                        <p>
-                                <canvas id="totalNaoAnalise" width="800" height="450"></canvas>
-                        </p>
-                    </div>
-
+                <button type='Submit'>Gerar relátorio</button>
+                
+            </form>
+            
+            
+            
+        </div>
     </div>
-
+    
     
 </main>
 
@@ -51,6 +518,7 @@
     Chart.defaults.global.defaultFontColor = '#b5bdcf';
     Chart.defaults.global.defaultFontFamily	 = 'Avenir Next';
     Chart.defaults.global.defaultFontSize	 =  14;
+    
     new Chart(document.getElementById("totalAnalises"), {
         type: 'bar',
         data: {
@@ -112,7 +580,7 @@
             }
         }
     });
-
+    
     new Chart(document.getElementById("totalProgramas"), {
         type: 'bar',
         data: {
@@ -181,6 +649,7 @@
             
             datasets: [
             {   
+                label: "2018",
                 borderColor: "#0a6cce",
                 borderWidth: 2,
                 backgroundColor: [
@@ -235,66 +704,288 @@
                 }
             }
         }
-});
-
-
-
-    // var marksCanvas = document.getElementById("graficoTotalAnalise");
+    });
     
-    // Chart.defaults.global.defaultFontFamily = "Lato";
-    // Chart.defaults.global.defaultFontSize = 18;
+    var myDoughnutChart = new Chart(document.getElementById("totalUsuarios"), {
+        type: 'doughnut',
+        data: {
+            labels: ["Usários", "Ativos",  "Inativos"],
+            
+            datasets: [
+            {   
+                borderColor: "#0a6cce",
+                borderWidth: 2,
+                backgroundColor: [
+                "rgba(10,108,206,0.37)",
+                "rgba(0,255,10,0.3)",
+                "rgba(255,99,132,0.2)",
+                ],
+                data: [120, 100, 20]
+            }
+            ]
+        },
+        options: {
+            
+            
+            scales: {
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(237,242,253,0.46)"
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            responsive: true,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#edf2fd',
+                    fontFamily: 'Avenir Next',
+                    fontSize: 15
+                }
+            },
+            title: {
+                display: false,
+            },
+            tooltips:
+            {
+                callbacks: {
+                    labelColor: function(tooltipItem, chart) {
+                        return {
+                            borderColor: 'rgba(10,108,206,0.37)',
+                            backgroundColor: 'rgba(10,108,206,0.37)'
+                        }
+                    },
+                    labelTextColor:function(tooltipItem, chart){
+                        return '#edf2fd';
+                    }
+                }
+            }
+        }
+    });
     
-    // var marksData = {
-        //   labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-        //   datasets: [{
-            //     label: "Não analisadas",
-            //     backgroundColor: "transparent",
-            //     borderColor: "rgba(200,0,0,0.6)",
-            //     fill: false,
-            //     radius: 6,
-            //     pointRadius: 6,
-            //     pointBorderWidth: 3,
-            //     pointBackgroundColor: "orange",
-            //     pointBorderColor: "rgba(200,0,0,0.6)",
-            //     pointHoverRadius: 10,
-            //     data: [65, 75, 70, 80, 60, 80, 10, 9, 20, 10, 40, 23]
-            //   }, {
-                //     label: "Analisadas",
-                //     backgroundColor: "transparent",
-                //     borderColor: "rgba(0,0,200,0.6)",
-                //     fill: false,
-                //     radius: 6,
-                //     pointRadius: 6,
-                //     pointBorderWidth: 3,
-                //     pointBackgroundColor: "cornflowerblue",
-                //     pointBorderColor: "rgba(0,0,200,0.6)",
-                //     pointHoverRadius: 10,
-                //     data: [54, 65, 60, 70, 70, 75, 13, 10, 20, 30, 44, 24]
-                //   }]
-                // };
-                
-                // var chartOptions = {
-                    //   scale: {
-                        //     ticks: {
-                            //       beginAtZero: true,
-                            //       min: 0,
-                            //       max: 100,
-                            //       stepSize: 20
-                            //     },
-                            //     pointLabels: {
-                                //       fontSize: 18
-                                //     }
-                                //   },
-                                //   legend: {
-                                    //     position: 'left'
-                                    //   }
-                                    // };
-                                    
-                                    // var radarChart = new Chart(marksCanvas, {
-                                        //   type: 'horizontalBar',
-                                        //   data: marksData,
-                                        //   options: chartOptions
-                                        // });
-                                        
-                                        
-                                    </script>
+    var speedCanvas = document.getElementById("totalEmissoras");
+    
+    
+    
+    var speedData = {
+        labels: ["Globo", "Record", "Band", "SBT"],
+        datasets: [{
+            label: "Análises",
+            data: [100, 59, 150, 20],
+            backgroundColor: "rgba(10,108,206,0.37)",
+            borderColor: "#0a6cce",
+            borderWidth: 2,
+            hoverBackgroundColor: "rgba(10,108,206,0.57)",
+            hoverBorderColor: "#0b74dc", 
+        }]
+    };
+    
+    var chartOptions = {
+        legend: {
+            display: true,
+            position: 'top',
+            labels: {
+                fontColor: '#edf2fd',
+                fontFamily: 'Avenir Next',
+                fontSize: 15
+            }
+        },
+        scales: {
+            yAxes: [{
+                stacked: true,
+                gridLines: {
+                    display: true,
+                    color: "rgba(237,242,253,0.46)"
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
+        },
+        responsive: true,
+        tooltips:
+        {
+            callbacks: {
+                labelColor: function(tooltipItem, chart) {
+                    return {
+                        borderColor: 'rgba(10,108,206,0.37)',
+                        backgroundColor: 'rgba(10,108,206,0.37)'
+                    }
+                },
+                labelTextColor:function(tooltipItem, chart){
+                    return '#edf2fd';
+                }
+            }
+        }
+    };
+    
+    var lineChart = new Chart(speedCanvas, {
+        type: 'line',
+        data: speedData,
+        options: chartOptions
+    });
+
+  
+</script>
+
+<style>
+    
+    .toggle-button-cover
+    {
+        display: table-cell;
+        position: relative;
+        width: 200px;
+        height: 140px;
+        box-sizing: border-box;
+    }
+    
+    .button-cover
+    {
+        margin: 10px;
+        background-color: #fff;
+        box-shadow: 0 3px 0 #e7efef;
+    }
+    
+    .button-cover:before
+    {
+        counter-increment: button-counter;
+        content: counter(button-counter);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #e7efef;
+        font-size: 12px;
+        line-height: 1;
+        padding: 5px;
+    }
+    
+    .button-cover, .knobs, .layer
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .button
+    {
+        position: relative;
+        top: 50%;
+        height: 36px;
+        overflow: hidden;
+        margin: 0;
+        margin-top: .7em;
+    }
+    .button1
+    {
+        width: 100%
+    }
+    
+    .button.r, .button.r .layer
+    {
+        border-radius: 100px;
+    }
+    
+    .button.b2
+    {
+        border-radius: 2px;
+    }
+    
+    .checkbox
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+    }
+    
+    .knobs
+    {
+        z-index: 2;
+    }
+    
+    .layer
+    {
+        width: 100%;
+        background-color: #edf2f2;
+        transition: 0.3s ease all;
+        z-index: 1;
+    }
+    
+    /* Button 3 */
+    #button-3 .knobs:before
+    {
+        content: 'SIM';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 22px;
+        height: 10px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        font-family: 'Avenir Next';
+        text-align: center;
+        line-height: 1;
+        padding: 9px 4px;
+        background-color: #0a6cce;
+        border-radius: 50%;
+        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+    }
+    
+    #button-3 .checkbox:active + .knobs:before
+    {
+        width: 70px;
+        border-radius: 100px;
+    }
+    
+    #button-3 .checkbox:checked:active + .knobs:before
+    {
+        margin-left: -26px;
+    }
+    
+    #button-3 .checkbox:checked + .knobs:before
+    {
+        content: 'NÃO';
+        background-color: #ff1403;
+        
+    }
+    .button1 .checkbox:checked + .knobs:before
+    {
+        left: 125px !important
+    }
+    .button2 .checkbox:checked + .knobs:before
+    {
+        left: 272px !important
+    }
+    
+    
+    #button-3 .checkbox:checked ~ .layer
+    {
+        background-color: #f7d8d8;
+    }
+    
+    .FiltroCOnteudo
+    {
+        width: 100% !important
+    }
+    .button2
+    {
+        width: 100%;
+    }
+
+</style>

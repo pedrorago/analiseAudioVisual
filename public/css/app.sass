@@ -251,6 +251,9 @@ header
     display: flex
     justify-content: space-between
     transition: .3s ease-out
+    position: fixed
+    z-index: 100
+    right: 0
 
 
 
@@ -1409,7 +1412,111 @@ nav
 .Graphic01
     width: 49%
     height: 34em
+
+.Graphic02
+    width: 49%
+    height: 26em
+
+.Graphic03
+    width: 63%
+
+    .HeaderEst
+        width: 95% !important
     
+    p
+        height: 70% !important
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        margin-top: 0em !important
+
+
+.Graphic04
+    width: 33%
+    align-items: flex-start !important
+    height: 31.1em
+
+    .HeaderEst
+        width: 83% !important
+        margin-bottom: 2em
+
+    span
+        display: flex
+        flex-direction: column
+        width: 52%
+
+        label
+            font-family: Avenir Next
+            color: #edf2f2
+    
+    .EstatisctBody
+        width: 82%
+        max-height: 72%
+        display: flex
+        align-items: flex-start
+        padding: 0em 2em
+        overflow-y: auto
+        flex-wrap: wrap
+        padding-bottom: 1em
+            
+        &::-webkit-scrollbar
+            width: 5px
+
+        &::-webkit-scrollbar-track
+            background: #323c58
+            border-radius: 25px
+
+        &::-webkit-scrollbar-thumb
+            border-radius: 25px
+            background: #5e6880
+
+        select
+            border: 0px
+            height: 2.7em
+            border-radius: 27px
+            padding: 0em 1em
+            background: #edf2f2
+
+            &:focus
+                outline: none
+
+
+        #StatusProgramas, #StatusUsuario, #StatusTotalAnalise, #EmissorasAnalises
+            width: 43.6%
+            margin-bottom: 1.3em
+            margin-top: 2em
+            margin-left: 1em
+        
+        #ConteudoAnalise
+            margin-left: 0em
+            margin-top: 1.4em
+            width: 100%
+
+        .selectConteudo
+            width: 100%
+            margin-top: 1.7em
+        
+        .ConteudoViolentoSpan
+            margin-top: 1.7em
+        
+        .ConteudoFiltroContent, .ConteudoViolento
+            height: 0em
+            transition: .3s ease-out
+            overflow: hidden
+        
+        .violentoActive
+            height: auto !important
+            
+        button
+            @include botao(1em 2em, #0058ff)
+            width: 100%
+            margin-top: 1.8em
+
+@media(max-width: 1440px)
+    .Graphic01
+        height: 25em   
+
 .EstatisticasContainer
     background: #191f31
     border-radius: 19px
@@ -1419,6 +1526,8 @@ nav
     overflow: hidden
     flex-direction: column
     margin-bottom: 2em
+    box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.2)
+
 
     p
         width: 89%

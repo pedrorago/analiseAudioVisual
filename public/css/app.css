@@ -90,7 +90,10 @@ header {
   float: right;
   display: flex;
   justify-content: space-between;
-  transition: 0.3s ease-out; }
+  transition: 0.3s ease-out;
+  position: fixed;
+  z-index: 100;
+  right: 0; }
   header .analyzeHeader {
     display: none;
     align-items: center;
@@ -1306,6 +1309,99 @@ nav {
   width: 49%;
   height: 34em; }
 
+.Graphic02 {
+  width: 49%;
+  height: 26em; }
+
+.Graphic03 {
+  width: 63%; }
+  .Graphic03 .HeaderEst {
+    width: 95% !important; }
+  .Graphic03 p {
+    height: 70% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 0em !important; }
+
+.Graphic04 {
+  width: 33%;
+  align-items: flex-start !important;
+  height: 31.1em; }
+  .Graphic04 .HeaderEst {
+    width: 83% !important;
+    margin-bottom: 2em; }
+  .Graphic04 span {
+    display: flex;
+    flex-direction: column;
+    width: 52%; }
+    .Graphic04 span label {
+      font-family: Avenir Next;
+      color: #edf2f2; }
+  .Graphic04 .EstatisctBody {
+    width: 82%;
+    max-height: 72%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0em 2em;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    padding-bottom: 1em; }
+    .Graphic04 .EstatisctBody::-webkit-scrollbar {
+      width: 5px; }
+    .Graphic04 .EstatisctBody::-webkit-scrollbar-track {
+      background: #323c58;
+      border-radius: 25px; }
+    .Graphic04 .EstatisctBody::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+      background: #5e6880; }
+    .Graphic04 .EstatisctBody select {
+      border: 0px;
+      height: 2.7em;
+      border-radius: 27px;
+      padding: 0em 1em;
+      background: #edf2f2; }
+      .Graphic04 .EstatisctBody select:focus {
+        outline: none; }
+    .Graphic04 .EstatisctBody #StatusProgramas, .Graphic04 .EstatisctBody #StatusUsuario, .Graphic04 .EstatisctBody #StatusTotalAnalise, .Graphic04 .EstatisctBody #EmissorasAnalises {
+      width: 43.6%;
+      margin-bottom: 1.3em;
+      margin-top: 2em;
+      margin-left: 1em; }
+    .Graphic04 .EstatisctBody #ConteudoAnalise {
+      margin-left: 0em;
+      margin-top: 1.4em;
+      width: 100%; }
+    .Graphic04 .EstatisctBody .selectConteudo {
+      width: 100%;
+      margin-top: 1.7em; }
+    .Graphic04 .EstatisctBody .ConteudoViolentoSpan {
+      margin-top: 1.7em; }
+    .Graphic04 .EstatisctBody .ConteudoFiltroContent, .Graphic04 .EstatisctBody .ConteudoViolento {
+      height: 0em;
+      transition: 0.3s ease-out;
+      overflow: hidden; }
+    .Graphic04 .EstatisctBody .violentoActive {
+      height: auto !important; }
+    .Graphic04 .EstatisctBody button {
+      background: #0058ff;
+      color: #edf2fd;
+      text-decoration: none;
+      font-family: Avenir Next;
+      padding: 1em 2em;
+      border-radius: 6px;
+      transition: 0.3s ease-out;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      margin-top: 1.8em; }
+      .Graphic04 .EstatisctBody button:focus {
+        outline: none; }
+
+@media(max-width: 1440px) {
+  .Graphic01 {
+    height: 25em; } }
 .EstatisticasContainer {
   background: #191f31;
   border-radius: 19px;
@@ -1314,7 +1410,8 @@ nav {
   justify-content: flex-start;
   overflow: hidden;
   flex-direction: column;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.2); }
   .EstatisticasContainer p {
     width: 89%;
     height: 81%;
