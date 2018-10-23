@@ -99,7 +99,7 @@ module.exports = function (app, passport) {
                 return UserService.edit_user(user);
 
             }).then(resp => {
-                res.json(resp);
+                res.redirect('profile');
             })
             .catch(function (e) {
                 res.json(e);
