@@ -921,10 +921,8 @@ nav {
     top: 26%;
     right: 3%;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.1;
     transition: 0.3s ease-out; }
-    #EditForm span img:hover, .formProfile span img:hover {
-      opacity: 1; }
 #EditForm .inputTimes img, .formProfile .inputTimes img {
   top: 36%;
   right: 6%; }
