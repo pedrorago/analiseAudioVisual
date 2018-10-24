@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "audio_visual",
+    "password": "12345678",
+    "database": "saav",
     "host": "localhost",
     "dialect": "mysql"
   },
