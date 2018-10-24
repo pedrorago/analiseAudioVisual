@@ -217,7 +217,7 @@ $(function()
 });
 
 
-var ctx = document.getElementById("graficoSemana").getContext('2d');
+var ctx = document.getElementById("graficoSemana");
 var graficoSemana = new Chart(ctx, 
     {
         type: 'line',
