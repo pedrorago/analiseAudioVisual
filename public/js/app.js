@@ -1,6 +1,15 @@
 
 $(function()
 {
+
+    setTimeout(function()
+    {
+        $("nav li a p").css("opacity", "1");
+        $(".containerReports").css("opacity", "1");
+    }, 1000);
+
+
+
     $('#FiltroConteudo').on('click', function() 
     {
         if( $("#FiltroConteudo").is(':checked') ){
@@ -88,26 +97,23 @@ $(function()
         }
         
     });
-    
-    var typingTimer; 
-    var doneTypingInterval = 1000; 
-    
-    /*$('#EditForm input, .formProfile input, .formProfile textarea').keyup(function() 
-    {
-        clearTimeout(typingTimer);
-        if ($('#EditForm input, .formProfile input, .formProfile textarea').val) 
-        {
-            typingTimer = setTimeout(doneTyping, doneTypingInterval);
-        }
-    });*/
-    
-    function doneTyping() {
-        $("#EditForm input, .formProfile input, .formProfile textarea").attr("disabled", "true");
-        $("#EditForm input, .formProfile input, .formProfile textarea").css("color", "#333d5d");
-    }
-    
-    
-    
+var typingTimer; //timer identifier
+var doneTypingInterval = 1000; //time in ms, 1 second for example
+
+//on keyup, start the countdown
+$('#EditForm input, .formProfile input, .formProfile textarea').keyup(function() {
+  $(this).siblings(".pencilEdit").css("opacity", '1');
+  clearTimeout(typingTimer);
+  if ($('#EditForm input, .formProfile input, .formProfile textarea').val) {
+    typingTimer = setTimeout(doneTyping, doneTypingInterval);
+  }
+});
+
+//user is "finished typing," do something
+function doneTyping() {
+    $(".pencilEdit").css("opacity", '0.1');
+}
+
     var tipoArquivoProgram;
     
     /*$(".pencilEdit").on('click', function()

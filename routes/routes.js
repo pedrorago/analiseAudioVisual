@@ -125,6 +125,13 @@ module.exports = function (app, passport) {
         })
     });
 
+    
+    app.get('/reports', function (req, res) {
+        res.locals.user = req.user;
+        res.render('reports.ejs'); // load the index.ejs file
+    });
+
+
     app.get('/analyze', function (req, res) {
         res.locals.user = req.user;
         res.render('analyze.ejs'); // load the index.ejs file

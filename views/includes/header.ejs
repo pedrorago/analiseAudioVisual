@@ -66,8 +66,14 @@
 
         </div>
         <div class='userIconContainer'>
-            <picture>
-                <img src="data:image/png;base64, <%=locals.user.photo%>" alt="">
+            <picture class='pictureUserLogout'>
+                <div class='containerIMGPic'>
+                    <img src="data:image/png;base64, <%=locals.user.photo%>" alt="">
+                </div>
+                <a href="/logout" class='titleBox'>
+                        <span></span>
+                        <p>Sair</p>
+                </a>
             </picture>
         </div>
     </header>
