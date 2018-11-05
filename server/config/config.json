@@ -4,20 +4,23 @@
     "password": "beto2525",
     "database": "saav",
     "host": "mysql995.umbler.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": "Op"
   },
   "test": {
     "username": "betonix",
     "password": "beto2525",
     "database": "saav",
     "host": "mysql995.umbler.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": "Op"
   },
   "production": {
     "username": "betonix",
     "password": "beto2525",
     "database": "saav",
     "host": "mysql995.umbler.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": "Op"
   }
 }

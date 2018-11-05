@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     photo        : DataTypes.STRING,
   },{
     freezeTableName: true,
-    tableName   : 'Users'
+    tableName   : 'Users',
+    operatorsAliases: false
   });
 
   return User;

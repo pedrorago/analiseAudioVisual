@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     tableName   : 'analise',
     createdAt    : false,
     updatedAt    : false,
+    operatorsAliases: false
   });
 
   return Analise;

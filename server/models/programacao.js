@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     tableName   : 'programacao',
     updatedAt    : false,
+    operatorsAliases: false
   });
 
   return Programacao;
