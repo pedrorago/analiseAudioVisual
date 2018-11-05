@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "12345678",
+    "username": "betonix",
+    "password": "beto2525",
     "database": "saav",
-    "host": "localhost",
+    "host": "mysql995.umbler.com",
     "dialect": "mysql"
   },
   "test": {
     "username": "betonix",
-    "password": "roberto2525",
-    "database": "analise_visual",
-    "host": "db4free.net",
+    "password": "beto2525",
+    "database": "saav",
+    "host": "mysql995.umbler.com",
     "dialect": "mysql"
   },
   "production": {
     "username": "betonix",
-    "password": "roberto2525",
-    "database": "analise_visual",
-    "host": "db4free.net",
+    "password": "beto2525",
+    "database": "saav",
+    "host": "mysql995.umbler.com",
     "dialect": "mysql"
   }
 }
