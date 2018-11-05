@@ -5,7 +5,8 @@
     "database": "saav",
     "host": "mysql995.umbler.com",
     "dialect": "mysql",
-    "operatorsAliases": "Op"
+    "operatorsAliases": "Op",
+    "port":41890
   },
   "test": {
     "username": "betonix",
