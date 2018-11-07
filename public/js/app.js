@@ -185,13 +185,14 @@ function doneTyping() {
             
             if(!vazio)
             {
-                
+
                 var nomeArquivo = $("#Upload").val();
                 
                 var self = $('.upload');
                 if(self.hasClass('do')) 
                 {
-                    self.removeClass('do animateEnd');
+                    self.removeClass('do');
+                    self.removeClass('animateEnd');
                 } else 
                 {
                     self.addClass('do');

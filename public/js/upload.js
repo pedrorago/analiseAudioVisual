@@ -50,13 +50,18 @@ frm.submit(function (e) {
                 percentComplete = parseInt(percentComplete * 100);
     
                 // update the Bootstrap progress bar with the new percentage
+                $("header").css('margin-top','.3em');
+                $(".sidebar").css('margin-top','.3em');
                 $('.progress-bar').width(percentComplete + '%');
-    
+
+                
                 // once the upload reaches 100%, set the progress bar text to done
                 if (percentComplete === 100) {
 
                   setTimeout(function()
                   {
+                    $("header").css('margin-top','0');
+                    $(".sidebar").css('margin-top','0');
 
                     $('.progress-bar').css('display', 'none');
 

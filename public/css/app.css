@@ -108,6 +108,13 @@ body {
     width: 83.8%;
   }
 }
+@media (max-width: 1336px)
+{
+  .activeHeader
+  {
+    width: 82.2%
+  }
+}
 header {
   background: #191f31;
   height: 5em;
@@ -118,7 +125,6 @@ header {
   transition: 0.3s ease-out;
   position: fixed;
   z-index: 100;
-<<<<<<< HEAD
   right: 0;
 }
 header .analyzeHeader {
@@ -242,8 +248,6 @@ header .userIconContainer picture img {
   opacity: 0;
   animation: fade-in 2s normal forwards ease-in-out;
   animation-delay: 0.5s;
-}
-=======
   right: 0; }
   header .analyzeHeader {
     display: none;
@@ -404,7 +408,6 @@ header .userIconContainer picture img {
           background: #333d5d; }
           header .userIconContainer picture .titleBox span p {
             font-family: Avenir Next; }
->>>>>>> 2f168a0d7b9d7fcf3285cde300daa5120684eff7
 
 @media (max-width: 1440px) {
   header {
@@ -413,7 +416,7 @@ header .userIconContainer picture img {
 }
 @media (max-width: 1336px) {
   header {
-    width: 94.2%;
+    width: 93.5%;
   }
 }
 aside {
@@ -456,7 +459,6 @@ nav {
   width: 100%;
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   margin-top: 2.7em;
 }
 nav li {
@@ -531,7 +533,6 @@ nav .infoButton:active {
       background-color: #161c2d; }
     nav .infoButton:active {
       background-color: #191f31; }
->>>>>>> 2f168a0d7b9d7fcf3285cde300daa5120684eff7
 
 @media (max-width: 1440px) {
   nav {
@@ -1327,7 +1328,6 @@ nav .infoButton:active {
   margin-bottom: 0em;
 }
 #EditForm span, .formProfile span {
-<<<<<<< HEAD
   position: relative;
 }
 #EditForm span img, .formProfile span img {
@@ -1354,7 +1354,6 @@ nav .infoButton:active {
     cursor: pointer;
     opacity: 0.1;
     transition: 0.3s ease-out; }
->>>>>>> 2f168a0d7b9d7fcf3285cde300daa5120684eff7
 #EditForm .inputTimes img, .formProfile .inputTimes img {
   top: 36%;
   right: 6%;
@@ -1888,7 +1887,7 @@ nav .infoButton:active {
 }
 .Graphic04 .EstatisctBody select {
   border: 0px;
-  height: 2.7em;
+  height: 3em;
   border-radius: 27px;
   padding: 0em 1em;
   background: #edf2f2;
@@ -1899,7 +1898,7 @@ nav .infoButton:active {
 .Graphic04 .EstatisctBody #StatusProgramas, .Graphic04 .EstatisctBody #StatusUsuario, .Graphic04 .EstatisctBody #StatusTotalAnalise, .Graphic04 .EstatisctBody #EmissorasAnalises {
   width: 43.6%;
   margin-bottom: 1.3em;
-  margin-top: 2em;
+  margin-top: 2.7em;
   margin-left: 1em;
 }
 .Graphic04 .EstatisctBody #ConteudoAnalise {
