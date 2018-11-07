@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     email           : DataTypes.STRING,
     password        : DataTypes.STRING,
     photo        : DataTypes.STRING,
+    admin: DataTypes.STRING
   },{
     freezeTableName: true,
     tableName   : 'Users',

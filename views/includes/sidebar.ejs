@@ -4,7 +4,7 @@
         <p>Sistema de Análise Audiovisual</p>
     
     </a>
-    
+   
     <nav>
         <li>
             <a href="/" title="Início" >
@@ -30,7 +30,7 @@
                 <p>Relatórios</p>
             </a>
         </li>
-        <li>
+        <!--<li>
             <a href="/" title="Configurações" >
                 <img src="/img/icon4.png" alt="Icone Configurações - SAAV">
                 <p>Configurações</p>
@@ -41,12 +41,17 @@
                 <img src="/img/icon5.png" alt="Icone Livro de Códigos - SAAV">
                 <p>Livro de Códigos</p>
             </a>
-        </li>
+        </li>-->
         <li>
-            <a href="/profile" title="Usuário" >
-                <img src="/img/icon6.png" alt="Icone Usuário - SAAV">
-                <p>Usuário</p>
-            </a>
+                <% if (user.admin==1) { %>
+
+                    <a href="/signup" title="Criar Usuário" >
+                        <img src="/img/icon6.png" alt="Icone Usuário - SAAV">
+                        <p>Usuário</p>
+                    </a>
+                   
+                <% } %>
+
         </li>
         <!-- <li class='infoButton'>
             <a href="/" title="Informações" >

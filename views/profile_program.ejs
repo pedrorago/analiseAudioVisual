@@ -21,8 +21,13 @@
                     <label>Arquivo no formato: <p id='FormatoArquivo'>MP4</p></label>
                     <label>Nome do arquivo:    <p id='NomeArquivo'><%=program.nome%> </p></label>
                 </div>
-                <a href="/edit_program" class='botaoCinza'>Editar</a>
-                <a href="/delete-program/<%= program.id %>" class='botaoVermelho'>Remover</a>
+
+                <% if (user.admin==1) { %>
+                    <a href="/edit_program" class='botaoCinza'>Editar</a>
+                    <a href="/delete-program/<%= program.id %>" class='botaoVermelho'>Remover</a>
+                   
+                <% } %>
+              
                 <a href="/analyze/<%= program.id %>" class='botaoAzul'>Analisar</a>
                 
             </div>
@@ -34,10 +39,10 @@
                     <p><%=program.nome%></p>
                 </span>
                 
-                <span>
+                <!--<span>
                     <label for="">DIA DE EMISSÃO</label>
                     <p>Não registrado</p>
-                </span>
+                </span>-->
                 <span>
                     <label for="">DATA DE EMISSÃO</label>
                     <p><%= program.dia_emissao.toLocaleDateString() %></p>
@@ -45,20 +50,20 @@
                 
                 <span>
                     <label>EMISSORA</label>
-                    <p>Não registrado</p>
+                    <p><%= program.emissora %></p>
                 </span>
                 <span>
                     <label>STATUS</label>
                     <p><%=program.status%></p>
                 </span>
-                <span>
+                <!--<span>
                     <label>FORMATO DE VÍDEO</label>
                     <p>MP4</p>
-                </span>
-                <span>
+                </span>-->
+                <!--<span>
                     <label>CLASSIFICAÇÃO</label>
                     <p>Não registrado</p>
-                </span>
+                </span>-->
                 <span>
                     <label>INÍCIO DA PROGRAMAÇÃO</label>
                     <p><%= program.hora_inicio.toLocaleTimeString().slice(0,-3)%>H</p>

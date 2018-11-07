@@ -6,12 +6,12 @@ var self = module.exports = {
         return new Promise(function(resolve, reject) {
 
             var s3 = new AWS.S3({     
-                accessKeyId: 'AKIAI7AGK273GTEBXFTQ',
-                secretAccessKey: '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',
+                accessKeyId: 'AKIAJQ4RQOLOYB7553RA',
+                secretAccessKey: '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',
                   params: {
                         Key: save_name_file, 
                         Body: file,
-                        Bucket: 'analise-audio-visual'},
+                        Bucket: 'teste-beto'},
                         ACL:'public-read-write',
                   options: {partSize: 5 * 1024 * 1024, queueSize: 10}   // 5 MB
                });
@@ -20,8 +20,7 @@ var self = module.exports = {
                    if(err)
                      reject(err);
                   resolve(data);
-               });
-            
+               });         
         })
 
     },

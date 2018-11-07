@@ -13,8 +13,13 @@
         <span class='headerContent'>
             <h3>TODAS AS PROGRAMAÇÕES</h3>
 
-            <div>
-            <a href="/singUp_program">Cadastrar</a>
+            <div>   <%= user.admin %>
+                    <% if (user.admin==1) { %>
+
+                        <a href="/singUp_program">Cadastrar</a>
+                       
+                    <% } %>
+
 
                     <form action="" class='formInputSearch'>
                             <input type="text" placeholder="Pesquise" name='pesquisa'>
@@ -43,8 +48,8 @@
                                 <p><%= programs[i].hora_inicio.toLocaleTimeString()%></p>
                             </span>
                             <span>
-                                <label>FORMATO</label>
-                                <p>MP4</p>
+                                <label>EMISSORA</label>
+                                <p><%= programs[i].emissora %></p>
                             </span>
                             <span>
                                 <label>ID</label>

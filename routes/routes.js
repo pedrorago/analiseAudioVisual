@@ -17,7 +17,7 @@ module.exports = function (app, passport) {
             let programacao = resp[1];
             programacao.link_video = resp[0].Location;
             programacao.nome_video = resp[0].key;
-
+            console.log(programacao);
             ProgramacaoService.save_promogramacao(programacao).then(resp => {
                 res.json({ msg: "Sucesso ao cadastrar programação!" })
             });
@@ -80,7 +80,9 @@ module.exports = function (app, passport) {
 
             }).then(resp => {
                 res.locals.user = req.user;
-                res.render('login');
+                res.render('signup.ejs', {
+                    message: req.flash('signupMessage')
+                });
             })
             .catch(function (e) {
                 res.json(e);
@@ -110,8 +112,9 @@ module.exports = function (app, passport) {
     app.get('/',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
         AnalyzeService.get_last_analise().then(resp =>{
-            console.log(resp);
-            res.render('index.ejs',{last:resp}); // load the index.ejs file
+            AnalyzeService.get_my_analise(req.user.id).then(resp2 =>{
+                res.render('index.ejs',{last:resp,mine:resp2}); // load the index.ejs file
+            })
         })
     });
 
@@ -247,14 +250,14 @@ module.exports = function (app, passport) {
         })(req, res, next)
     })
 
-    app.get('/signup', function (req, res) {
+    app.get('/signup',isLoggedIn, function (req, res) {
         res.render('signup.ejs', {
             message: req.flash('signupMessage')
         });
     });
 
 
-    app.post('/signup', passport.authenticate('local-signup', {
+    app.post('/signup',isLoggedIn, passport.authenticate('local-signup', {
         successRedirect: '/profile',
         failureRedirect: '/signup',
         failureFlash: true

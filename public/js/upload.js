@@ -18,6 +18,7 @@ frm.submit(function (e) {
     data.append('video',$('input[type=file]')[0].files[0]);
     data.append('hora_inicio',dataInico+" "+$('#HorarioInicio').val());
     data.append('hora_fim',dataInico+" "+$('#HorarioFim').val());
+    data.append('emissora',$('#emissora').val());
 
     e.preventDefault();
     

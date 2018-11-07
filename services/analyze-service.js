@@ -33,6 +33,18 @@ module.exports = {
             })
     },
 
+    get_my_analise: function (id) {
+        return new Promise(function (resolve, reject) {
+            sequelize.query("select count(*) as qtd from analise where analise.id_user = "+id, { type: sequelize.QueryTypes.SELECT})
+            .then(resp => {
+                resolve(resp);
+                // We don't need spread here, since only the results will be returned for select queries
+            }).catch(e =>{
+                reject(e);
+            })
+        })
+},
+
     get_all_analise: function () {
         return new Promise(function (resolve, reject) {
             Analise.findAll().then(programacao => {

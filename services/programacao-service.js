@@ -15,7 +15,9 @@ module.exports = {
 
     get_all_promogramacao: function () {
         return new Promise(function (resolve, reject) {
-            Programacao.findAll({where:{excluido:0}}).then(programacao => {
+            Programacao.findAll({where:{excluido:0}, order: [
+                ['id', 'DESC']
+            ],}).then(programacao => {
                 resolve(programacao);
             }).catch(e => {
                 reject(e);
