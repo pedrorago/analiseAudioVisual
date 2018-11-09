@@ -9,6 +9,7 @@ module.exports = function (app, passport) {
 
 
     app.post('/s3StreamUpload', function (req, res, next) {
+        req.setTimeout(5000000000);
         var busboy = new Busboy({ headers: req.headers });
 
         Promise.all([UtilService.upload_promise(busboy),
