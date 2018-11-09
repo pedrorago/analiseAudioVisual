@@ -260,7 +260,7 @@ header {
     width: 94.2%; } }
 @media(max-width: 1336px) {
   header {
-    width: 94.2%; } }
+    width: 93.4%; } }
 aside {
   height: 100%;
   width: 5.3em;
@@ -606,7 +606,7 @@ nav {
     margin-bottom: 2em;
     color: #333d5d;
     font-family: Helvetica;
-    height: 4em; }
+    height: 3em; }
     .SingUpForm input:focus, .SingUpForm select:focus, .SingUpForm form:focus, .SingUpForm textarea:focus {
       outline: none; }
     .SingUpForm input::placeholder, .SingUpForm select::placeholder, .SingUpForm form::placeholder, .SingUpForm textarea::placeholder {
@@ -671,7 +671,7 @@ nav {
     margin-bottom: 2em;
     color: #333d5d;
     font-family: Helvetica;
-    height: 4em; }
+    height: 3em; }
     .UploadVideo input:focus, .UploadVideo select:focus, .UploadVideo form:focus, .UploadVideo textarea:focus {
       outline: none; }
     .UploadVideo input::placeholder, .UploadVideo select::placeholder, .UploadVideo form::placeholder, .UploadVideo textarea::placeholder {
@@ -948,7 +948,7 @@ nav {
     margin-bottom: 2em;
     color: #333d5d;
     font-family: Helvetica;
-    height: 4em; }
+    height: 3em; }
     .ProgramDesc input:focus, .ProgramDesc select:focus, .ProgramDesc form:focus, .ProgramDesc textarea:focus {
       outline: none; }
     .ProgramDesc input::placeholder, .ProgramDesc select::placeholder, .ProgramDesc form::placeholder, .ProgramDesc textarea::placeholder {
@@ -1016,7 +1016,7 @@ nav {
       margin-bottom: 2em;
       color: #333d5d;
       font-family: Helvetica;
-      height: 4em; }
+      height: 3em; }
       .profileContent .formProfile input:focus, .profileContent .formProfile select:focus, .profileContent .formProfile form:focus, .profileContent .formProfile textarea:focus {
         outline: none; }
       .profileContent .formProfile input::placeholder, .profileContent .formProfile select::placeholder, .profileContent .formProfile form::placeholder, .profileContent .formProfile textarea::placeholder {
@@ -1313,7 +1313,7 @@ nav {
       margin-bottom: 2em;
       color: #333d5d;
       font-family: Helvetica;
-      height: 4em; }
+      height: 3em; }
       .infosPlace .infosPlacebody input:focus, .infosPlace .infosPlacebody select:focus, .infosPlace .infosPlacebody form:focus, .infosPlace .infosPlacebody textarea:focus {
         outline: none; }
       .infosPlace .infosPlacebody input::placeholder, .infosPlace .infosPlacebody select::placeholder, .infosPlace .infosPlacebody form::placeholder, .infosPlace .infosPlacebody textarea::placeholder {
@@ -1500,5 +1500,22 @@ nav {
     .EstatisticasContainer .HeaderEst h5 {
       font-size: 1.8em;
       margin-top: 0em; }
+
+@media(max-width: 1336px) {
+  .SingUpForm {
+    width: 30em; }
+
+  .VideoContent {
+    width: 33.3em; }
+
+  .Graphic04 span {
+    width: 58%; }
+
+  .Graphic04 .EstatisctBody #StatusProgramas, .Graphic04 .EstatisctBody #StatusUsuario, .Graphic04 .EstatisctBody #StatusTotalAnalise, .Graphic04 .EstatisctBody #EmissorasAnalises {
+    width: 36.6%;
+    margin-top: 2.1em; }
+
+  .activeHeader {
+    width: 81.8%; } }
 
 /*# sourceMappingURL=app.css.map */
