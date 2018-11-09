@@ -1,6 +1,86 @@
 
 $(function()
 {
+
+    
+    //Formulario de recuperação
+
+
+    var frm2 = $('#forgot_form');
+
+    frm2.submit(function (e) {
+        e.preventDefault();
+
+        $('.login').addClass('test')	
+        setTimeout(function(){	
+          $('.login').addClass('testtwo')	
+        },300);	
+        setTimeout(function(){	
+          $(".authent").show().animate({right:-320},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
+          $(".authent").animate({opacity: 1},{duration: 200, queue: false }).addClass('visible');	
+        },350);	
+
+
+        setTimeout(function(){	
+          $(".authent").show().animate({right:90},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
+          $(".authent").animate({opacity: 0},{duration: 200, queue: false }).addClass('visible');	
+          $('.login').removeClass('testtwo')	
+        },2500);	
+
+
+        $.ajax({
+            type: frm2.attr('method'),
+            url: frm2.attr('action'),
+            data: frm2.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+
+                setTimeout(function(){	
+                    $('.login').removeClass('test')	
+                    $('.login div').fadeOut(123);	
+                },2800);	
+
+                if(data.responseCode != 0)
+                {
+                    setTimeout(function(){	
+                        $('.success').fadeIn();	
+            
+                    },3200);
+                    setTimeout(function(){	
+                        window.location.href = "/";
+            
+                    },3800);
+                }
+                else
+                {
+                    setTimeout(function(){	
+                        $('.error').fadeIn();	
+            
+                    },3200);
+                    setTimeout(function(){	
+                        window.location.href = "/";
+            
+                    },5000);
+
+                }
+
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+
+
+       }); 
+
+
+    
+    
+    
+    // Formulario de Login
+
+    
         var frm = $('#login_form');
 
         frm.submit(function (e) {
