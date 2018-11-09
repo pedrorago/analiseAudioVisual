@@ -105,7 +105,7 @@ body {
 
 @media (max-width: 1440px) {
   .activeHeader {
-    width: 83.8%;
+    width: 83%;
   }
 }
 header {
@@ -308,7 +308,7 @@ header .userIconContainer picture .titleBox span p {
 
 @media (max-width: 1440px) {
   header {
-    width: 94.2%;
+    width: 93.8%;
   }
 }
 @media (max-width: 1336px) {
@@ -1454,7 +1454,7 @@ nav .infoButton:active {
   border-bottom: 2px solid #0076ff;
   padding: 2em 2em;
   padding-bottom: 2em;
-  height: 16em;
+  height: 28.72em;
   overflow: hidden;
   position: relative;
 }
@@ -1850,6 +1850,29 @@ nav .infoButton:active {
 
   .activeHeader {
     width: 81.8%;
+  }
+}
+@media (max-width: 1024px) {
+  .Graphic03 {
+    width: 100%;
+    height: 35em;
+  }
+  .Graphic03 .HeaderEst {
+    width: 93% !important;
+  }
+  .Graphic03 p {
+    margin-top: 3em !important;
+  }
+
+  .Graphic04 {
+    width: 100%;
+    height: 31.1em;
+  }
+  .Graphic04 .HeaderEst {
+    width: 94% !important;
+  }
+  .Graphic04 .EstatisctBody {
+    width: 91%;
   }
 }
 

@@ -9,7 +9,7 @@
     {
         height:5em;
         display:block;
-        position: absolute;
+        position: fixed;
     }
     aside .logo
     {
@@ -53,7 +53,7 @@
                     <p><%=program.dia_emissao.toLocaleString()%></p>
                 </span>
                 
-                <a href="javascript:void(0)"><img src="/img/download.svg" alt=""></a>
+                <a href="<%=program.link_video%>" download><img src="/img/download.svg" alt=""></a>
             </div>
             <div class='Userplace infosPlace infosPlaceActive'>
                 <div class='infosPlaceheader'>
@@ -548,6 +548,7 @@
             </div>
         </form>
             <div class='rightposition'>
+
                 <div class='bookBox'>
                     <form action="" class='formInputSearch'>
                         <input type="text" placeholder="Pesquise" name='pesquisa'>
@@ -562,23 +563,16 @@
                             <p>Lorem ipsum lorem ipsum</p>
                         </span>
                     </div>
-                    <span class='gradient'></span>
-                </div>
-                
-                <div class='Userplace'>
-                    <img src="/img/icon6.png" alt="Icone Usuário - SAAV">
-                    <h5>Pedro Rago</h5>
-                    <p>Você</p>
+                    <!-- <span class='gradient'></span> -->
                 </div>
                 <div class='Userplace'>
-                    <h5 style='margin-left:0 !important;'>Analises realizadas</h5>
-                </div>
-                
-                <div class='HistoryAnalyzes'>
-                    <!-- 0 ANLISES -->
-                    <h1>0</h1>
-                    <p>Análises</p>
-                </div>
+                        <img src="/img/icon6.png" alt="Icone Usuário - SAAV">
+                        <h5> <%= user.name %> </h5>
+                        <p>Você</p>
+                    </div>
+
+
+
             </div>
             
             

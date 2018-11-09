@@ -151,13 +151,13 @@ $(function()
        }); 
           
 
-         $('#UsuarioInput,#SenhaInput').focus(function(){	
+         $('#EmailForgot,#UsuarioInput,#SenhaInput').focus(function(){	
           $(this).prev().animate({'opacity':'1'},200)	
         });	
-        $('#UsuarioInput,#SenhaInput').blur(function(){	
+        $('#EmailForgot,#UsuarioInput,#SenhaInput').blur(function(){	
           $(this).prev().animate({'opacity':'.5'},200)	
         });	
-         $('#UsuarioInput,#SenhaInput').keyup(function(){	
+         $('#EmailForgot,#UsuarioInput,#SenhaInput').keyup(function(){	
           if(!$(this).val() == ''){	
             $(this).next().animate({'opacity':'1','right' : '30'},200)	
           } else {	
