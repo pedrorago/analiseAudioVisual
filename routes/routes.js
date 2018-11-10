@@ -4,7 +4,8 @@ const UtilService = require('../services/util-service');
 const ProgramacaoService = require('../services/programacao-service');
 const UserService = require('../services/users-service');
 const AnalyzeService = require('../services/analyze-service');
-
+var moment = require('moment');
+moment.locale('pt-BR');
 module.exports = function (app, passport) {
 
 
@@ -120,10 +121,22 @@ module.exports = function (app, passport) {
 
     app.get('/program',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
-        ProgramacaoService.get_all_promogramacao().then(resp=>{
+        ProgramacaoService.get_all_promogramacao(req).then(resp=>{
             //res.json(resp); // load the index.ejs file
             res.render('program.ejs',
-            {   programs:resp
+            {   programs:resp,
+                 moment: moment 
+            });
+        })
+    });
+
+    app.post('/program-filtro',isLoggedIn, function (req, res) {
+        res.locals.user = req.user;
+        ProgramacaoService.get_all_promogramacao(req).then(resp=>{
+            //res.json(resp); // load the index.ejs file
+            res.render('program.ejs',
+            {   programs:resp,
+                moment: moment 
             });
         })
     });

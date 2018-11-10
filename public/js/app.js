@@ -2,7 +2,8 @@
 $(function()
 {
 
-    
+    $('#filtro-dia-emissao').mask('00/00/0000');
+
     //Formulario de recuperação
 
 

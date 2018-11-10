@@ -19,7 +19,17 @@
                         <a href="/singUp_program" style='margin-right: 0em;'>Cadastrar</a>
                        
                     <% } %>
-
+                 
+                    <form action="/program-filtro" class='formInputSearch' method="post">
+                            <input id='filtro-dia-emissao' type="text" placeholder="18/12/2018" name='dia_emissao'>
+                            <select name="emissora" id="emissora">
+                                <option value="">Informe a emissora</option>
+                                <option value='SBT'>SBT</option>
+                                <option value='GLOBO'>GLOBO</option>
+                                <option value='RECORD'>RECORD</option>
+                            </select>
+                            <button type='submit'>FILTRAR</button>
+                    </form>
 
                     <!-- <form action="" class='formInputSearch'>
                             <input type="text" placeholder="Pesquise" name='pesquisa'>
@@ -41,7 +51,7 @@
                             </span>
                             <span>
                                 <label>DATA DE TRANSMISSÃO</label>
-                                <p><%= programs[i].dia_emissao.toLocaleDateString() %></p>
+                                <p><%= moment(moment.utc(programs[i].dia_emissao)).format("DD/MM/YYYY") %></p>
                             </span>
                             <span>
                                 <label>HORÁRIO DE TRANSMISSÃO</label>
