@@ -45,7 +45,7 @@
                 </span>-->
                 <span>
                     <label for="">DATA DE EMISSÃO</label>
-                    <p><%= program.dia_emissao.toLocaleDateString() %></p>
+                    <p><%=moment(moment.utc(program.dia_emissao)).format("DD/MM/YYYY") %></p>
                 </span>
                 
                 <span>

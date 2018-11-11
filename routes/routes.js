@@ -171,13 +171,14 @@ module.exports = function (app, passport) {
         })
     });
 
-    app.get('/profile_program/:id_program', function (req, res) {
+    app.get('/profile_program/:id_program',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
         ProgramacaoService.get_promogramacao(req.params.id_program).then(resp=>{
             //res.json(resp); // load the index.ejs file
 
             res.render('profile_program.ejs',
-            {   program:resp
+            {   program:resp,
+                moment: moment 
             });
         })
 
