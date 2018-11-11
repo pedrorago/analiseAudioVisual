@@ -1,4 +1,28 @@
 <% include includes/header.ejs %>
 <!-- View de perfil do usuario -->
+<main>
+   <h2>Perfil de<strong> <%=user.name%></strong></h2>
+   <h5>ADICIONAR UM NOVO USUÁRIO</h5>
+   <div class='container'>
+      <div class='profileContent'>
+         <form class='formProfile' id='formCreate' action="/"  method="post" enctype="multipart/form-data" style="display: block;">
+            <div class='inputBox'>
+               <span class='inputSpan'>
+               <label for="Nome">NOME</label>
+               <img src="img/pencil.svg" alt="" class='pencilEdit'>
+               <input type="text" placeholder='Digite o nome' name='name'  value=''>
+               </span>
+               <span class='inputSpan'>
+               <label for="Email">EMAIL</label>
+               <img src="img/pencil.svg" alt="" class='pencilEdit'>
+               <input type="text" placeholder='Digite o email' name='email'  value=''>
+               </span>
+            <button  type='submit' style="margin-left: 0em">Enviar</button>
 
+            </div>
+            
+         </form>
+    </div>
+   <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
+</main>
 <% include includes/footer.ejs %>
