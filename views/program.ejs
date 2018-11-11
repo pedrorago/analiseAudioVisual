@@ -13,31 +13,26 @@
         <span class='headerContent'>
             <h3>TODAS AS PROGRAMAÇÕES</h3>
 
-            <div>   
-                    <% if (user.admin==1) { %>
+            <form action="/program-filtro" class='formSearchFinal' method="post">
+                <input id='filtro-dia-emissao' type="text" placeholder="18/12/2018" name='dia_emissao'>
+                <select name="emissora" id="emissora">
+                    <option value="">Informe a emissora</option>
+                    <option value='SBT'>SBT</option>
+                    <option value='GLOBO'>GLOBO</option>
+                    <option value='RECORD'>RECORD</option>
+                </select>
+                <select name="status" id="status">
+                    <option value="">Informe o status</option>
+                    <option value='Não Analisado'>Não Analisado</option>
+                    <option value='Analisado'>Analisado</option>
+                </select>
+                <button type='submit'>Filtrar</button>
+                <% if (user.admin==1) { %>
 
-                        <a href="/singUp_program" style='margin-right: 0em;'>Cadastrar</a>
-                       
-                    <% } %>
-                 
-                    <form action="/program-filtro" class='formInputSearch' method="post">
-                            <input id='filtro-dia-emissao' type="text" placeholder="18/12/2018" name='dia_emissao'>
-                            <select name="emissora" id="emissora">
-                                <option value="">Informe a emissora</option>
-                                <option value='SBT'>SBT</option>
-                                <option value='GLOBO'>GLOBO</option>
-                                <option value='RECORD'>RECORD</option>
-                            </select>
-                            <button type='submit'>FILTRAR</button>
-                    </form>
-
-                    <!-- <form action="" class='formInputSearch'>
-                            <input type="text" placeholder="Pesquise" name='pesquisa'>
-                            <button>
-                                <i class="material-icons"> search </i>
-                            </button>
-                        </form> -->
-            </div>
+                    <a href="/singUp_program" style='margin-right: 0em;'>Cadastrar</a>
+                   
+                <% } %>
+        </form>
 
 
         </span>

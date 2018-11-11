@@ -11,6 +11,9 @@ module.exports = {
         if(req.body.dia_emissao){
             sql = sql + ' and DATE_FORMAT(dia_emissao,"%d/%m/%Y") = '+ '"'+req.body.dia_emissao+'"';
         }
+        if(req.body.status){
+            sql = sql + ' and status = '+ '"'+req.body.status+'"';
+        }
         sql = sql + ' and excluido = 0 order by id desc';
 
         return new Promise(function (resolve, reject) {

@@ -264,6 +264,7 @@ module.exports = function (app, passport) {
     })
 
     app.get('/signup',isLoggedIn, function (req, res) {
+        res.locals.user = req.user;
         res.render('signup.ejs', {
             message: req.flash('signupMessage')
         });

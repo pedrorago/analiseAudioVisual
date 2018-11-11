@@ -40,9 +40,9 @@
         </div>
         <div class='analyzeHeader'>
             <span>
-                <img src="/img/woman2.jpg" alt="">
+                <img src="<%=locals.user.photo%>" alt="">
             </span>
-            <h3>Publicado por <strong>Maria Clara</strong></h3>
+            <h3>Visualizado por <strong><%=locals.user.name%></strong></h3>
 
             <div>
                 <img src="/img/statusIcon.svg" alt="">
@@ -64,7 +64,7 @@
         <div class='userIconContainer'>
             <picture class='pictureUserLogout'>
                 <div class='containerIMGPic'>
-                    <img src="data:image/png;base64, <%=locals.user.photo%>" alt="">
+                    <img src="<%=locals.user.photo%>" alt="">
                 </div>
                 <a href="/logout" class='titleBox'>
                         <span></span>

@@ -85,7 +85,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 300;
 }
 
-.label, .infosPlace .infosPlacebody label, .Userplace h5, .bookBox div label, .profileContent .formProfile label, .ProgramDesc label, .UploadVideo label, .SingUpForm label, .TimingAnalisesDashboard label, .GraphicDashboard label {
+.label, .infosPlace .infosPlacebody label, .Userplace h5, .bookBox div label, .profileContent .formProfile label, .ProgramDesc label, .UploadVideo label, .SingUpForm label, .formSearchFinal label, .TimingAnalisesDashboard label, .GraphicDashboard label {
   font-family: Helvetica;
   color: #6f7789;
   font-size: 0.89em;
@@ -135,7 +135,7 @@ header .analyzeHeader span {
   justify-content: center;
 }
 header .analyzeHeader span img {
-  width: 100%;
+  height: 100%;
 }
 header .analyzeHeader h3 {
   font-family: Avenir Next;
@@ -245,7 +245,7 @@ header .userIconContainer picture {
   justify-content: flex-end;
 }
 header .userIconContainer picture img {
-  width: 100%;
+  height: 100%;
   opacity: 0;
   animation: fade-in 2s normal forwards ease-in-out;
   animation-delay: 0.5s;
@@ -261,6 +261,9 @@ header .userIconContainer picture .containerIMGPic {
   width: 2.4em;
   height: 2.5em;
   background: #424d6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header .userIconContainer picture .titleBox {
   width: 6em;
@@ -313,7 +316,7 @@ header .userIconContainer picture .titleBox span p {
 }
 @media (max-width: 1336px) {
   header {
-    width: 93.4%;
+    width: 93.5%;
   }
 }
 aside {
@@ -525,7 +528,7 @@ nav .infoButton:active {
   margin-left: 1.5em;
 }
 .TimingAnalisesDashboard div picture img {
-  width: 100%;
+  height: 100%;
   opacity: 0;
   animation: fade-in 2s normal forwards ease-in-out;
   animation-delay: 0.5s;
@@ -538,6 +541,7 @@ nav .infoButton:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .headerContent div {
   display: flex;
@@ -589,6 +593,102 @@ nav .infoButton:active {
   cursor: pointer;
 }
 
+.formSearchFinal {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+.formSearchFinal input, .formSearchFinal select, .formSearchFinal form, .formSearchFinal textarea {
+  border: none;
+  position: relative;
+  background: #edf2fd;
+  width: 100%;
+  padding: 0.9em;
+  padding-left: 1.7em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  color: #333d5d;
+  font-family: Helvetica;
+  height: 3em;
+}
+.formSearchFinal input:focus, .formSearchFinal select:focus, .formSearchFinal form:focus, .formSearchFinal textarea:focus {
+  outline: none;
+}
+.formSearchFinal input::placeholder, .formSearchFinal select::placeholder, .formSearchFinal form::placeholder, .formSearchFinal textarea::placeholder {
+  color: #455179;
+  font-family: Helvetica;
+  font-size: 1.1em;
+}
+.formSearchFinal label {
+  color: #d0d4dd;
+  font-weight: 500;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+}
+.formSearchFinal select {
+  margin-top: 1em;
+}
+.formSearchFinal input, .formSearchFinal select {
+  border: none;
+  position: relative;
+  background: #edf2fd;
+  width: 100%;
+  padding: 0.9em;
+  padding-left: 1.7em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  color: #333d5d;
+  font-family: Helvetica;
+  height: 3em;
+  margin: 0;
+  margin-top: 0 !important;
+  margin-left: 2em;
+  width: 13em;
+}
+.formSearchFinal button {
+  background: #333d5d;
+  color: #edf2fd;
+  text-decoration: none;
+  font-family: Avenir Next;
+  padding: 0.5em 1.5em;
+  border-radius: 6px;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  border: none;
+  font-weight: 400;
+  font-size: 1em;
+  width: 7.5em;
+  margin-left: 1em;
+}
+.formSearchFinal button:focus {
+  outline: none;
+}
+.formSearchFinal a {
+  margin-right: 0em;
+  background: #333d5d;
+  color: #edf2fd;
+  text-decoration: none;
+  font-family: Avenir Next;
+  padding: 0.65em 1.5em;
+  border-radius: 6px;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  border: none;
+  font-weight: 400;
+  font-size: 1em;
+  margin-left: 1em;
+}
+.formSearchFinal a:focus {
+  outline: none;
+}
+
+@media (max-width: 1336px) {
+  .formInputSearch i {
+    left: -46%;
+  }
+}
 .listProgram {
   width: 100%;
   max-height: 30.5em;
@@ -802,6 +902,24 @@ nav .infoButton:active {
   border: none;
 }
 .SingUpForm button:focus {
+  outline: none;
+}
+
+.NovoUsuarioButton {
+  background: #0a6cce;
+  color: #edf2fd;
+  text-decoration: none;
+  font-family: Avenir Next;
+  padding: 1em 1.6em;
+  border-radius: 6px;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  border: none;
+  margin-top: 0.5em;
+}
+.NovoUsuarioButton:focus {
   outline: none;
 }
 
@@ -1486,6 +1604,7 @@ nav .infoButton:active {
   padding-bottom: 1em;
   margin-bottom: 1.5em;
   z-index: 10;
+  padding-top: 0.5em;
 }
 .bookBox div label {
   font-size: 1em;
@@ -1874,6 +1993,34 @@ nav .infoButton:active {
   .Graphic04 .EstatisctBody {
     width: 91%;
   }
+}
+.boxComentario {
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.8em;
+  width: 92.6%;
+  padding-top: 1.5em;
+}
+.boxComentario label {
+  color: #d0d4dd;
+  font-weight: 500;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+  font-family: Helvetica;
+}
+.boxComentario textarea {
+  border: none;
+  position: relative;
+  background: #edf2fd;
+  width: 100%;
+  padding: 0.9em;
+  padding-left: 1.7em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  color: #333d5d;
+  font-family: Helvetica;
+  height: 14em;
 }
 
 /*# sourceMappingURL=app.css.map */
