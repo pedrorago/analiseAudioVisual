@@ -81,100 +81,90 @@ $(function()
     
     // Formulario de Login
 
-    
-        var frm = $('#login_form');
+    var frm = $('#login_form');
+    frm.submit(function (e) {
+       e.preventDefault();
+        $('.login').addClass('test')	
+       setTimeout(function(){	
+         $('.login').addClass('testtwo')	
+       },300);	
+       setTimeout(function(){	
+         $(".authent").show().animate({right:-320},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
+         $(".authent").animate({opacity: 1},{duration: 200, queue: false }).addClass('visible');	
+       },350);	
 
-        frm.submit(function (e) {
-            e.preventDefault();
 
-            $('.login').addClass('test')	
+       setTimeout(function(){	
+         $(".authent").show().animate({right:90},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
+         $(".authent").animate({opacity: 0},{duration: 200, queue: false }).addClass('visible');	
+         $('.login').removeClass('testtwo')	
+       },2500);	
+
+    $.ajax({
+       type: frm.attr('method'),
+       url: frm.attr('action'),
+       data: frm.serialize(),
+       success: function (data) {
+           console.log('Submission was successful.');
             setTimeout(function(){	
-              $('.login').addClass('testtwo')	
-            },300);	
-            setTimeout(function(){	
-              $(".authent").show().animate({right:-320},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
-              $(".authent").animate({opacity: 1},{duration: 200, queue: false }).addClass('visible');	
-            },350);	
-    
-    
-            setTimeout(function(){	
-              $(".authent").show().animate({right:90},{easing : 'easeOutQuint' ,duration: 600, queue: false });	
-              $(".authent").animate({opacity: 0},{duration: 200, queue: false }).addClass('visible');	
-              $('.login').removeClass('testtwo')	
-            },2500);	
-    
-
-
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            success: function (data) {
-                console.log('Submission was successful.');
-
-                setTimeout(function(){	
-                    $('.login').removeClass('test')	
-                    $('.login div').fadeOut(123);	
-                },2800);	
-
-                if(data.responseCode != 0)
-                {
-                    setTimeout(function(){	
-                        $('.success').fadeIn();	
-            
-                    },3200);
-                    setTimeout(function(){	
-                        window.location.href = "/";
-            
-                    },3800);
-                }
-                else
-                {
-                    setTimeout(function(){	
-                        $('.error').fadeIn();	
-            
-                    },3200);
-                    setTimeout(function(){	
-                        window.location.href = "/";
-            
-                    },5000);
-
-                }
-
-            },
-            error: function (data) {
-                console.log('An error occurred.');
-                console.log(data);
-            },
-        });
-
-
-       }); 
-          
-
-         $('#EmailForgot,#UsuarioInput,#SenhaInput').focus(function(){	
-          $(this).prev().animate({'opacity':'1'},200)	
-        });	
-        $('#EmailForgot,#UsuarioInput,#SenhaInput').blur(function(){	
-          $(this).prev().animate({'opacity':'.5'},200)	
-        });	
-         $('#EmailForgot,#UsuarioInput,#SenhaInput').keyup(function(){	
-          if(!$(this).val() == ''){	
-            $(this).next().animate({'opacity':'1','right' : '30'},200)	
-          } else {	
-            $(this).next().animate({'opacity':'0','right' : '20'},200)	
-          }	
-        });
-  
-        
-	
+               $('.login').removeClass('test')	
+               $('.login div').fadeOut(123);	
+           },2800);	
+            if(data.responseCode != 0)
+           {
+               setTimeout(function(){	
+                   $('.success').fadeIn();	
        
-        var open = 0;	
-      $('.tab').click(function(){	
-        $(this).fadeOut(200,function(){	
-          $(this).parent().animate({'left':'0'})	
-        });	
-      });
+               },3200);
+               setTimeout(function(){	
+                   window.location.href = "/";
+       
+               },3800);
+           }
+           else
+           {
+               setTimeout(function(){	
+                   $('.error').fadeIn();	
+       
+               },3200);
+               setTimeout(function(){	
+                   window.location.href = "/";
+       
+               },5000);
+            }
+        },
+       error: function (data) {
+           console.log('An error occurred.');
+           console.log(data);
+       },
+   });
+   }); 
+     
+     $('#UsuarioInput,#SenhaInput').focus(function(){	
+     $(this).prev().animate({'opacity':'1'},200)	
+   });	
+   $('#UsuarioInput,#SenhaInput').blur(function(){	
+     $(this).prev().animate({'opacity':'.5'},200)	
+   });	
+    $('#UsuarioInput,#SenhaInput').keyup(function(){	
+     if(!$(this).val() == ''){	
+       $(this).next().animate({'opacity':'1','right' : '30'},200)	
+     } else {	
+       $(this).next().animate({'opacity':'0','right' : '20'},200)	
+     }	
+   });
+
+   
+
+  
+   var open = 0;	
+ $('.tab').click(function(){	
+   $(this).fadeOut(200,function(){	
+     $(this).parent().animate({'left':'0'})	
+   });	
+ });
+ 
+ 
       
       
 
@@ -447,4 +437,32 @@ var graficoSemana = new Chart(ctx,
                     }
             }
     });
+            
+            
+            
+            $(document).ready(function() {
+                var frm = $('#login_form');
+                
+                frm.submit(function (e) {
+                    
+                    e.preventDefault();
+                    
+                    $.ajax({
+                        type: frm.attr('method'),
+                        url: frm.attr('action'),
+                        data: frm.serialize(),
+                        success: function (data) {
+                            console.log('Submission was successful.');
+                            if(data.responseCode==1){
+                                window.location.href = "/"
+                            }
+                        },
+                        error: function (data) {
+                            console.log('An error occurred.');
+                            console.log(data);
+                        },
+                    });
+                });
+                
+            })
             
