@@ -214,7 +214,7 @@ $(function()
     }
     
     $("#Conteudo-violento").on('change', function() {
-        if ($(this).val() == 'Sim'){
+        if ($(this).val() == '1'){
             $(".analiseFinal").css('display', 'block');
             setTimeout(function()
             {
@@ -228,13 +228,6 @@ $(function()
             }, 100);        
         }
     });
-    
-    
-    
-    
-    
-    //
-    
     
     randID();
     

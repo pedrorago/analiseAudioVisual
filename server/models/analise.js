@@ -30,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
 	  comportamento_descriminatorio : DataTypes.STRING,
     data_created : DataTypes.DATE,
     data_updated : DataTypes.DATE,
-    status : DataTypes.STRING,
     id_user : DataTypes.STRING,
-    id_programacao : DataTypes.STRING
+    id_programacao : DataTypes.STRING,
+    obs : DataTypes.STRING
     
   },{
     freezeTableName: true,

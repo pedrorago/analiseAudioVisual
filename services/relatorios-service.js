@@ -1,5 +1,6 @@
 const sequelize = require('../server/models').sequelize;
 
+
 module.exports = {
 
     get_last_analise: function () {
@@ -71,8 +72,8 @@ module.exports = {
     },
     export: function(res) {
         const excel = require('node-excel-export');
-        models.sequelize.query("SELECT * FROM analise a INNER JOIN programacao p on a.id_programacao = p.id;", 
-           {type: models.sequelize.QueryTypes.SELECT
+        sequelize.query("SELECT * FROM programacao p left JOIN analise a on a.id_programacao = p.id;", 
+           {type: sequelize.QueryTypes.SELECT
         }).then((results, metadata) => {
               //Here you specify the export structure
               const specification = {
@@ -221,7 +222,17 @@ module.exports = {
                     headerStyle: {fgColor: {rgb: 'FFFF0000'}},
                     width: 220 // <- width in chars (when the number is passed as string)
                 },
-                facebook_id: {
+                status: {
+                    displayName: 'Status',
+                    headerStyle: {fgColor: {rgb: 'FFFF0000'}},
+                    width: 220 // <- width in chars (when the number is passed as string)
+                },
+                obs: {
+                    displayName: 'Observação',
+                    headerStyle: {fgColor: {rgb: 'FFFF0000'}},
+                    width: 220 // <- width in chars (when the number is passed as string)
+                },
+                /*facebook_id: {
                   displayName: 'FACEBOOK',
                   headerStyle: {fgColor: {rgb: 'FFFF0000'}},
                   width: 220, // <- width in pixels,
@@ -235,7 +246,7 @@ module.exports = {
                         return "Não"
                     }
                   },
-                }
+                }*/
               }
                
               // The data set should have the following shape (Array of Objects)
@@ -263,7 +274,7 @@ module.exports = {
               );
                
               // You can then return this straight
-              res.attachment('rank.xlsx'); // This is sails.js specific (in general you need to set headers)
+              res.attachment('relatorio.xlsx'); // This is sails.js specific (in general you need to set headers)
               return res.send(report);
 
         })

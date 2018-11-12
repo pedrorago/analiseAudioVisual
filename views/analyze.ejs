@@ -151,7 +151,7 @@
                     <span>
                         <label for="Leitura">O conteúdo é:</label>
                         <select name="conteudo" id="leitura">
-                            <option value="Informe qual é o tipo de leitura">Informe qual é o tipo de leitura</option>
+                            <option value="">Informe qual é o tipo de leitura</option>
                             <option value="1">Legendado</option>
                             <option value="2">Dublado</option>
                             <option value="3">Não se especifica</option>
@@ -170,12 +170,12 @@
                         <label for="ClassificacaoEmissora">Classificação inicativa inicialmente divulgada pela emissora:</label>
                         <select name="classificacao_indicativa" id="ClassificacaoEmissora">
                             <option value=""> Selecione a Classificação</option>
-                            <option value="Livre">Livre</option>
-                            <option value="1">10 anos</option>
-                            <option value="2">12 anos</option>
-                            <option value="3">14 anos</option>
-                            <option value="4">16 anos</option>
-                            <option value="5">18 anos</option>
+                            <option value="1">Livre</option>
+                            <option value="2">10 anos</option>
+                            <option value="3">12 anos</option>
+                            <option value="4">14 anos</option>
+                            <option value="5">16 anos</option>
+                            <option value="6">18 anos</option>
                         </select>
                     </span>
                     
@@ -280,6 +280,7 @@
                     <span>
                         <label for='relevancia_conteudo_trama'>Relevância do conteúdo violento para a trama:</labe> 
                             <select name="relevancia_conteudo_trama" id="relevancia_conteudo_trama">
+                                <option value=''>Informe Relevância do conteúdo violento para a trama.</option>
                                 <option value='1'>O conteúdo violento não é relevante para a compreensão da trama.</option>
                                 <option value='2'>O conteúdo violento é medianamente relevante para a compreensão da trama.</option>
                                 <option value='3'>O conteúdo violento é imprescindível para a compreensão da trama.</option>
@@ -328,6 +329,7 @@
                         <span>
                             <label for="tipo_violencia">Quanto ao tipo de violência envolvida: </label>
                             <select name="tipo_violencia" id="tipo_violencia">
+                                <option value=''>Informe tipo de violência</option>
                                 <option value='1'>Assassinato/homicídio.</option>
                                 <option value='2'>Agressão física/lesão corporal.</option>
                                 <option value='3'>Abuso sexual.</option>
@@ -344,6 +346,7 @@
                         <span>
                             <label for="cena_nudes">O material em análise apresenta cenas de nudez:</label>
                             <select name="cena_nudes" id="cena_nudes">
+                                <option value="">Informe se há nudez</option>
                                 <option value="1">Sim</option>
                                 <option value="2">Não</option>
                             </select>
@@ -352,6 +355,7 @@
                         <span>
                             <label for="cena_sexuais">O material em análise apresenta cenas de relações sexuais em quaisquer perspectivas?</label>
                             <select name="cena_sexuais" id="cena_sexuais">
+                                    <option value="">Informe se apresenta cenas de relações sexuais</option>
                                     <option value="1">Sim</option>
                                     <option value="2">Não</option>
                             </select>
@@ -361,6 +365,7 @@
                             <label for="proprocao_conteudo_sexual">Não Contém Proporção do conteúdo sexual/com nudez no material analisado:
                                 </label>
                             <select name="proprocao_conteudo_sexual" id="proprocao_conteudo_sexual">
+                                    <option value=''>Informe Proporção do conteúdo sexual</option>
                                     <option value='1'>Completamente pontual</option>
                                     <option value='2'>Menor de 5%</option>
                                     <option value='3'>Entre 5% e 10%</option>
@@ -375,6 +380,7 @@
                             <label for="relevancia_conteudo_sexual">Relevância do conteúdo sexual para a trama:
                                 </label>
                             <select name="relevancia_conteudo_sexual" id="relevancia_conteudo_sexual">
+                                    <option value=''>Informe a Relevância do conteúdo sexual</option>
                                     <option value='1'>O conteúdo sexual não é relevante para a compreensão da trama.</option>
                                     <option value='2'>O conteúdo sexual é medianamente relevante para a compreensão da trama.</option>
                                     <option value='3'>O conteúdo sexual é imprescindível para a compreensão da trama.</option>
@@ -385,6 +391,7 @@
                             <label for="referencia_conteudo_sexual">Referências do conteúdo sexual/de nudez no material analisado:
                                 </label>
                             <select name="referencia_conteudo_sexual" id="referencia_conteudo_sexual">
+                                    <option value=''> Informe Referências do conteúdo sexual</option>
                                     <option value='1'>Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e</option>
                                     <option value='2'>nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.</option>
                                     <option value='3'>Apresenta nudez completa.</option>
@@ -431,6 +438,7 @@
                         <span>
                             <label for="conteudo_narcoticos">O material em análise apresenta algum tipo de conteúdo envolvendo drogas?                                </label>
                             <select name="conteudo_narcoticos" id="conteudo_narcoticos">
+                                    <option value=''> Apresenta algum tipo de conteúdo envolvendo drogas</option>
                                     <option value='1'>Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.</option>
                                     <option value='2'>Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.</option>
                                     <option value='3'>Sim, ambas</option>
@@ -441,6 +449,7 @@
                         <span>
                             <label for="relevancia_conteudo_narcotico">Relevância do conteúdo envolvendo drogas para a trama:                                </label>
                             <select name="relevancia_conteudo_narcotico" id="relevancia_conteudo_narcotico">
+                                    <option value=''> Apresenta algum tipo de conteúdo envolvendo drogas</option>
                                     <option value='1'>O conteúdo não é relevante para a compreensão da trama.</option>
                                     <option value='2'>O conteúdo é medianamente relevante para a compreensão da trama.</option>
                                     <option value='3'>O conteúdo é imprescindível para a compreensão da trama.</option>
@@ -451,7 +460,7 @@
                             <label for="referencia_conteudo_drogas">Referência ao conteúdo envolvendo drogas:
                                 </label>
                             <select name="referencia_conteudo_drogas" id="referencia_conteudo_drogas">
-
+                                    <option value=''> Informe Referência ao conteúdo envolvendo drogas</option>
                                     <option value='1'>Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
                                     <option value='2'>Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
                                     <option value='3'>Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).</option>
@@ -479,11 +488,12 @@
                         <span>
                             <label for="tipo_linguagem">Quanto ao tipo de linguagem: </label>
                             <select name="tipo_linguagem" id="tipo_linguagem">
+                                    <option value=''> Informe Quanto ao tipo de linguagem</option>
                                     <option value='1'>Apresenta linguagem chula, de baixo calão, palavrões.</option>
                                     <option value='2'>Apresenta linguagem erótica, de conteúdo sexual.</option>
                                     <option value='3'>Apresenta gestos obscenos.</option>
                                     <option value='4'>Apresenta gírias.</option>
-                                    <option value='5'Apresenta ironias, metáforas.</option>
+                                    <option value='5'>Apresenta ironias, metáforas.</option>
                                     <option value='6'>Apresenta linguagem técnica/erudita.</option>
                                     <option value='7'>Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.</option>
                                     <option value='8'>Não se aplica.</option>
@@ -496,6 +506,7 @@
                             <label for="tipo_descriminacao">Quanto ao tipo de discriminação apresentada:
                                 </label>
                             <select name="tipo_descriminacao" id="tipo_descriminacao">
+                                    <option value=''> Informe Quanto ao tipo de discriminação apresentada</option>
                                     <option value='1'>De gênero</option>
                                     <option value='2'>De classe</option>
                                     <option value='3'>Contra gays, lésbicas, bissexuais e/ou transgêneros.</option>
@@ -515,6 +526,7 @@
                             <label for="vinculacao_esteriotipo">Quando da apresentação de alguns destes grupos há, na maior parte das cenas,
                                     a veiculação de estereótipos?</label>
                             <select name="vinculacao_esteriotipo" id="vinculacao_esteriotipo">
+                                    <option value=''> Informe</option>
                                     <option value='1'>Sim</option>
                                     <option value='2'>Não</option>
                             </select>
@@ -524,6 +536,7 @@
                             <label for="intensidade_comportamento_descriminatorio">Quando à intensidade da presença de comportamento discriminatório
                                 </label>
                             <select name="intensidade_comportamento_descriminatorio" id="intensidade_comportamento_descriminatorio">
+                                    <option value=''> Informe</option>
                                     <option value='1'>Acidentalmente verificado.</option>
                                     <option value='2'>Medianamente verificado.</option>
                                     <option value='3'>Muito verificado.</option>
@@ -534,22 +547,22 @@
                             <label for="comportamento_descriminatorio">Quanto ao comportamento discriminatório.
                                 </label>
                             <select name="comportamento_descriminatorio" id="comportamento_descriminatorio">
-                                    <option value='É condenado.'>É condenado.<option>
-                                            <option value='1'>É valorizado.<option>
-                                            <option value='2'>É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.<option>
-                                            <option value='3'>Os agressores são punidos.<option>
-                                            <option value='4'>Os agressores não são punidos.<option>
-                                            <option value='5'>Os agressores são valorizados/recompensados.<option>
+                                    <option value=''> Informe</option>
+                                    <option value='1'>É condenado.<option>
+                                    <option value='2'>É valorizado.<option>
+                                    <option value='3'>É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.<option>
+                                    <option value='4'>Os agressores são punidos.<option>
+                                    <option value='5'>Os agressores não são punidos.<option>
+                                    <option value='6'>Os agressores são valorizados/recompensados.<option>
                             </select>
                         </span>
                     </div>
                 </div>
                 <div class="boxComentario">
                     <label>Comentário (opcional)</label>
-                    <textarea name="comentario" id="comentario"></textarea>
+                    <textarea name="obs" id="comentario"></textarea>
                 </div>
             </div>
-
 
         </form>
             <div class='rightposition'>

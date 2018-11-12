@@ -4,6 +4,7 @@ const UtilService = require('../services/util-service');
 const ProgramacaoService = require('../services/programacao-service');
 const UserService = require('../services/users-service');
 const AnalyzeService = require('../services/analyze-service');
+const RelatorioService = require('../services/relatorios-service');
 var moment = require('moment');
 moment.locale('pt-BR');
 module.exports = function (app, passport) {
@@ -37,6 +38,10 @@ module.exports = function (app, passport) {
         }).catch(e => {
             res.json(e);
         });
+    });
+
+    app.get('/export-excel',isLoggedIn, function (req, res) {
+        RelatorioService.export(res);
     });
 
     app.post('/edit-program/:program_id', function (req, res) {
