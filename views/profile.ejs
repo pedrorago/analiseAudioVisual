@@ -2,22 +2,22 @@
 <!-- View de perfil do usuario -->
 <main>
    <h2>Perfil de<strong> <%=user.name%></strong></h2>
-   <h5>ANALISTA</h5>
+   <h5>CONFIGURAÇÕES</h5>
    <div class='container'>
       <div class='profileContent'>
-         <form class='formProfile' action="/edit-user"  method="post" enctype="multipart/form-data">
-            <div class='ImgProfileBox'>
+         <form class='formProfile' action="/edit-user"  method="post" enctype="multipart/form-data" style="display: block;">
+            <!-- <div class='ImgProfileBox'>
                <div class='videoPreviewContent imagemPreview' id='ImgProfilePreview'>
                   <img src="img/icon11.svg" alt="" class='iconPencil'>
                   <span></span>
-                  <img src="data:image/png;base64, <%=user.photo%>" class='imagemPreviewBox'alt="">
+                  <img src="<%=user.photo%>" class='imagemPreviewBox'alt="">
                </div>
                <div class='FormImg'>
                   <input hidden name="id" value="<%=user.id%>"/>
                   <input type="file" id='Upload' hidden name='imagem_file[]' accept="imagem/jpeg,imagem/jpg,imagem/png,imagem/tiff">
-                  <label for="Upload" style='margin:0;'>
+                  <label for="Upload" style='margin:0;'> -->
                      <!-- <img src="img/icon10.svg" alt=""> -->
-                     <div class="upload">
+                     <!-- <div class="upload">
                         <svg class="circle" viewBox="0 0 164 164">
                            <circle cx="82" cy="82" r="80"></circle>
                            <circle class="active" cx="82" cy="82" r="80"></circle>
@@ -30,7 +30,7 @@
                      </div>
                   </label>
                </div>
-            </div>
+            </div> -->
             <div class='inputBox'>
                <span class='inputSpan'>
                <label for="Nome">NOME</label>
@@ -48,7 +48,7 @@
                <input type="text" placeholder='dd/mm/aa' name='nascimento' value="10/02/1998">
                </span>
             </div>
-            <span class='SecondInfoProfile TextareaaSpan'>
+            <span class='SecondInfoProfile TextareaaSpan' style="margin-top: 0em !important">
             <label for="Sobre">Sobre:</label>
             <img src="img/pencil.svg" alt="" class='pencilEdit'>
             <textarea name="sobre" placeholder='Escreva um pouco sobre você' id="Sobre" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae libero ea iusto, commodi doloremque, deleniti harum consequatur accusamus aspernatur fugit aperiam sint porro veniam facere vero nulla? Ipsam, itaque!
@@ -56,15 +56,15 @@
             </span>
             <span class='PassSpan SpanAtual'>
             <label for="SenhaAtual">Senha atual:</label>
-            <img src="img/pencil.svg" alt="" class='pencilEdit'>
+            <img src="img/pencil.svg" alt="" class='pencilEdit' style="top: 62%">
             <input type="password" name='currentPassword' placeholder='Digite uma senha'>
             </span>
             <span class='PassSpan'>
             <label for="NovaSenha">Nova senha:</label>
-            <img src="img/pencil.svg" alt="" class='pencilEdit'>
+            <img src="img/pencil.svg" alt="" class='pencilEdit' style="top: 62%">
             <input type="password" name='newpassword' placeholder='Digite uma senha'>
             </span>
-            <button  type='submit'>Enviar</button>
+            <button  type='submit' style="margin-left: 0em">Enviar</button>
             
          </form>
          <div class='infosProfile'>
@@ -84,6 +84,15 @@
                    Ultima analise realizada:    
                    <p id='QtdAnalises'>19/08/2018</p>
                 </label>
+
+        
+                                <% if (user.admin==1) { %>
+
+                                    <a href="/signup" class="NovoUsuarioButton">Cadastrar novo usuário</a>
+
+                                   
+                                <% } %>
+
              </div>
         </div>
     </div>

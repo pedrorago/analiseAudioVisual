@@ -17,24 +17,24 @@
                 <input name="video" id="inputVideo" hidden>
                 
                 <label for="Nome">NOME DA PROGRAMAÇÃO</label>
-                <input type="text" name='nome' id='NomeProgramacaoCadastro'>
+                <input type="text" name='nome' id='NomeProgramacaoCadastro' required>
 
                 <label for="DataProgramacao">DATA DA PROGRAMAÇÃO</label>
-                <input name='data_programacao' type='date' id='DataProgramacao'/>                
+                <input name='dia_emissao' type='date' id='DataProgramacao' required/>                
                 
                 <label for="HorarioInicio">HORÁRIO DO INÍCIO DA PROGRAMAÇÃO</label>
-                <input name='hora_inicio' type='time' id='HorarioInicio'> 
+                <input name='hora_inicio' type='time' id='HorarioInicio' required> 
 
                 <label for="HorarioFim">HORÁRIO DO FIM DA PROGRAMAÇÃO</label>
-                <input name='hora_fim' type='time' id='HorarioFim'>
+                <input name='hora_fim' type='time' id='HorarioFim' required>
 
                 <label for="emissora">EMISSORA:</label>
-                <select name="emissora" id="emissora">
+                <select name="emissora" id="emissora" required>
                     <option value="">Informe a emissora</option>
                     <option value='SBT'>SBT</option>
                     <option value='GLOBO'>GLOBO</option>
+                    <option value='RECORD'>RECORD</option>
                 </select>
-
                 <button type='submit'>Cadastrar</button>
             </form>
             <div class='UploadVideo'>

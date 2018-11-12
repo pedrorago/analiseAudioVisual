@@ -43,7 +43,7 @@ $icon: #333d5d
     overflow: hidden
 
     img
-        width: 100%
+        height: 100%
         opacity: 0
         animation: fade-in 2s normal forwards ease-in-out
         animation-delay: .5s
@@ -210,7 +210,7 @@ body
         margin-bottom: 2em
         color: $colorBlackInput
         font-family: Helvetica
-        height: 4em
+        height: 3em
         
         &:focus 
             outline: none
@@ -243,7 +243,7 @@ body
 
 @media(max-width: 1440px)
     .activeHeader
-        width: 83.8%
+        width: 83%
 
 header
     background: $colorHeader
@@ -275,7 +275,7 @@ header
             justify-content: center
 
             img
-                width: 100%
+                height: 100%
         
         h3
             font-family: Avenir Next
@@ -379,6 +379,9 @@ header
                 width: 2.4em
                 height: 2.5em
                 background: #424d6e
+                display: flex
+                align-items: center
+                justify-content: center
 
 
 
@@ -402,11 +405,11 @@ header
 @media(max-width: 1440px)
     
     header
-        width: 94.2%
+        width: 93.8%
 
 @media(max-width: 1336px)
     header
-        width: 94.2%
+        width: 93.5%
 
 aside
     height: 100%
@@ -600,6 +603,7 @@ nav
     display: flex
     align-items: center
     justify-content: space-between
+    flex-wrap: wrap
     div 
         display: flex
         align-items: center
@@ -607,6 +611,8 @@ nav
         a
             @include botao(.6em 1.5em, $corBotaoCinza)
             margin-right: 1.5em
+
+
 
 .formInputSearch
     position: relative
@@ -635,6 +641,72 @@ nav
         left: 3%
         color: #626c89
         cursor: pointer
+.formSearchFinal
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin-top: 1em
+    @include form()
+
+    input, select
+        border: none
+        position: relative
+        background: #edf2fd
+        width: 100%
+        padding: 0.9em
+        padding-left: 1.7em
+        border-radius: 5px
+        margin-bottom: 2em
+        color: #333d5d
+        font-family: Helvetica
+        height: 3em
+        margin: 0
+        margin-top: 0 !important
+        margin-left: 2em
+        width: 13em
+
+    button
+        background: #333d5d
+        color: #edf2fd
+        text-decoration: none
+        font-family: Avenir Next
+        padding: 0.5em 1.5em
+        border-radius: 6px
+        transition: 0.3s ease-out
+        cursor: pointer
+        border: none
+        font-weight: 400
+        font-size: 1em
+        width: 7.5em
+        margin-left: 1em
+
+        &:focus
+            outline: none
+    a
+        margin-right: 0em
+        background: #333d5d
+        color: #edf2fd
+        text-decoration: none
+        font-family: Avenir Next
+        padding: 0.65em 1.5em
+        border-radius: 6px
+        transition: 0.3s ease-out
+        cursor: pointer
+        border: none
+        font-weight: 400
+        font-size: 1em
+        margin-left: 1em
+
+        &:focus
+            outline: none
+
+
+@media(max-width: 1336px)
+
+    .formInputSearch 
+        i
+            left: -46%
 
 .listProgram
     width: 100%
@@ -777,6 +849,12 @@ nav
         width: 9em
         font-size: 1em
         border: none
+
+.NovoUsuarioButton
+    @include botao(1em 1.6em, rgb(10, 108, 206))
+    font-size: 1em
+    border: none
+    margin-top: .5em
 
 .UploadVideo
     @include form()
@@ -1272,7 +1350,7 @@ nav
     border-bottom: 2px solid #0076ff
     padding: 2em 2em
     padding-bottom: 2em
-    height: 16em
+    height: 78.4vh
     overflow: hidden
     position: relative
     
@@ -1306,6 +1384,7 @@ nav
             padding-bottom: 1em
             margin-bottom: 1.5em
             z-index: 10
+            padding-top: .5em
 
         label
             @extend .label
@@ -1600,3 +1679,70 @@ nav
         h5
             font-size: 1.8em
             margin-top: 0em
+
+@media(max-width: 1336px)
+    .SingUpForm
+        width: 30em
+
+    .VideoContent
+        width: 33.3em
+
+    .Graphic04 
+        span
+            width: 58%
+    .Graphic04 .EstatisctBody #StatusProgramas, .Graphic04 .EstatisctBody #StatusUsuario, .Graphic04 .EstatisctBody #StatusTotalAnalise, .Graphic04 .EstatisctBody #EmissorasAnalises
+            width: 36.6%
+            margin-top: 2.1em
+
+    .activeHeader
+        width: 81.8%
+
+@media(max-width: 1024px)
+    .Graphic03
+        width: 100%
+        height: 35em
+
+        .HeaderEst
+            width: 93% !important
+
+        p
+            margin-top: 3em !important
+
+
+    .Graphic04
+        width: 100%
+        height: 31.1em
+
+        .HeaderEst
+            width: 94% !important
+
+        .EstatisctBody
+            width: 91%
+
+.boxComentario
+    margin-bottom: 3em
+    display: flex
+    flex-direction: column
+    padding-left: 1.8em
+    width: 92.6%
+    padding-top: 1.5em
+
+    label
+        color: #d0d4dd
+        font-weight: 500
+        font-size: 0.85em
+        margin-bottom: 1em
+        font-family: Helvetica
+
+    textarea
+        border: none
+        position: relative
+        background: #edf2fd
+        width: 100%
+        padding: 0.9em
+        padding-left: 1.7em
+        border-radius: 5px
+        margin-bottom: 2em
+        color: #333d5d
+        font-family: Helvetica
+        height: 14em

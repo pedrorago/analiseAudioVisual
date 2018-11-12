@@ -9,7 +9,7 @@
     {
         height:5em;
         display:block;
-        position: absolute;
+        position: fixed;
     }
     aside .logo
     {
@@ -53,7 +53,7 @@
                     <p><%=program.dia_emissao.toLocaleString()%></p>
                 </span>
                 
-                <a href="javascript:void(0)"><img src="/img/download.svg" alt=""></a>
+                <a href="<%=program.link_video%>" download><img src="/img/download.svg" alt=""></a>
             </div>
             <div class='Userplace infosPlace infosPlaceActive'>
                 <div class='infosPlaceheader'>
@@ -63,11 +63,11 @@
                 <div class='infosPlacebody'>   
                     <span>
                         <label for="Nome">Nome do Programa:</label>
-                        <input name="nome_programa" type="text" placeholder="Digite o nome do programa" value='Program-DE23D2' value='nome_programa'>
+                        <input name="nome_programa" type="text" placeholder="Digite o nome do programa" value='<%=program.nome%>'>
                     </span>
                     <span>
                         <label for="Emissora">Nome da Emissora:</label>
-                        <input name="nome_emissora" type="text" placeholder="Digite o nome da emissora" value='nome_emissora'>
+                        <input name="nome_emissora" type="text" placeholder="Digite o nome da emissora" value='<%=program.emissora%>'>
                     </span>
                     <span>
                         <label for="DiaT">Dia de transmissão:</label>
@@ -328,32 +328,32 @@
                         <span>
                             <label for="tipo_violencia">Quanto ao tipo de violência envolvida: </label>
                             <select name="tipo_violencia" id="tipo_violencia">
-                                <option value='Assassinato/homicídio.'>Assassinato/homicídio.</option>
-                                <option value='Agressão física/lesão corporal.'>Agressão física/lesão corporal.</option>
-                                <option value='Abuso sexual.'>Abuso sexual.</option>
-                                <option value='Atos criminosos sem lesões corporais ou contra a vida.'>Atos criminosos sem lesões corporais ou contra a vida.</option>
-                                <option value='Estupro.'>Estupro.</option>
-                                <option value='Exploração sexual'>Exploração sexual</option>
-                                <option value='Mutilação de partes de corpo.'>Mutilação de partes de corpo.</option>
-                                <option value='Suicídio'>Suicídio</option>
-                                <option value='Tortura/crueldade'>Tortura/crueldade</option>
-                                <option value='Outros'>Outros</option>
+                                <option value='1'>Assassinato/homicídio.</option>
+                                <option value='2'>Agressão física/lesão corporal.</option>
+                                <option value='3'>Abuso sexual.</option>
+                                <option value='4'>Atos criminosos sem lesões corporais ou contra a vida.</option>
+                                <option value='5'>Estupro.</option>
+                                <option value='6'>Exploração sexual</option>
+                                <option value='7'>Mutilação de partes de corpo.</option>
+                                <option value='8'>Suicídio</option>
+                                <option value='9'>Tortura/crueldade</option>
+                                <option value='10'>Outros</option>
                             </select>
                         </span>
 
                         <span>
                             <label for="cena_nudes">O material em análise apresenta cenas de nudez:</label>
                             <select name="cena_nudes" id="cena_nudes">
-                                <option value="Sim">Sim</option>
-                                <option value="Não">Não</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
                             </select>
                         </span>
 
                         <span>
                             <label for="cena_sexuais">O material em análise apresenta cenas de relações sexuais em quaisquer perspectivas?</label>
                             <select name="cena_sexuais" id="cena_sexuais">
-                                    <option value="Sim">Sim</option>
-                                    <option value="Não">Não</option>
+                                    <option value="1">Sim</option>
+                                    <option value="2">Não</option>
                             </select>
                         </span>
 
@@ -361,13 +361,13 @@
                             <label for="proprocao_conteudo_sexual">Não Contém Proporção do conteúdo sexual/com nudez no material analisado:
                                 </label>
                             <select name="proprocao_conteudo_sexual" id="proprocao_conteudo_sexual">
-                                    <option value='Completamente pontual'>Completamente pontual</option>
-                                    <option value='Menor de 5%'>Menor de 5%</option>
-                                    <option value='Entre 5% e 10%'>Entre 5% e 10%</option>
-                                    <option value='Entre 10% e 30%'>Entre 10% e 30%</option>
-                                    <option value='Entre 30% e 50%'>Entre 30% e 50%</option>
-                                    <option value='Entre 50% e 70%'>Entre 50% e 70%</option>
-                                    <option value='Não - entre 70% e 100%'>Não - entre 70% e 100%</option>
+                                    <option value='1'>Completamente pontual</option>
+                                    <option value='2'>Menor de 5%</option>
+                                    <option value='3'>Entre 5% e 10%</option>
+                                    <option value='4'>Entre 10% e 30%</option>
+                                    <option value='5'>Entre 30% e 50%</option>
+                                    <option value='6'>Entre 50% e 70%</option>
+                                    <option value='7'>Não - entre 70% e 100%</option>
                             </select>
                         </span>
 
@@ -375,9 +375,9 @@
                             <label for="relevancia_conteudo_sexual">Relevância do conteúdo sexual para a trama:
                                 </label>
                             <select name="relevancia_conteudo_sexual" id="relevancia_conteudo_sexual">
-                                    <option value='O conteúdo sexual não é relevante para a compreensão da trama.'>O conteúdo sexual não é relevante para a compreensão da trama.</option>
-                                    <option value='O conteúdo sexual é medianamente relevante para a compreensão da trama.'>O conteúdo sexual é medianamente relevante para a compreensão da trama.</option>
-                                    <option value='O conteúdo sexual é imprescindível para a compreensão da trama.'>O conteúdo sexual é imprescindível para a compreensão da trama.</option>
+                                    <option value='1'>O conteúdo sexual não é relevante para a compreensão da trama.</option>
+                                    <option value='2'>O conteúdo sexual é medianamente relevante para a compreensão da trama.</option>
+                                    <option value='3'>O conteúdo sexual é imprescindível para a compreensão da trama.</option>
                             </select>
                         </span>
 
@@ -385,29 +385,29 @@
                             <label for="referencia_conteudo_sexual">Referências do conteúdo sexual/de nudez no material analisado:
                                 </label>
                             <select name="referencia_conteudo_sexual" id="referencia_conteudo_sexual">
-                                    <option value='Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e'>Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e</option>
-                                    <option value='nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.'>nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.</option>
-                                    <option value='Apresenta nudez completa.'>Apresenta nudez completa.</option>
-                                    <option value='A apresentação da nudez se dá em um contexto científico, médico, de educação sexual ou totalmente desvencilhado de qualquer conotação erótica.'>A apresentação da nudez se dá em um contexto científico, médico, de educação sexual ou totalmente desvencilhado de qualquer conotação erótica.</option>
-                                    <option value='Apresenta cenas de insinuação sexual (é possível deduzir que a relação ocorrerá ou está acontecendo, sem que, contudo, seja possível visualizar).'>Apresenta cenas de insinuação sexual (é possível deduzir que a relação ocorrerá ou está acontecendo, sem que, contudo, seja possível visualizar).</option>
-                                    <option value='Apresenta cenas de sexo sem penetração.'>Apresenta cenas de sexo sem penetração.</option>
-                                    <option value='Apresenta insinuações se sexo oral e/ou anal.'>Apresenta insinuações se sexo oral e/ou anal.</option>
-                                    <option value='Apresenta insinuações se masturbação.'>Apresenta insinuações se masturbação.</option>
-                                    <option value='Apresenta sexo explícito.'>Apresenta sexo explícito.</option>
-                                    <option value='Há cenas de incesto.'>Há cenas de incesto.</option>
-                                    <option value='Há cenas de prostituição.'>Há cenas de prostituição.</option>
-                                    <option value='A mulher é tratada como objeto.'>A mulher é tratada como objeto.</option>
-                                    <option value='O sexo é associado com a traição extraconjugal.'>O sexo é associado com a traição extraconjugal.</option>
-                                    <option value='O sexo é associado com a promiscuidade (várias relações, com pessoas diferentes, em curtos espaços temporais).'>O sexo é associado com a promiscuidade (várias relações, com pessoas diferentes, em curtos espaços temporais).</option>
-                                    <option value='O estupro é apresentado como consequência da paixão e não como um crime.'>O estupro é apresentado como consequência da paixão e não como um crime.</option>
-                                    <option value='O estupro como consequência do consumo de drogas ilícitas e nãocomo um crime.'>O estupro como consequência do consumo de drogas ilícitas e nãocomo um crime.</option>
-                                    <option value='Há o envolvimento de crianças e adolescentes nas cenas com conteúdo sexual.'>Há o envolvimento de crianças e adolescentes nas cenas com conteúdo sexual.</option>
-                                    <option value='A apresentação de fundo musical reforça o conteúdo sexual.'>A apresentação de fundo musical reforça o conteúdo sexual.</option>
-                                    <option value='A apresentação de fundo musical minimiza o conteúdo sexual.'>A apresentação de fundo musical minimiza o conteúdo sexual.</option>
-                                    <option value='A apresentação de sonoplastia minimiza o conteúdo sexual.'>A apresentação de sonoplastia minimiza o conteúdo sexual.</option>
-                                    <option value='A apresentação de sonoplastia valoriza o conteúdo sexual.'>A apresentação de sonoplastia valoriza o conteúdo sexual.</option>
-                                    <option value='O enquadramento da imagem valoriza o conteúdo sexual.'>O enquadramento da imagem valoriza o conteúdo sexual.</option>
-                                    <option value='O enquadramento da imagem minimiza o conteúdo sexual.'>O enquadramento da imagem minimiza o conteúdo sexual.</option>
+                                    <option value='1'>Apresenta nudez frontal, porém sem a exibição de nus frontais (pênis, vagina) seios e</option>
+                                    <option value='2'>nádegas, ou seja, uma nudez ‘’opaca’’ ou velada.</option>
+                                    <option value='3'>Apresenta nudez completa.</option>
+                                    <option value='4'>A apresentação da nudez se dá em um contexto científico, médico, de educação sexual ou totalmente desvencilhado de qualquer conotação erótica.</option>
+                                    <option value='5'>Apresenta cenas de insinuação sexual (é possível deduzir que a relação ocorrerá ou está acontecendo, sem que, contudo, seja possível visualizar).</option>
+                                    <option value='6'>Apresenta cenas de sexo sem penetração.</option>
+                                    <option value='7.'>Apresenta insinuações se sexo oral e/ou anal.</option>
+                                    <option value='8'>Apresenta insinuações se masturbação.</option>
+                                    <option value='9'>Apresenta sexo explícito.</option>
+                                    <option value='10'>Há cenas de incesto.</option>
+                                    <option value='11'>Há cenas de prostituição.</option>
+                                    <option value='12'>A mulher é tratada como objeto.</option>
+                                    <option value='13'>O sexo é associado com a traição extraconjugal.</option>
+                                    <option value='14'>O sexo é associado com a promiscuidade (várias relações, com pessoas diferentes, em curtos espaços temporais).</option>
+                                    <option value='15'>O estupro é apresentado como consequência da paixão e não como um crime.</option>
+                                    <option value='16'>O estupro como consequência do consumo de drogas ilícitas e nãocomo um crime.</option>
+                                    <option value='17'>Há o envolvimento de crianças e adolescentes nas cenas com conteúdo sexual.</option>
+                                    <option value='18'>A apresentação de fundo musical reforça o conteúdo sexual.</option>
+                                    <option value='19'>A apresentação de fundo musical minimiza o conteúdo sexual.</option>
+                                    <option value='20'>A apresentação de sonoplastia minimiza o conteúdo sexual.</option>
+                                    <option value='21'>A apresentação de sonoplastia valoriza o conteúdo sexual.</option>
+                                    <option value='22'>O enquadramento da imagem valoriza o conteúdo sexual.</option>
+                                    <option value='23'>O enquadramento da imagem minimiza o conteúdo sexual.</option>
                             </select>
                         </span>
 
@@ -431,19 +431,19 @@
                         <span>
                             <label for="conteudo_narcoticos">O material em análise apresenta algum tipo de conteúdo envolvendo drogas?                                </label>
                             <select name="conteudo_narcoticos" id="conteudo_narcoticos">
-                                    <option value='Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.'>Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.</option>
-                                    <option value='Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.'>Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.</option>
-                                    <option value='Sim, ambas'>Sim, ambas</option>
-                                    <option value='Não'>Não</option>
+                                    <option value='1'>Sim. lícitas - que ou o que é conforme à lei, aos princípios do direito.</option>
+                                    <option value='2'>Sim, ilícitas - condenado pela lei e/ou pela moral; proibido, ilegal.</option>
+                                    <option value='3'>Sim, ambas</option>
+                                    <option value='4'>Não</option>
                             </select>
                         </span>
 
                         <span>
                             <label for="relevancia_conteudo_narcotico">Relevância do conteúdo envolvendo drogas para a trama:                                </label>
                             <select name="relevancia_conteudo_narcotico" id="relevancia_conteudo_narcotico">
-                                    <option value='O conteúdo não é relevante para a compreensão da trama.'>O conteúdo não é relevante para a compreensão da trama.</option>
-                                    <option value='O conteúdo é medianamente relevante para a compreensão da trama.'>O conteúdo é medianamente relevante para a compreensão da trama.</option>
-                                    <option value='O conteúdo é imprescindível para a compreensão da trama.'>O conteúdo é imprescindível para a compreensão da trama.</option>
+                                    <option value='1'>O conteúdo não é relevante para a compreensão da trama.</option>
+                                    <option value='2'>O conteúdo é medianamente relevante para a compreensão da trama.</option>
+                                    <option value='3'>O conteúdo é imprescindível para a compreensão da trama.</option>
                             </select>
                         </span>
 
@@ -452,26 +452,26 @@
                                 </label>
                             <select name="referencia_conteudo_drogas" id="referencia_conteudo_drogas">
 
-                                    <option value='Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.'>Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
-                                    <option value='Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.'>Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
-                                    <option value='Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).'>Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).</option>
-                                    <option value='Apresenta consequências negativas (ser malsucedido na vida, por exemplo) de longo prazo ao agressor (traficante).'>Apresenta consequências negativas (ser malsucedido na vida, por exemplo) de longo prazo ao agressor (traficante).</option>
-                                    <option value='Apresenta consequências negativas (problemas de saúde, por exemplo) para o consumidor (usuário).'>Apresenta consequências negativas (problemas de saúde, por exemplo) para o consumidor (usuário).</option>
-                                    <option value='Apresenta consequências positivas (prazer, p. ex.) para o consumidor (usuário)'>Apresenta consequências positivas (prazer, p. ex.) para o consumidor (usuário)</option>
-                                    <option value='Não há punição do agressor (traficante).'>Não há punição do agressor (traficante).</option>
-                                    <option value='Há recompensa ao agressor (traficante).'>Há recompensa ao agressor (traficante).</option>
-                                    <option value='Apresenta drogas como a única forma ou a forma predominante de resoluçãode problema.'>Apresenta drogas como a única forma ou a forma predominante de resoluçãode problema.</option>
-                                    <option value='Apresenta formas alternativas de resolução de problemas.'>Apresenta formas alternativas de resolução de problemas.</option>
-                                    <option value='Apresenta uma discussão ao redor do tema consumo de drogas.'>Apresenta uma discussão ao redor do tema consumo de drogas.</option>
-                                    <option value='Apresenta uma discussão ao redor do tema tráfico de drogas.'>Apresenta uma discussão ao redor do tema tráfico de drogas.</option>
-                                    <option value='A apresentação de fundo musical reforça o conteúdo'>A apresentação de fundo musical reforça o conteúdo</option>
-                                    <option value='A apresentação de fundo musical minimiza o conteúdo.'>A apresentação de fundo musical minimiza o conteúdo.</option>
-                                    <option value='A apresentação de sonoplastia reforça o conteúdo.'>A apresentação de sonoplastia reforça o conteúdo.</option>
-                                    <option value='A apresentação de sonoplastia minimiza o conteúdo.'>A apresentação de sonoplastia minimiza o conteúdo.</option>
-                                    <option value='O enquadramento da imagem valoriza o conteúdo.'>O enquadramento da imagem valoriza o conteúdo.</option>
-                                    <option value='O enquadramento da imagem minimiza o conteúdo.'>O enquadramento da imagem minimiza o conteúdo.</option>
-                                    <option value='Referências ao conteúdo envolvendo drogas apresentadas dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.'>Referências ao conteúdo envolvendo drogas apresentadas dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.</option>
-                                    <option value='Envolve crianças e/ou adolescentes na cena. '>Envolve crianças e/ou adolescentes na cena. </option>
+                                    <option value='1'>Apresenta descrições, a partir das imagens exibidas, pormenorizadas do consumo/produção / venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
+                                    <option value='2'>Apresenta descrições verbais pormenorizadas do consumo/produção/venda de drogas (incluindo o modus operandi e a reação das pessoas.</option>
+                                    <option value='3'>Apresenta consequências negativas (prisão, por exemplo) de curto prazo ao agressor (traficante).</option>
+                                    <option value='4'>Apresenta consequências negativas (ser malsucedido na vida, por exemplo) de longo prazo ao agressor (traficante).</option>
+                                    <option value='5'>Apresenta consequências negativas (problemas de saúde, por exemplo) para o consumidor (usuário).</option>
+                                    <option value='6'>Apresenta consequências positivas (prazer, p. ex.) para o consumidor (usuário)</option>
+                                    <option value='7'>Não há punição do agressor (traficante).</option>
+                                    <option value='8'>Há recompensa ao agressor (traficante).</option>
+                                    <option value='9'>Apresenta drogas como a única forma ou a forma predominante de resoluçãode problema.</option>
+                                    <option value='10'>Apresenta formas alternativas de resolução de problemas.</option>
+                                    <option value='11'>Apresenta uma discussão ao redor do tema consumo de drogas.</option>
+                                    <option value='12'>Apresenta uma discussão ao redor do tema tráfico de drogas.</option>
+                                    <option value='13'>A apresentação de fundo musical reforça o conteúdo</option>
+                                    <option value='14'>A apresentação de fundo musical minimiza o conteúdo.</option>
+                                    <option value='15'>A apresentação de sonoplastia reforça o conteúdo.</option>
+                                    <option value='16.'>A apresentação de sonoplastia minimiza o conteúdo.</option>
+                                    <option value='17'>O enquadramento da imagem valoriza o conteúdo.</option>
+                                    <option value='18'>O enquadramento da imagem minimiza o conteúdo.</option>
+                                    <option value='19'>Referências ao conteúdo envolvendo drogas apresentadas dentro de um contexto histórico, envolvendo as causas, consequências e soluções pertinentes ao caso.</option>
+                                    <option value='20'>Envolve crianças e/ou adolescentes na cena. </option>
                                     
                             </select>
                         </span>
@@ -479,35 +479,35 @@
                         <span>
                             <label for="tipo_linguagem">Quanto ao tipo de linguagem: </label>
                             <select name="tipo_linguagem" id="tipo_linguagem">
-                                    <option value='Apresenta linguagem chula, de baixo calão, palavrões.'>Apresenta linguagem chula, de baixo calão, palavrões.</option>
-                                    <option value='Apresenta linguagem erótica, de conteúdo sexual.'>Apresenta linguagem erótica, de conteúdo sexual.</option>
-                                    <option value='Apresenta gestos obscenos.'>Apresenta gestos obscenos.</option>
-                                    <option value='Apresenta gírias.'>Apresenta gírias.</option>
-                                    <option value='Apresenta ironias, metáforas.'>Apresenta ironias, metáforas.</option>
-                                    <option value='Apresenta linguagem técnica/erudita.'>Apresenta linguagem técnica/erudita.</option>
-                                    <option value='Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.'>Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.</option>
-                                    <option value='Não se aplica.'>Não se aplica.</option>
-                                    <option value='Acidentalmente utilizados.'>Acidentalmente utilizados.</option>
-                                    <option value='Medianamente utilizados.'>Medianamente utilizados.</option>
-                                    <option value='Muito utilizados.'>Muito utilizados.</option>
+                                    <option value='1'>Apresenta linguagem chula, de baixo calão, palavrões.</option>
+                                    <option value='2'>Apresenta linguagem erótica, de conteúdo sexual.</option>
+                                    <option value='3'>Apresenta gestos obscenos.</option>
+                                    <option value='4'>Apresenta gírias.</option>
+                                    <option value='5'Apresenta ironias, metáforas.</option>
+                                    <option value='6'>Apresenta linguagem técnica/erudita.</option>
+                                    <option value='7'>Apresenta linguagem polida, que reflete e estimula comportamento éticos, solidários e de respeito social.</option>
+                                    <option value='8'>Não se aplica.</option>
+                                    <option value='9'>Acidentalmente utilizados.</option>
+                                    <option value='10'>Medianamente utilizados.</option>
+                                    <option value='11'>Muito utilizados.</option>
                             </select>
                         </span>
                         <span>
                             <label for="tipo_descriminacao">Quanto ao tipo de discriminação apresentada:
                                 </label>
                             <select name="tipo_descriminacao" id="tipo_descriminacao">
-                                    <option value='De gênero'>De gênero</option>
-                                    <option value='De classe'>De classe</option>
-                                    <option value='Contra gays, lésbicas, bissexuais e/ou transgêneros.'>Contra gays, lésbicas, bissexuais e/ou transgêneros.</option>
-                                    <option value='Contra raças/etnias'>Contra raças/etnias</option>
-                                    <option value='Contra migrantes e imigrantes.'>Contra migrantes e imigrantes.</option>
-                                    <option value='Contra indígenas.'>Contra indígenas.</option>
-                                    <option value='Contra determinados povos/populações.'>Contra determinados povos/populações.</option>
-                                    <option value='Contra crianças/adolescentes.'>Contra crianças/adolescentes.</option>
-                                    <option value='Contra religiões.'>Contra religiões.</option>
-                                    <option value='Contra pessoas com deficiência.'>Contra pessoas com deficiência.</option>
-                                    <option value='Outras.'>Outras.</option>
-                                    <option value='Não se aplica.'>Não se aplica.</option>
+                                    <option value='1'>De gênero</option>
+                                    <option value='2'>De classe</option>
+                                    <option value='3'>Contra gays, lésbicas, bissexuais e/ou transgêneros.</option>
+                                    <option value='4'>Contra raças/etnias</option>
+                                    <option value='5'>Contra migrantes e imigrantes.</option>
+                                    <option value='6'>Contra indígenas.</option>
+                                    <option value='7'>Contra determinados povos/populações.</option>
+                                    <option value='8'>Contra crianças/adolescentes.</option>
+                                    <option value='9'>Contra religiões.</option>
+                                    <option value='10'>Contra pessoas com deficiência.</option>
+                                    <option value='11'>Outras.</option>
+                                    <option value='12'>Não se aplica.</option>
                             </select>
                         </span>
 
@@ -515,8 +515,8 @@
                             <label for="vinculacao_esteriotipo">Quando da apresentação de alguns destes grupos há, na maior parte das cenas,
                                     a veiculação de estereótipos?</label>
                             <select name="vinculacao_esteriotipo" id="vinculacao_esteriotipo">
-                                    <option value='Sim'>Sim</option>
-                                    <option value='Não'>Não</option>
+                                    <option value='1'>Sim</option>
+                                    <option value='2'>Não</option>
                             </select>
                         </span>
 
@@ -524,9 +524,9 @@
                             <label for="intensidade_comportamento_descriminatorio">Quando à intensidade da presença de comportamento discriminatório
                                 </label>
                             <select name="intensidade_comportamento_descriminatorio" id="intensidade_comportamento_descriminatorio">
-                                    <option value='Acidentalmente verificado.'>Acidentalmente verificado.</option>
-                                    <option value='Medianamente verificado.'>Medianamente verificado.</option>
-                                    <option value='Muito verificado.'>Muito verificado.</option>
+                                    <option value='1'>Acidentalmente verificado.</option>
+                                    <option value='2'>Medianamente verificado.</option>
+                                    <option value='3'>Muito verificado.</option>
                             </select>
                         </span>
 
@@ -535,19 +535,25 @@
                                 </label>
                             <select name="comportamento_descriminatorio" id="comportamento_descriminatorio">
                                     <option value='É condenado.'>É condenado.<option>
-                                            <option value='É valorizado.'>É valorizado.<option>
-                                            <option value='É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.'>É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.<option>
-                                            <option value='Os agressores são punidos.'>Os agressores são punidos.<option>
-                                            <option value='Os agressores não são punidos.'>Os agressores não são punidos.<option>
-                                            <option value='Os agressores são valorizados/recompensados.'>Os agressores são valorizados/recompensados.<option>
+                                            <option value='1'>É valorizado.<option>
+                                            <option value='2'>É apresentado em um contexto histórico e político, quando causas, consequências e soluções são sublinhadas.<option>
+                                            <option value='3'>Os agressores são punidos.<option>
+                                            <option value='4'>Os agressores não são punidos.<option>
+                                            <option value='5'>Os agressores são valorizados/recompensados.<option>
                             </select>
                         </span>
                     </div>
                 </div>
-                
+                <div class="boxComentario">
+                    <label>Comentário (opcional)</label>
+                    <textarea name="comentario" id="comentario"></textarea>
+                </div>
             </div>
+
+
         </form>
             <div class='rightposition'>
+
                 <div class='bookBox'>
                     <form action="" class='formInputSearch'>
                         <input type="text" placeholder="Pesquise" name='pesquisa'>
@@ -562,23 +568,16 @@
                             <p>Lorem ipsum lorem ipsum</p>
                         </span>
                     </div>
-                    <span class='gradient'></span>
-                </div>
-                
-                <div class='Userplace'>
-                    <img src="img/icon6.png" alt="Icone Usuário - SAAV">
-                    <h5>Pedro Rago</h5>
-                    <p>Você</p>
+                    <!-- <span class='gradient'></span> -->
                 </div>
                 <div class='Userplace'>
-                    <h5 style='margin-left:0 !important;'>Analises realizadas</h5>
-                </div>
-                
-                <div class='HistoryAnalyzes'>
-                    <!-- 0 ANLISES -->
-                    <h1>0</h1>
-                    <p>Análises</p>
-                </div>
+                        <img src="/img/icon6.png" alt="Icone Usuário - SAAV">
+                        <h5> <%= user.name %> </h5>
+                        <p>Você</p>
+                    </div>
+
+
+
             </div>
             
             

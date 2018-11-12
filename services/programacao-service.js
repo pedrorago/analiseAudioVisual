@@ -2,9 +2,35 @@ const Programacao = require('../server/models').Programacao
 const sequelize = require('../server/models').sequelize;
 
 module.exports = {
+
+    get_all_promogramacao: function (req) {
+        sql = 'where 1 = 1';
+        if(req.body.emissora){
+            sql = sql + ' and emissora = '+ "'"+req.body.emissora+"'";
+        }
+        if(req.body.dia_emissao){
+            sql = sql + ' and DATE_FORMAT(dia_emissao,"%d/%m/%Y") = '+ '"'+req.body.dia_emissao+'"';
+        }
+        if(req.body.status){
+            sql = sql + ' and status = '+ '"'+req.body.status+'"';
+        }
+        sql = sql + ' and excluido = 0 order by id desc';
+
+        return new Promise(function (resolve, reject) {
+            sequelize.query(" select * from programacao "+ sql, { type: sequelize.QueryTypes.SELECT})
+            .then(resp => {
+                resolve(resp);
+                // We don't need spread here, since only the results will be returned for select queries
+            }).catch(e =>{
+                reject(e);
+            })
+        })
+    },
+
+
     save_promogramacao: function (programacao) {
         return new Promise(function (resolve, reject) {
-            programacao.dia_emissao = new Date();
+            //programacao.dia_emissao = new Date();
             Programacao.create(programacao).then(resp => {
                 resolve(resp);
             }).catch(e => {
@@ -13,7 +39,7 @@ module.exports = {
         })
     },
 
-    get_all_promogramacao: function () {
+    /*get_all_promogramacao: function () {
         return new Promise(function (resolve, reject) {
             Programacao.findAll({where:{excluido:0}, order: [
                 ['id', 'DESC']
@@ -23,7 +49,7 @@ module.exports = {
                 reject(e);
             })
         })
-    },
+    },*/
 
     get_promogramacao: function (id) {
         return new Promise(function (resolve, reject) {

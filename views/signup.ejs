@@ -1,100 +1,28 @@
-
+<% include includes/header.ejs %>
 <!-- View de perfil do usuario -->
-<!DOCTYPE>
-<html>
-<head>
-
-    <title>SAAV - Sistema de Análise Audiovisual</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta author="Pedro Rago">
-
-    <link rel="icon" href="img/logo.png">
-    <base href="">
-
-    <meta property="og:type" content="website">
-
-    <meta charset="utf-8">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gilda+Display|Playfair+Display|Playfair+Display+SC" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-
-</head>
 <main>
+   <h2>Perfil de<strong> <%=user.name%></strong></h2>
+   <h5>ADICIONAR UM NOVO USUÁRIO</h5>
+   <div class='container'>
+      <div class='profileContent'>
+         <form class='formProfile' id='formCreate' action="/"  method="post" enctype="multipart/form-data" style="display: block;">
+            <div class='inputBox'>
+               <span class='inputSpan'>
+               <label for="Nome">NOME</label>
+               <img src="img/pencil.svg" alt="" class='pencilEdit'>
+               <input type="text" placeholder='Digite o nome' name='name'  value=''>
+               </span>
+               <span class='inputSpan'>
+               <label for="Email">EMAIL</label>
+               <img src="img/pencil.svg" alt="" class='pencilEdit'>
+               <input type="text" placeholder='Digite o email' name='email'  value=''>
+               </span>
+            <button  type='submit' style="margin-left: 0em">Enviar</button>
 
-    <div class='container'>
-        
-        <div class='profileContent'>
+            </div>
             
-            <form class='formProfile' action="/create-user" method="post" enctype="multipart/form-data">
-                
-                <div class='ImgProfileBox'>
-                
-                    
-                    <div class='FormImg'>
-                        <input type="file" id='Upload' name='photo' accept="imagem/jpeg,imagem/jpg,imagem/png,imagem/tiff">
-                        <label for="Upload" style='margin:0;'>
-                            <!-- <img src="img/icon10.svg" alt=""> -->
-                            <div class="upload">
-                                
-                                <svg class="circle" viewBox="0 0 164 164">
-                                    <circle cx="82" cy="82" r="80"></circle>
-                                    <circle class="active" cx="82" cy="82" r="80"></circle>
-                                </svg>
-                                
-                                <svg class="image" viewBox="0 0 60 60">
-                                    <rect fill="currentColor" x="0" y="0" width="60" height="60" rx="11.9999993"></rect>
-                                    <circle fill="#8999bc" cx="15" cy="15" r="5"></circle>
-                                    <path d="M50,54 L10,54 C7.790861,54 6,52.209139 6,50 L6,44.2867962 C6,44.0993765 6.05266944,43.9157289 6.1520017,43.7567973 L12.6080068,33.4271891 C12.9299296,32.9121126 13.3649277,32.4771145 13.8800042,32.1551917 C15.7533504,30.9843504 18.2211519,31.553843 19.3919932,33.4271891 L26,44 L36.3752674,21.7672841 C36.7726106,20.9158345 37.4570086,20.2314365 38.3084581,19.8340934 C40.3103427,18.8998806 42.6905198,19.7653995 43.6247326,21.7672841 L53.9061831,43.7989639 C53.9679765,43.9313783 54,44.0757261 54,44.2218493 L54,50 C54,52.209139 52.209139,54 50,54 Z" fill="#8999bc"></path>
-                                </svg>
-                                
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class='inputBox'>
-                    <span class='inputSpan'>
-                        <label for="Nome">NOME</label>
-                        
-                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
-                        <input type="text" placeholder='Digite o seu nome' name='name' >
-                    </span>
-                    
-                    <span class='inputSpan'>
-                        <label for="Email">EMAIL</label>
-                        
-                        <img src="img/pencil.svg" alt="" class='pencilEdit'>
-                        <input type="text" placeholder='Digite o seu email' name='email' >
-                    </span>
-                </div>
-              
-                <span class='PassSpan'>
-                    <label for="NovaSenha">senha:</label>
-                    <img src="img/pencil.svg" alt="" class='pencilEdit'>
-                    <input type="password" name='password' placeholder='Digite uma senha' >
-                </span>
-                <button type='submit'>Enviar</button>
-            </form>
-            
-        </div>
-        
-        
+         </form>
     </div>
-    
-    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
-    
+   <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
 </main>
-
-
-
+<% include includes/footer.ejs %>

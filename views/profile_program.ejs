@@ -45,7 +45,7 @@
                 </span>-->
                 <span>
                     <label for="">DATA DE EMISSÃO</label>
-                    <p><%= program.dia_emissao.toLocaleDateString() %></p>
+                    <p><%=moment(moment.utc(program.dia_emissao)).format("DD/MM/YYYY") %></p>
                 </span>
                 
                 <span>
@@ -79,7 +79,7 @@
         
     </div>
     
-    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
+    <!-- <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend> -->
     
 </main>
 
