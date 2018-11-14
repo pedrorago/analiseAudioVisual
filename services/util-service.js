@@ -6,14 +6,14 @@ var self = module.exports = {
         return new Promise(function(resolve, reject) {
 
             var s3 = new AWS.S3({     
-                accessKeyId: '',
-                secretAccessKey: '',
+                accessKeyId: 'AKIAJQ4RQOLOYB7553RA',
+                secretAccessKey: '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',
                   params: {
                         Key: save_name_file, 
                         Body: file,
                         Bucket: 'teste-beto'},
                         ACL:'public-read-write',
-                  options: {partSize: 5 * 1024 * 1024, queueSize: 10}   // 5 MB
+                  options: {partSize: 2 * 1024 * 1024, queueSize: 10}   // 5 MB
                });
                s3.upload().on('httpUploadProgress', function (evt) {
                }).send(function (err, data) {
