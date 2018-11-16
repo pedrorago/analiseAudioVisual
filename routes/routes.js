@@ -73,13 +73,18 @@ module.exports = function (app, passport) {
     });
 
     app.post('/create-user', function (req, res) {
+
+        let pass = Math.random().toString(36).slice(-10);
+
+
         let user = {};
         var busboy = new Busboy({ headers: req.headers });
         Promise.all([UtilService.file_to_base64(busboy),
         UtilService.form_to_json(busboy)])
             .then(resp => {
-                
+                console.log("senhaaaaaaaaaaaaa"+pass);
                 user = resp[1];
+                user.password = pass;
                 user['photo'] = resp[0][0];
                 user.createdAt = new Date();
 
@@ -87,12 +92,17 @@ module.exports = function (app, passport) {
 
             }).then(resp => {
                 res.locals.user = req.user;
+                user.password = pass;
+                UserService.send_email(user);
                 res.render('signup.ejs', {
-                    message: req.flash('signupMessage')
+                    message: "CRIADO COM SUCESSO, FOI ENVIADO UM EMAIL COM A SENHA DO USUARIO."
                 });
             })
             .catch(function (e) {
-                res.json(e);
+                res.locals.user = req.user;
+                res.render('signup.ejs', {
+                    message: e
+                });
             })
         req.pipe(busboy);
     });
@@ -273,7 +283,7 @@ module.exports = function (app, passport) {
     app.get('/signup',isLoggedIn, function (req, res) {
         res.locals.user = req.user;
         res.render('signup.ejs', {
-            message: req.flash('signupMessage')
+            message: ""
         });
     });
 

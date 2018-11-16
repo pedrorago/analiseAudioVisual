@@ -25,6 +25,7 @@
     "mysql": "^2.16.0",
     "mysql2": "^1.5.3",
     "node-excel-export": "^1.4.4",
+    "nodemailer": "^4.6.8",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "request": "^2.87.0",

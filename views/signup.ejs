@@ -2,10 +2,11 @@
 <!-- View de perfil do usuario -->
 <main>
    <h2>Perfil de<strong> <%=user.name%></strong></h2>
+   <h2><strong> <%=message%></strong></h2>
    <h5>ADICIONAR UM NOVO USUÁRIO</h5>
    <div class='container'>
       <div class='profileContent'>
-         <form class='formProfile' id='formCreate' action="/"  method="post" enctype="multipart/form-data" style="display: block;">
+         <form class='formProfile' id='formCreate' action="/create-user"  method="post" enctype="multipart/form-data" style="display: block;">
             <div class='inputBox'>
                <span class='inputSpan'>
                <label for="Nome">NOME</label>
