@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "betonix",
+    "username": "betonix-new",
     "password": "beto2525",
-    "database": "saav",
+    "database": "saav-new",
     "host": "mysql995.umbler.com",
     "dialect": "mysql",
     "operatorsAliases": "Op",
