@@ -37,6 +37,21 @@
     header .analyzeHeader a {
         z-index: 9999999;
 }
+.conteudo-livro-label{
+    font-family: Helvetica;
+    color: #d0d4dd;
+    font-weight: 500;
+    font-size: 0.85em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    text-align: center;
+    width: 200px;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 2em;
+}
 .conteudo-livro{
     font-family: Helvetica;
     color: #d0d4dd;
@@ -61,6 +76,9 @@
 }
 .infosPlacebody > span > label{
 width: 90%;
+}
+.lgbt{
+    margin-bottom: 2em;
 }
 </style>
 
@@ -112,7 +130,7 @@ width: 90%;
                             
                             <span>
                                 <label for="Emissora">Nome da Emissora:</label>
-                                <input name="nome_emissora" type="text" value='<%=program.emissora%>'>
+                                <input disabled name="nome_emissora" type="text" value='<%=program.emissora%>'>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
                                     <div>
@@ -125,7 +143,7 @@ width: 90%;
                             
                             <span>
                                 <label for="Nome">Nome do Programa:</label>
-                                <input name="nome_programa" type="text" placeholder="Digite o nome do programa" value='<%=program.nome%>'>
+                                <input name="nome_programa" disabled type="text" placeholder="Digite o nome do programa" value='<%=program.nome%>'>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
                                     <div>
@@ -509,7 +527,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Violência física:</label>
-                            <select id="demo" name="violencia_fisica" id="DiaT" multiple>
+                                <select name="violencia_fisica" id="DiaT" >
                                     <option value="">Informe</option>
                                     <option value="1">bater</option>
                                     <option value="2">espancar</option>
@@ -533,7 +551,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Violência física praticada por:</label>
-                                <select name="violencia_fisica_praticada_por" multiple id="DiaT">
+                                <select name="violencia_fisica_praticada_por"  id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">Mulher</option>
                                     <option value="2">Homem</option>
@@ -549,27 +567,26 @@ width: 90%;
                                 </select>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
-                                    <div>
-                                    </div>
+                                    <div>   </div>
                                 </div>
                             </span>
                             
                             
                             <span>
                                 <label for="DiaT">Violência física praticada contra:</label>
-                                <select name="violencia_fisica_praticada_contra" multiple id="DiaT">
-                                        <option value="">Informe</option>
-                                        <option value="1">Mulher</option>
-                                        <option value="2">Homem</option>
-                                        <option value="3">criança</option>
-                                        <option value="4">adolescente</option>
-                                        <option value="5">mulher idosa</option>
-                                        <option value="6">homem idoso</option>
-                                        <option value="7">Homossexual masculino</option>
-                                        <option value="8">Homossexual feminino</option>
-                                        <option value="9">Bissexual</option>
-                                        <option value="10">Transexual</option>
-                                        <option value="11">Transgénero</option>
+                                <select name="violencia_fisica_praticada_contra"  id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">bater</option>
+                                    <option value="2">espancar</option>
+                                    <option value="3">socos</option>
+                                    <option value="4">empurrões</option>
+                                    <option value="5">pontapés</option>
+                                    <option value="6">bofetadas</option>
+                                    <option value="7">atirar objetos</option>
+                                    <option value="8">sacudir</option>
+                                    <option value="9">morder</option>
+                                    <option value="10">puxar os cabelos </option>
+                                    <option value="11">mutilar</option>
                                 </select>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
@@ -609,7 +626,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Suicídio praticado por:</label>
-                                <select name="suicidio" id="DiaT">
+                                <select name="suicidio_praticado_por" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">homem</option>
                                     <option value="2">mulher</option>
@@ -772,7 +789,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Tortura psicológica:</label>
-                                <select name="tortura_psicológica" id="DiaT">
+                                <select name="tortura_psicologica" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">Ameaças</option>
                                     <option value="2">Perseguição</option>
@@ -853,7 +870,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Violência psicológica:</label>
-                                <select name="violencia_psicológica" id="DiaT">
+                                <select name="violencia_psicologica" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">rejeição</option>
                                     <option value="2">depreciação</option>
@@ -1606,7 +1623,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Violência patrimonial praticado por:</label>
-                                <select name="vviolencia_patrimonial_praticada_por" id="DiaT">
+                                <select name="violencia_patrimonial_praticada_por" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">Homem</option>
                                     <option value="2">Mulher</option>
@@ -1627,7 +1644,7 @@ width: 90%;
                             
                             <span>
                                 <label for="DiaT">Violência patrimonial praticado contra:</label>
-                                <select name="vviolencia_patrimonial_praticada_contra" id="DiaT">
+                                <select name="violencia_patrimonial_praticada_contra" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">Homem</option>
                                     <option value="2">Mulher</option>
@@ -2571,7 +2588,7 @@ width: 90%;
                             </span>
                             
                             <span>
-                                <label for="DiaT">A	cena de estupro associada a uma paixão e não a um crime é praticada contra:</label>
+                                <label for="DiaT">A cena de estupro associada a uma paixão e não a um crime é praticada contra:</label>
                                 <select name="cena_estrupo_paixao_praticada_contra" id="DiaT">
                                     <option value="">Informe</option>
                                     <option value="1">Homem</option>
@@ -2594,7 +2611,8 @@ width: 90%;
                             </span>
                             
                             <span>
-                                <label for="DiaT">informe a duração em segundos da cena/imagem de estupro associado a uma paixão e não como um crime:</label>
+                                <label for="DiaT">informe a duração em segundos da cena/imagem de estupro associado a uma paixão e não como um
+                                    crime:</label>
                                 <input name="tempo_cena_estupro_paixao" type="text">
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
@@ -2604,11 +2622,631 @@ width: 90%;
                             </span>
                             
                             <span>
-                                    <label for="DiaT">A obra apresenta cena de estupro como consequência de consumo de drogas ilícitas e não como um crime intencional:</label>
-                                    <select name="cena_estrupo_drogas" id="DiaT">
+                                <label for="DiaT">A obra apresenta cena de estupro como consequência de consumo de drogas ilícitas e não como um
+                                    crime intencional:</label>
+                                <select name="cena_estrupo_drogas" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Sim</option>
+                                    <option value="2">Não</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">A cena de estupro associada a uma paixão e não como um crime é praticado por:</label>
+                                <select name="cena_estrupo_drogas_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Criança</option>
+                                    <option value="4">Adolescente</option>
+                                    <option value="5">Homem idoso</option>
+                                    <option value="6">Mulher idosa</option>
+                                    <option value="7">Homossexual masculino</option>
+                                    <option value="8">Homossexual feminino</option>
+                                    <option value="9">Bissexual</option>
+                                    <option value="10">Transexual</option>
+                                    <option value="11">Transgênero</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">A cena de estupro associada a uma paixão e não como um crime é praticado contra:</label>
+                                <select name="cena_estrupo_drogas_praticada_contra" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Criança</option>
+                                    <option value="4">Adolescente</option>
+                                    <option value="5">Homem idoso</option>
+                                    <option value="6">Mulher idosa</option>
+                                    <option value="7">Homossexual masculino</option>
+                                    <option value="8">Homossexual feminino</option>
+                                    <option value="9">Bissexual</option>
+                                    <option value="10">Transexual</option>
+                                    <option value="11">Transgênero</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span>
+                                <label for="DiaT">informe a duração em segundos da cena/imagem de estupro como consequência de consumo de drogas
+                                    ilícitas e não como um crime intencional:</label>
+                                <input name="tempo_cena_estrupo_drogas" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <div class="lgbt">
+                                <p>Referências ao conteúdo de discriminação à população LGBT</p>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: a discriminação é qualquer conduta que viole os direitos das pessoas com base em
+                                        critérios injustificados como orientação sexual e identidade de gênero.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <span>
+                                <label for="DiaT">Discriminação população homossexual masculino:</label>
+                                <select name="discriminacao_homossesual_masculino" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Proibição a livre expressão e manifestação de afetividade, sendo as mesmas permitidas aos
+                                        demais cidadãos</option>
+                                    <option value="2">Proibição de ingresso em qualquer ambiente ou estabelecimentos</option>
+                                    <option value="3">Proibição de permanência em qualquer ambiente ou estabelecimento público ou privado, aberto
+                                        ao público</option>
+                                    <option value="4">Inibir ou proibir a admissão ou o acesso profissional em qualquer estabelecimento público ou
+                                        privado em função da orientação sexual ou identidade de gênero do profissional</option>
+                                    <option value="5">Praticar o empregador, a demissão direta ou indireta, em razão de orientação sexual ou
+                                        identidade de gênero</option>
+                                    <option value="6">Praticar atendimento diferenciado que não esteja devidamente determinado pela lei</option>
+                                    <option value="7">Preterir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="8">Sobretaxar a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="9">Impedir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="10">Preterir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                                    <option value="11">Sobretaxar a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou
+                                        imóveis de qualquer finalidade</option>
+                                    <option value="12">Impedir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Discriminação a população homossexual masculino praticada por:</label>
+                                <select name="discriminacao_homossesual_masculino_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">informe a duração em segundos da discriminação a população homossexual masculino:</label>
+                                <input name="tempo_discriminacao_homossesual_masculino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física contra homossexual masculino:</label>
+                                <select name="violencia_fisica_contra_homossexual_masculino" id="DiaT" >
+                                    <option value="">Informe</option>
+                                    <option value="1">bater</option>
+                                    <option value="2">espancar</option>
+                                    <option value="3">socos</option>
+                                    <option value="4">empurrões</option>
+                                    <option value="5">pontapés</option>
+                                    <option value="6">bofetadas</option>
+                                    <option value="7">atirar objetos</option>
+                                    <option value="8">sacudir</option>
+                                    <option value="9">morder</option>
+                                    <option value="10">puxar os cabelos </option>
+                                    <option value="11">mutilar</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: ação ou omissão que coloque em risco ou cause danos à integridade física de uma
+                                        pessoa </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física praticada por:</label>
+                                <select name="violencia_fisica_contra_homossexual_masculino_praticada_por"  id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência física praticada contra o homossexual
+                                    masculino:</label>
+                                <input name="tempo_violencia_fisica_contra_homossexual_masculino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica homossexual masculino:</label>
+                                <select name="violencia_psicologica_homossexual_masculino" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">rejeição</option>
+                                    <option value="2">depreciação</option>
+                                    <option value="3">descriminação</option>
+                                    <option value="4">desrespeito</option>
+                                    <option value="5">cobrança exagerada</option>
+                                    <option value="6">punição vexatória </option>
+                                    <option value="7">humilhação</option>
+                                    <option value="8">bullying</option>
+                                    <option value="9">constrangimento</option>
+                                    <option value="10">manipulação</option>
+                                    <option value="11">isolamento</option>
+                                    <option value="12">vigilância constante</option>
+                                    <option value="13">chantagem</option>
+                                    <option value="14">ridicularização</option>
+                                    <option value="15">perseguição</option>
+                                    <option value="16">ameaças</option>
+                                    <option value="17">insultos</option>
+                                    <option value="18">gritos</option>
+                                    <option value="20">xingamentos com emprego de termos pejorativos</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: Excessos e/ou descasos que causem prejuízo a saúde psicológica, a identidade, a
+                                        moral, a dignidade, a autoestima ou ao desenvolvimento pessoal
+                            
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica causada por:</label>
+                                <select name="violencia_psicologica_homossexual_masculino_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência psicológica a população homossexual
+                                    masculino:</label>
+                                <input name="tempo_violencia_psicologica_homossexual_masculino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            
+                            <span>
+                                <label for="DiaT">Discriminação população homossexual feminino:</label>
+                                <select name="discriminacao_homossexual_feminino" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Proibição a livre expressão e manifestação de afetividade, sendo as mesmas permitidas aos
+                                        demais cidadãos</option>
+                                    <option value="2">Proibição de ingresso em qualquer ambiente ou estabelecimentos</option>
+                                    <option value="3">Proibição de permanência em qualquer ambiente ou estabelecimento público ou privado, aberto
+                                        ao público</option>
+                                    <option value="4">Inibir ou proibir a admissão ou o acesso profissional em qualquer estabelecimento público ou
+                                        privado em função da orientação sexual ou identidade de gênero do profissional</option>
+                                    <option value="5">Praticar o empregador, a demissão direta ou indireta, em razão de orientação sexual ou
+                                        identidade de gênero</option>
+                                    <option value="6">Praticar atendimento diferenciado que não esteja devidamente determinado pela lei</option>
+                                    <option value="7">Preterir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="8">Sobretaxar a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="9">Impedir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="10">Preterir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                                    <option value="11">Sobretaxar a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou
+                                        imóveis de qualquer finalidade</option>
+                                    <option value="12">Impedir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Discriminação a população homossexual feminino praticada por:</label>
+                                <select name="discriminacao_homossexual_feminino_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">informe a duração em segundos da discriminação a população homossexual feminino:</label>
+                                <input name="tempo_discriminacao_homossexual_feminino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física contra homossexual feminino:</label>
+                                <select name="violencia_fisica_contra_homossexual_feminino" id="DiaT" >
+                                    <option value="">Informe</option>
+                                    <option value="1">bater</option>
+                                    <option value="2">espancar</option>
+                                    <option value="3">socos</option>
+                                    <option value="4">empurrões</option>
+                                    <option value="5">pontapés</option>
+                                    <option value="6">bofetadas</option>
+                                    <option value="7">atirar objetos</option>
+                                    <option value="8">sacudir</option>
+                                    <option value="9">morder</option>
+                                    <option value="10">puxar os cabelos </option>
+                                    <option value="11">mutilar</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: ação ou omissão que coloque em risco ou cause danos à integridade física de uma
+                                        pessoa </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física praticada por:</label>
+                                <select name="violencia_fisica_contra_homossexual_feminino_praticada_por"  id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência física praticada contra o homossexual
+                                    feminino:</label>
+                                <input name="tempo_violencia_fisica_contra_homossexual_feminino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica homossexual feminino:</label>
+                                <select name="violencia_psicologica_homossexual_feminino" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">rejeição</option>
+                                    <option value="2">depreciação</option>
+                                    <option value="3">descriminação</option>
+                                    <option value="4">desrespeito</option>
+                                    <option value="5">cobrança exagerada</option>
+                                    <option value="6">punição vexatória </option>
+                                    <option value="7">humilhação</option>
+                                    <option value="8">bullying</option>
+                                    <option value="9">constrangimento</option>
+                                    <option value="10">manipulação</option>
+                                    <option value="11">isolamento</option>
+                                    <option value="12">vigilância constante</option>
+                                    <option value="13">chantagem</option>
+                                    <option value="14">ridicularização</option>
+                                    <option value="15">perseguição</option>
+                                    <option value="16">ameaças</option>
+                                    <option value="17">insultos</option>
+                                    <option value="18">gritos</option>
+                                    <option value="20">xingamentos com emprego de termos pejorativos</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: Excessos e/ou descasos que causem prejuízo a saúde psicológica, a identidade, a
+                                        moral, a dignidade, a autoestima ou ao desenvolvimento pessoal
+                            
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica causada por:</label>
+                                <select name="violencia_psicologica_homossexual_feminino_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência psicológica a população homossexual
+                                    feminino:</label>
+                                <input name="tempo_violencia_psicologica_homossexual_feminino" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            
+                            <span>
+                                <label for="DiaT">Discriminação população bissexual:</label>
+                                <select name="discriminacao_bissexual" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Proibição a livre expressão e manifestação de afetividade, sendo as mesmas permitidas aos
+                                        demais cidadãos</option>
+                                    <option value="2">Proibição de ingresso em qualquer ambiente ou estabelecimentos</option>
+                                    <option value="3">Proibição de permanência em qualquer ambiente ou estabelecimento público ou privado, aberto
+                                        ao público</option>
+                                    <option value="4">Inibir ou proibir a admissão ou o acesso profissional em qualquer estabelecimento público ou
+                                        privado em função da orientação sexual ou identidade de gênero do profissional</option>
+                                    <option value="5">Praticar o empregador, a demissão direta ou indireta, em razão de orientação sexual ou
+                                        identidade de gênero</option>
+                                    <option value="6">Praticar atendimento diferenciado que não esteja devidamente determinado pela lei</option>
+                                    <option value="7">Preterir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="8">Sobretaxar a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="9">Impedir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                    <option value="10">Preterir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                                    <option value="11">Sobretaxar a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou
+                                        imóveis de qualquer finalidade</option>
+                                    <option value="12">Impedir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                        de qualquer finalidade</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Discriminação a população bissexual praticada por:</label>
+                                <select name="discriminacao_bissexual_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">informe a duração em segundos da discriminação a população bissexual:</label>
+                                <input name="tempo_discriminacao_bissexual" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física contra bissexual:</label>
+                                <select name="violencia_fisica_contra_bissexual" id="DiaT" >
+                                    <option value="">Informe</option>
+                                    <option value="1">bater</option>
+                                    <option value="2">espancar</option>
+                                    <option value="3">socos</option>
+                                    <option value="4">empurrões</option>
+                                    <option value="5">pontapés</option>
+                                    <option value="6">bofetadas</option>
+                                    <option value="7">atirar objetos</option>
+                                    <option value="8">sacudir</option>
+                                    <option value="9">morder</option>
+                                    <option value="10">puxar os cabelos </option>
+                                    <option value="11">mutilar</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: ação ou omissão que coloque em risco ou cause danos à integridade física de uma
+                                        pessoa </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência física praticada por:</label>
+                                <select name="violencia_fisica_contra_bissexual_praticada_por"  id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        </div>
+                                    </div>
+                            </span>
+                            
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência física praticada contra o homossexual
+                                    feminino:</label>
+                                <input name="tempo_violencia_fisica_contra_bissexual" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica bissexual:</label>
+                                <select name="violencia_psicologica_bissexual" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">rejeição</option>
+                                    <option value="2">depreciação</option>
+                                    <option value="3">descriminação</option>
+                                    <option value="4">desrespeito</option>
+                                    <option value="5">cobrança exagerada</option>
+                                    <option value="6">punição vexatória </option>
+                                    <option value="7">humilhação</option>
+                                    <option value="8">bullying</option>
+                                    <option value="9">constrangimento</option>
+                                    <option value="10">manipulação</option>
+                                    <option value="11">isolamento</option>
+                                    <option value="12">vigilância constante</option>
+                                    <option value="13">chantagem</option>
+                                    <option value="14">ridicularização</option>
+                                    <option value="15">perseguição</option>
+                                    <option value="16">ameaças</option>
+                                    <option value="17">insultos</option>
+                                    <option value="18">gritos</option>
+                                    <option value="20">xingamentos com emprego de termos pejorativos</option>
+                            
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                        definição conceitual: Excessos e/ou descasos que causem prejuízo a saúde psicológica, a identidade, a
+                                        moral, a dignidade, a autoestima ou ao desenvolvimento pessoal
+                            
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT">Violência psicológica causada por:</label>
+                                <select name="violencia_psicologica_bissexual_praticada_por" id="DiaT">
+                                    <option value="">Informe</option>
+                                    <option value="1">Homem</option>
+                                    <option value="2">Mulher</option>
+                                    <option value="3">Homem idoso</option>
+                                    <option value="4">Mulher idosa</option>
+                                </select>
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            <span>
+                                <label for="DiaT"> informe a duração em segundos da cena/imagem da violência psicológica a população homossexual
+                                    feminino:</label>
+                                <input name="tempo_violencia_psicologica_bissexual" type="text">
+                                <div class="livro-codigo">
+                                    <a>Ver livro</a>
+                                    <div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                            
+                            
+                            <span>
+                                    <label for="DiaT">Discriminação população transexual:</label>
+                                    <select name="discriminacao_transexual" id="DiaT">
                                         <option value="">Informe</option>
-                                        <option value="1">Sim</option>
-                                        <option value="2">Não</option>
+                                        <option value="1">Proibição a livre expressão e manifestação de afetividade, sendo as mesmas permitidas aos
+                                            demais cidadãos</option>
+                                        <option value="2">Proibição de ingresso em qualquer ambiente ou estabelecimentos</option>
+                                        <option value="3">Proibição de permanência em qualquer ambiente ou estabelecimento público ou privado, aberto
+                                            ao público</option>
+                                        <option value="4">Inibir ou proibir a admissão ou o acesso profissional em qualquer estabelecimento público ou
+                                            privado em função da orientação sexual ou identidade de gênero do profissional</option>
+                                        <option value="5">Praticar o empregador, a demissão direta ou indireta, em razão de orientação sexual ou
+                                            identidade de gênero</option>
+                                        <option value="6">Praticar atendimento diferenciado que não esteja devidamente determinado pela lei</option>
+                                        <option value="7">Preterir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="8">Sobretaxar a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="9">Impedir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="10">Preterir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                            de qualquer finalidade</option>
+                                        <option value="11">Sobretaxar a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou
+                                            imóveis de qualquer finalidade</option>
+                                        <option value="12">Impedir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                            de qualquer finalidade</option>
+                                
                                     </select>
                                     <div class="livro-codigo">
                                         <a>Ver livro</a>
@@ -2618,53 +3256,138 @@ width: 90%;
                                 </span>
                                 
                                 <span>
-                                    <label for="DiaT">A cena de estupro associada a uma paixão e não como um crime é praticado por:</label>
-                                    <select name="cena_estrupo_drogas_praticada_por" id="DiaT">
+                                    <label for="DiaT">Discriminação a população transexual praticada por:</label>
+                                    <select name="discriminacao_transexual_praticada_por" id="DiaT">
                                         <option value="">Informe</option>
                                         <option value="1">Homem</option>
                                         <option value="2">Mulher</option>
-                                        <option value="3">Criança</option>
-                                        <option value="4">Adolescente</option>
-                                        <option value="5">Homem idoso</option>
-                                        <option value="6">Mulher idosa</option>
-                                        <option value="7">Homossexual masculino</option>
-                                        <option value="8">Homossexual feminino</option>
-                                        <option value="9">Bissexual</option>
-                                        <option value="10">Transexual</option>
-                                        <option value="11">Transgênero</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
                                     </select>
                                     <div class="livro-codigo">
                                         <a>Ver livro</a>
                                         <div>
                                         </div>
                                     </div>
-                                </span>    
-                            
+                                </span>
+                                
                                 <span>
-                                        <label for="DiaT">A cena de estupro associada a uma paixão e não como um crime é praticado contra:</label>
-                                        <select name="cena_estrupo_drogas_praticada_contra" id="DiaT">
-                                            <option value="">Informe</option>
-                                            <option value="1">Homem</option>
-                                            <option value="2">Mulher</option>
-                                            <option value="3">Criança</option>
-                                            <option value="4">Adolescente</option>
-                                            <option value="5">Homem idoso</option>
-                                            <option value="6">Mulher idosa</option>
-                                            <option value="7">Homossexual masculino</option>
-                                            <option value="8">Homossexual feminino</option>
-                                            <option value="9">Bissexual</option>
-                                            <option value="10">Transexual</option>
-                                            <option value="11">Transgênero</option>
-                                        </select>
-                                        <div class="livro-codigo">
-                                            <a>Ver livro</a>
-                                            <div>
-                                            </div>
+                                    <label for="DiaT">informe a duração em segundos da discriminação a população transexual:</label>
+                                    <input name="tempo_discriminacao_transexual" type="text">
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
                                         </div>
-                                    </span>  
+                                    </div>
+                                </span>
+                                
                                 <span>
-                                    <label for="DiaT">informe a duração em segundos da cena/imagem de estupro como consequência de consumo de drogas ilícitas e não como um crime intencional:</label>
-                                    <input name="tempo_cena_estrupo_drogas" type="text">
+                                    <label for="DiaT">Violência física contra transexual:</label>
+                                    <select name="violencia_fisica_contra_transexual" id="DiaT" >
+                                        <option value="">Informe</option>
+                                        <option value="1">bater</option>
+                                        <option value="2">espancar</option>
+                                        <option value="3">socos</option>
+                                        <option value="4">empurrões</option>
+                                        <option value="5">pontapés</option>
+                                        <option value="6">bofetadas</option>
+                                        <option value="7">atirar objetos</option>
+                                        <option value="8">sacudir</option>
+                                        <option value="9">morder</option>
+                                        <option value="10">puxar os cabelos </option>
+                                        <option value="11">mutilar</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                            definição conceitual: ação ou omissão que coloque em risco ou cause danos à integridade física de uma
+                                            pessoa </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência física praticada por:</label>
+                                    <select name="violencia_fisica_contra_transexual_praticada_por"  id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Homem</option>
+                                        <option value="2">Mulher</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                
+                                <span>
+                                    <label for="DiaT"> informe a duração em segundos da cena/imagem da violência física praticada contra o homossexual
+                                        feminino:</label>
+                                    <input name="tempo_violencia_fisica_contra_transexual" type="text">
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência psicológica transexual:</label>
+                                    <select name="violencia_psicologica_transexual" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">rejeição</option>
+                                        <option value="2">depreciação</option>
+                                        <option value="3">descriminação</option>
+                                        <option value="4">desrespeito</option>
+                                        <option value="5">cobrança exagerada</option>
+                                        <option value="6">punição vexatória </option>
+                                        <option value="7">humilhação</option>
+                                        <option value="8">bullying</option>
+                                        <option value="9">constrangimento</option>
+                                        <option value="10">manipulação</option>
+                                        <option value="11">isolamento</option>
+                                        <option value="12">vigilância constante</option>
+                                        <option value="13">chantagem</option>
+                                        <option value="14">ridicularização</option>
+                                        <option value="15">perseguição</option>
+                                        <option value="16">ameaças</option>
+                                        <option value="17">insultos</option>
+                                        <option value="18">gritos</option>
+                                        <option value="20">xingamentos com emprego de termos pejorativos</option>
+                                
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                            definição conceitual: Excessos e/ou descasos que causem prejuízo a saúde psicológica, a identidade, a
+                                            moral, a dignidade, a autoestima ou ao desenvolvimento pessoal
+                                
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência psicológica causada por:</label>
+                                    <select name="violencia_psicologica_transexual_praticada_por" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Homem</option>
+                                        <option value="2">Mulher</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT"> informe a duração em segundos da cena/imagem da violência psicológica a população homossexual
+                                        feminino:</label>
+                                    <input name="tempo_violencia_psicologica_transexual" type="text">
                                     <div class="livro-codigo">
                                         <a>Ver livro</a>
                                         <div>
@@ -2672,14 +3395,269 @@ width: 90%;
                                     </div>
                                 </span>
                             
-                                <div class="lgbt">
-                                     <p>Referências ao conteúdo de discriminação à população LGBT</p>   
+                            
+                            
+                            <span>
+                                    <label for="DiaT">Discriminação população transgênero:</label>
+                                    <select name="discriminacao_transgenero" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Proibição a livre expressão e manifestação de afetividade, sendo as mesmas permitidas aos
+                                            demais cidadãos</option>
+                                        <option value="2">Proibição de ingresso em qualquer ambiente ou estabelecimentos</option>
+                                        <option value="3">Proibição de permanência em qualquer ambiente ou estabelecimento público ou privado, aberto
+                                            ao público</option>
+                                        <option value="4">Inibir ou proibir a admissão ou o acesso profissional em qualquer estabelecimento público ou
+                                            privado em função da orientação sexual ou identidade de gênero do profissional</option>
+                                        <option value="5">Praticar o empregador, a demissão direta ou indireta, em razão de orientação sexual ou
+                                            identidade de gênero</option>
+                                        <option value="6">Praticar atendimento diferenciado que não esteja devidamente determinado pela lei</option>
+                                        <option value="7">Preterir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="8">Sobretaxar a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="9">Impedir a hospedagem em hotéis, motéis, pensões ou similares</option>
+                                        <option value="10">Preterir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                            de qualquer finalidade</option>
+                                        <option value="11">Sobretaxar a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou
+                                            imóveis de qualquer finalidade</option>
+                                        <option value="12">Impedir a locação, compra, aquisição, arrendamento ou empréstimo de bens, moveis ou imóveis
+                                            de qualquer finalidade</option>
+                                
+                                    </select>
                                     <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Discriminação a população transgenero praticada por:</label>
+                                    <select name="discriminacao_transgenero_praticada_por" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Homem</option>
+                                        <option value="2">Mulher</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">informe a duração em segundos da discriminação a população transgenero:</label>
+                                    <input name="tempo_discriminacao_transgenero" type="text">
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência física contra transgenero:</label>
+                                    <select name="violencia_fisica_contra_transgenero" id="DiaT" >
+                                        <option value="">Informe</option>
+                                        <option value="1">bater</option>
+                                        <option value="2">espancar</option>
+                                        <option value="3">socos</option>
+                                        <option value="4">empurrões</option>
+                                        <option value="5">pontapés</option>
+                                        <option value="6">bofetadas</option>
+                                        <option value="7">atirar objetos</option>
+                                        <option value="8">sacudir</option>
+                                        <option value="9">morder</option>
+                                        <option value="10">puxar os cabelos </option>
+                                        <option value="11">mutilar</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                            definição conceitual: ação ou omissão que coloque em risco ou cause danos à integridade física de uma
+                                            pessoa </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência física praticada por:</label>
+                                    <select name="violencia_fisica_contra_transgenero_praticada_por"  id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Homem</option>
+                                        <option value="2">Mulher</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                
+                                <span>
+                                    <label for="DiaT"> informe a duração em segundos da cena/imagem da violência física praticada contra o homossexual
+                                        feminino:</label>
+                                    <input name="tempo_violencia_fisica_contra_transgenero" type="text">
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência psicológica transgenero:</label>
+                                    <select name="violencia_psicologica_transgenero" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">rejeição</option>
+                                        <option value="2">depreciação</option>
+                                        <option value="3">descriminação</option>
+                                        <option value="4">desrespeito</option>
+                                        <option value="5">cobrança exagerada</option>
+                                        <option value="6">punição vexatória </option>
+                                        <option value="7">humilhação</option>
+                                        <option value="8">bullying</option>
+                                        <option value="9">constrangimento</option>
+                                        <option value="10">manipulação</option>
+                                        <option value="11">isolamento</option>
+                                        <option value="12">vigilância constante</option>
+                                        <option value="13">chantagem</option>
+                                        <option value="14">ridicularização</option>
+                                        <option value="15">perseguição</option>
+                                        <option value="16">ameaças</option>
+                                        <option value="17">insultos</option>
+                                        <option value="18">gritos</option>
+                                        <option value="20">xingamentos com emprego de termos pejorativos</option>
+                                
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                            definição conceitual: Excessos e/ou descasos que causem prejuízo a saúde psicológica, a identidade, a
+                                            moral, a dignidade, a autoestima ou ao desenvolvimento pessoal
+                                
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT">Violência psicológica causada por:</label>
+                                    <select name="violencia_psicologica_transgenero_praticada_por" id="DiaT">
+                                        <option value="">Informe</option>
+                                        <option value="1">Homem</option>
+                                        <option value="2">Mulher</option>
+                                        <option value="3">Homem idoso</option>
+                                        <option value="4">Mulher idosa</option>
+                                    </select>
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                                
+                                <span>
+                                    <label for="DiaT"> informe a duração em segundos da cena/imagem da violência psicológica a população homossexual
+                                        feminino:</label>
+                                    <input name="tempo_violencia_psicologica_transgenero" type="text">
+                                    <div class="livro-codigo">
+                                        <a>Ver livro</a>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </span>
+                            
+                            
+                                <span>
+                                        <label for="DiaT">Discriminação racial:</label>
+                                        <select name="discriminacao_racial" id="DiaT">
+                                                <option value="">Informe</option>
+                                                <option value="1">Homem</option>
+                                                <option value="2">Mulher</option>
+                                                <option value="3">Criança</option>
+                                                <option value="4">Adolescente</option>
+                                                <option value="5">Homem idoso</option>
+                                                <option value="6">Mulher idosa</option>
+                                                <option value="7">Homossexual masculino</option>
+                                                <option value="8">Homossexual feminino</option>
+                                                <option value="9">Bissexual</option>
+                                                <option value="10">Transexual</option>
+                                                <option value="11">Transgênero</option>
+                                        </select>
+                                        <div class="livro-codigo">
+                                            <a>Ver livro</a>
+                                            <div>
+                                                    qualquer exclusão, distinção, restrição ou preferência baseada na raça, cor e nacionalidade
+                                            </div>
+                                        </div>
+                                    </span>
+                                            
+                                    <span>
+                                        <label for="DiaT"> Informe a duração em segundos da cena/imagem da discriminação racial:</label>
+                                        <input name="tempo_discriminacao_racial" type="text">
+                                        <div class="livro-codigo">
+                                            <a>Ver livro</a>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </span>
+                            
+                            
+                                    <span>
+                                            <label for="DiaT">Racismo religioso:</label>
+                                            <select name="racismo_religioso" id="DiaT">
+                                                    <option value="">Informe</option>
+                                                    <option value="1">manifestações discriminatórias</option>
+                                                    <option value="2">discurso de ódio</option>
+                                                    <option value="3">qualquer ato de comunicação que inferiorize a pessoa ou grupo</option>
+                                                    <option value="4">gesto ou conduta que demostre a ação discriminatória </option>
+                                            </select>
+                                            <div class="livro-codigo">
+                                                <a>Ver livro</a>
+                                                <div>
+                                                        definição conceitual: ocorre quando o indivíduo não aceita a diversidade religiosa 
+                                                    </div>
+                                            </div>
+                                        </span>
+                                                
+                            
+                            
+                                    <span>
+                                            <label for="DiaT">Racismo religioso:</label>
+                                            <select name="racismo_religioso_contra" id="DiaT">
+                                                    <option value="">Informe</option>
+                                                    <option value="">catolicismo</option>
+                                                    <option value="">Espiritismo</option>
+                                                    <option value="">Candomblé</option>
+                                                    <option value="">Umbanda</option>
+                                                    <option value="">Budismo</option>
+                                                    <option value="">Cristianismo</option>
+                                                    <option value="">Protestantismo</option>
+                                                    <option value="">Adventismo</option>
+                                                    <option value="">Islamismo</option>
+                                                    <option value="">Mormonismo</option>
+                                                    <option value="">Testemunha de Jeová</option>
+                            
+                                            </select>
+                                            <div class="livro-codigo">
+                                                <a>Ver livro</a>
+                                                <div>
+                                                    </div>
+                                            </div>
+                                        </span>
+                            
+                            
+                                        <span>
+                                            <label for="DiaT"> Informe a duração em segundos da cena/imagem do racismo religioso:</label>
+                                            <input name="tempo_racismo_religioso" type="text">
+                                            <div class="livro-codigo">
                                                 <a>Ver livro</a>
                                                 <div>
                                                 </div>
-                                    </div>
-                                </div>
+                                            </div>
+                                        </span>
                     </div>
                 </div>
                 <div class="boxComentario">
@@ -2690,13 +3668,14 @@ width: 90%;
 
         </form>
             <div class='rightposition'>
-
+                            <label class="conteudo-livro-label">Informações livro de codigo.</label>
                 <div class='bookBox'>
                     <form action="" class='formInputSearch'>
-                        <input type="text" placeholder="Pesquise" name='pesquisa'>
-                        <button>
+
+                        <!--<input type="text" placeholder="Pesquise" name='pesquisa'>
+                       <button>
                             <i class="material-icons"> search </i>
-                        </button>
+                        </button>-->
                     </form>
                     
                     <div>
@@ -2733,6 +3712,7 @@ width: 90%;
         $( ".infosPlacebody  > span > div > a" ).on( "click", function() {
             
             var x = $( this ).parent().children("div");
+            
             $(".conteudo-livro").html(x.text())
 
         });

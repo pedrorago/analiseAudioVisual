@@ -57,8 +57,12 @@
                 <img src="/img/clock.svg" alt="" class='clockImg'>
                 <p>01:30:00</p>
             </div>
+            <% if (!locals.status=='Analisado') { %>
 
-            <a onclick="saveAnalise()" href="javascript:void(0)">Concluir</a>
+                <a onclick="saveAnalise()" href="javascript:void(0)">Concluir</a>
+
+               
+               <% } %>
 
         </div>
         <div class='userIconContainer'>
