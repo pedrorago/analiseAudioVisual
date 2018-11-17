@@ -99,7 +99,7 @@ module.exports = {
                     },
                     width: 120 // <- width in pixels
                 },
-                nome_emissora: {
+                emissora: {
                     displayName: ' nome_emissora ',  
                     headerStyle: {
                         fgColor: {
@@ -108,7 +108,7 @@ module.exports = {
                     },
                     width: 120 // <- width in pixels
                 },
-                nome_programa: {
+                nome: {
                     displayName: '  nome_programa',  
                     headerStyle: {
                         fgColor: {
