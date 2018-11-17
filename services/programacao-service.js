@@ -14,6 +14,11 @@ module.exports = {
         if(req.body.status){
             sql = sql + ' and status = '+ '"'+req.body.status+'"';
         }
+       
+        if(req.user.admin!=1){
+            sql = sql + ' and (dia_emissao BETWEEN "'+req.user.data_inicio_filtro+'" AND "'+req.user.data_fim_filtro+'")';
+        }
+        console.log(sql);
         sql = sql + ' and excluido = 0 order by id desc';
 
         return new Promise(function (resolve, reject) {

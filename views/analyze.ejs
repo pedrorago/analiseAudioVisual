@@ -130,7 +130,7 @@ width: 90%;
                             
                             <span>
                                 <label for="Emissora">Nome da Emissora:</label>
-                                <input disabled name="nome_emissora" type="text" value='<%=program.emissora%>'>
+                                <input readonly name="nome_emissora" type="text" value='<%=program.emissora%>'>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
                                     <div>
@@ -143,7 +143,7 @@ width: 90%;
                             
                             <span>
                                 <label for="Nome">Nome do Programa:</label>
-                                <input name="nome_programa" disabled type="text" placeholder="Digite o nome do programa" value='<%=program.nome%>'>
+                                <input name="nome_programa" readonly type="text" placeholder="Digite o nome do programa" value='<%=program.nome%>'>
                                 <div class="livro-codigo">
                                     <a>Ver livro</a>
                                     <div>
@@ -3739,7 +3739,7 @@ width: 90%;
             
             var x = $( this ).parent().children("div");
             let y = x.html();
-            $(".conteudo-livro").html(y);
+            $(".conteudo-livro").html('<p>'+y+'</p>');
 
         });
     })

@@ -1,5 +1,19 @@
 <% include includes/header.ejs %>
 <!-- View de perfil do usuario -->
+<style>
+.label-data{
+   width: 100%;
+   text-align: center;
+}
+.datas{
+   display: flex;
+   align-items: center;
+}
+.input-datas{
+   width: 178px !important;
+
+}
+</style>
 <main>
    <h2>Perfil de<strong> <%=user.name%></strong></h2>
    <h2><strong> <%=message%></strong></h2>
@@ -11,13 +25,17 @@
                <span class='inputSpan'>
                <label for="Nome">NOME</label>
                <img src="img/pencil.svg" alt="" class='pencilEdit'>
-               <input type="text" placeholder='Digite o nome' name='name'  value=''>
+               <input type="text" placeholder='Digite o nome' name='name'  value='' required>
                </span>
                <span class='inputSpan'>
                <label for="Email">EMAIL</label>
                <img src="img/pencil.svg" alt="" class='pencilEdit'>
-               <input type="text" placeholder='Digite o email' name='email'  value=''>
-               </span>
+               <input type="text" placeholder='Digite o email' name='email'  value='' required>
+                  <label  for="Email">DATA INICIO</label>
+                  <input type="date" placeholder='DD/MM/AAAA' name='data_inicio_filtro' id='' value=''>
+                  <label  for="Email">DATA FIM</label>
+                  <input type="date"  placeholder='DD/MM/AAAA' name='data_fim_filtro' id=''  value=''>    
+                   </span>
             <button  type='submit' style="margin-left: 0em">Enviar</button>
 
             </div>
@@ -27,3 +45,7 @@
    <legend id='DireitosReservados'>Sistema de Análise Audiovisual - <strong>SAAV</strong><br>Todos os direitos reservados</legend>
 </main>
 <% include includes/footer.ejs %>
+<script>
+    $('#data_inicio_filtro').mask('00/00/0000');
+    $('#data_fim_filtro').mask('00/00/0000');
+</script>
