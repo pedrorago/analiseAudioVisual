@@ -3738,8 +3738,8 @@ width: 90%;
         $( ".infosPlacebody  > span > div > a" ).on( "click", function() {
             
             var x = $( this ).parent().children("div");
-            
-            $(".conteudo-livro").html(x)
+            let y = x.html();
+            $(".conteudo-livro").html(y);
 
         });
     })
