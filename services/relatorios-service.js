@@ -84,7 +84,7 @@ module.exports = {
     },
     export: function(res) {
         const excel = require('node-excel-export');
-        sequelize.query("SELECT * FROM programacao p left JOIN analise a on a.id_programacao = p.id inner join Users u ON u.id = a.id_user", {
+        sequelize.query("SELECT * FROM programacao p left JOIN analise a on a.id_programacao = p.id left join Users u ON u.id = a.id_user", {
             type: sequelize.QueryTypes.SELECT
         }).then((results, metadata) => {
             //Here you specify the export structure
